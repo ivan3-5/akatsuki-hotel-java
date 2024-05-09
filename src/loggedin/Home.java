@@ -61,7 +61,6 @@ public class Home extends javax.swing.JFrame {
         gallery = new javax.swing.JButton();
         contact = new javax.swing.JButton();
         about = new javax.swing.JButton();
-        admin = new javax.swing.JButton();
         logout = new javax.swing.JButton();
         jLabel61 = new javax.swing.JLabel();
         insidepanel = new javax.swing.JPanel();
@@ -323,38 +322,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
         sidepanel.add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 722, -1, -1));
-
-        admin.setBackground(new java.awt.Color(255, 255, 255));
-        admin.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        admin.setForeground(new java.awt.Color(255, 255, 255));
-        admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/admin.png"))); // NOI18N
-        admin.setText("Admin");
-        admin.setBorderPainted(false);
-        admin.setContentAreaFilled(false);
-        admin.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        admin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        admin.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                adminFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                adminFocusLost(evt);
-            }
-        });
-        admin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                adminMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                adminMouseExited(evt);
-            }
-        });
-        admin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminActionPerformed(evt);
-            }
-        });
-        sidepanel.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 263, 171, -1));
 
         logout.setBackground(new java.awt.Color(255, 0, 0));
         logout.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
@@ -733,29 +700,6 @@ public class Home extends javax.swing.JFrame {
       
     }//GEN-LAST:event_aboutFocusLost
 
-    private void adminFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adminFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminFocusGained
-
-    private void adminFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adminFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminFocusLost
-
-    private void adminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        admin.setForeground(gold);
-    }//GEN-LAST:event_adminMouseEntered
-
-    private void adminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseExited
-        Color white = new Color(255,255,255);
-        admin.setForeground(white);
-    }//GEN-LAST:event_adminMouseExited
-
-    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-       
-    }//GEN-LAST:event_adminActionPerformed
-
     private void gallery1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gallery1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_gallery1FocusGained
@@ -932,7 +876,6 @@ public class Home extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton about;
-    public javax.swing.JButton admin;
     public javax.swing.JButton book;
     public javax.swing.JButton contact;
     public javax.swing.JButton gallery;
