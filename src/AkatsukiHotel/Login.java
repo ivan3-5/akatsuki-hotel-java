@@ -5,6 +5,8 @@
  */
 package AkatsukiHotel;
 
+import loggedin.Home;
+
 /**
  *
  * @author Ivan Adcan
@@ -159,7 +161,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        LoggedIn t = new LoggedIn();
+        Home t = new Home();
         t.setVisible(true);
         t.loginHome();
         t.pack();

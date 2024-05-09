@@ -6,11 +6,17 @@
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/Login.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/ForgotPW.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/UserReservations.java</file>
-            <file>file:/D:/NetBeansProjects/GUI/src/panels/reserve.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Contact.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/Main.java</file>
-            <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/LoggedIn.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/SignUp.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Gallery.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Home.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Profile.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/panels/reserve.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Reserve.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/Admin.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/panels/home.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/About.java</file>
         </group>
     </open-files>
 </project-private>

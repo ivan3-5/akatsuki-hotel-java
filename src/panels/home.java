@@ -5,7 +5,7 @@
  */
 package panels;
 
-import AkatsukiHotel.LoggedIn;
+import loggedin.Home;
 import java.awt.Color;
 import panelsImages.homepic1;
 import panelsImages.homepic2;
@@ -373,7 +373,7 @@ public class home extends javax.swing.JPanel {
         reserve r = new reserve();
         gallery g = new gallery();
         about a = new about();
-        LoggedIn loggedin = new LoggedIn();
+        Home loggedin = new Home();
     }//GEN-LAST:event_bookActionPerformed
 
 

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AkatsukiHotel;
+package loggedin;
 
+import AkatsukiHotel.Login;
 import admin.Admin;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -18,12 +19,12 @@ import panelsImages.homepic5;
  *
  * @author Ivan Adcan
  */
-public class LoggedIn extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public LoggedIn() {
+    public Home() {
         initComponents();
     }
     
