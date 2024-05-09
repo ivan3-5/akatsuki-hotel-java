@@ -286,7 +286,7 @@ public class Gallery extends javax.swing.JFrame {
         about.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         about.setForeground(new java.awt.Color(255, 255, 255));
         about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/about.png"))); // NOI18N
-        about.setText("About Us");
+        about.setText("About");
         about.setBorderPainted(false);
         about.setContentAreaFilled(false);
         about.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
@@ -357,7 +357,7 @@ public class Gallery extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        sidepanel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 803, 171, -1));
+        sidepanel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 803, 171, -1));
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sidepanel-bg-gold.png"))); // NOI18N
