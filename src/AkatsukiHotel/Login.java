@@ -163,7 +163,6 @@ public class Login extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         Home t = new Home();
         t.setVisible(true);
-        t.loginHome();
         t.pack();
         t.setLocationRelativeTo(null);
         this.dispose();
