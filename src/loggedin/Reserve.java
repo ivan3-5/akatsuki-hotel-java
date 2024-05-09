@@ -6,14 +6,9 @@
 package loggedin;
 
 import AkatsukiHotel.Login;
-import admin.Admin;
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import panelsImages.homepic1;
-import panelsImages.homepic2;
-import panelsImages.homepic3;
-import panelsImages.homepic4;
-import panelsImages.homepic5;
+
 
 /**
  *
@@ -39,15 +34,6 @@ public class Reserve extends javax.swing.JFrame {
         gold = new Color(230,192,104);
         setBackground(new Color(255,255,255));
         setForeground(gold);
-    }
-    public void loginHome() {
-        panelHome.setVisible(true);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
     }
     
     /**
@@ -814,13 +800,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(true);
-        panelProfile.setVisible(false);
+       
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
@@ -836,13 +816,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(true);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
+       
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
@@ -858,13 +832,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(true);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
+       
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -880,13 +848,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(true);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
+       
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
@@ -913,13 +875,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseExited
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        panelHome.setVisible(true);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
+       
     }//GEN-LAST:event_homeActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
@@ -927,47 +883,35 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseClicked
 
     private void homeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeFocusGained
-        Color gold;
-        gold = new Color(230,192,104);
-        home.setForeground(gold);
+       
     }//GEN-LAST:event_homeFocusGained
 
     private void homeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeFocusLost
-        Color white = new Color(255,255,255);
-        home.setForeground(white);
+      
     }//GEN-LAST:event_homeFocusLost
 
     private void reserveFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reserveFocusGained
-        Color gold;
-        gold = new Color(230,192,104);
-        reserve.setForeground(gold);
+        
     }//GEN-LAST:event_reserveFocusGained
 
     private void reserveFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reserveFocusLost
-        Color white = new Color(255,255,255);
-        reserve.setForeground(white);
+       
     }//GEN-LAST:event_reserveFocusLost
 
     private void galleryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_galleryFocusGained
-        Color gold;
-        gold = new Color(230,192,104);
-        gallery.setForeground(gold);
+      
     }//GEN-LAST:event_galleryFocusGained
 
     private void galleryFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_galleryFocusLost
-        Color white = new Color(255,255,255);
-        gallery.setForeground(white);
+      
     }//GEN-LAST:event_galleryFocusLost
 
     private void aboutFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_aboutFocusGained
-        Color gold;
-        gold = new Color(230,192,104);
-        about.setForeground(gold);
+       
     }//GEN-LAST:event_aboutFocusGained
 
     private void aboutFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_aboutFocusLost
-        Color white = new Color(255,255,255);
-        about.setForeground(white);
+    
     }//GEN-LAST:event_aboutFocusLost
 
     private void adminFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adminFocusGained
@@ -990,13 +934,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_adminMouseExited
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(true);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(false);
+      
     }//GEN-LAST:event_adminActionPerformed
 
     private void gallery1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gallery1FocusGained
@@ -1016,13 +954,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-        panelHome.setVisible(false);
-        panelReserve.setVisible(false);
-        panelGallery.setVisible(false);
-        panelAdmin.setVisible(false);
-        panelContact.setVisible(false);
-        panelAbout.setVisible(false);
-        panelProfile.setVisible(true);
+      
     }//GEN-LAST:event_gallery1ActionPerformed
 
     private void bookSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookSmallActionPerformed
