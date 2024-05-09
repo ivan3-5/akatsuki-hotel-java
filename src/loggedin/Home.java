@@ -73,6 +73,7 @@ public class Home extends javax.swing.JFrame {
         about = new javax.swing.JButton();
         admin = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
         insidepanel = new javax.swing.JPanel();
         panelHome = new javax.swing.JPanel();
         scrollPanel = new javax.swing.JScrollPane();
@@ -271,6 +272,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         sidepanel.setBackground(new java.awt.Color(28, 42, 57));
+        sidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         home.setBackground(new java.awt.Color(255, 255, 255));
         home.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -305,6 +307,7 @@ public class Home extends javax.swing.JFrame {
                 homeActionPerformed(evt);
             }
         });
+        sidepanel.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 35, 171, -1));
 
         reserve.setBackground(new java.awt.Color(255, 255, 255));
         reserve.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -336,6 +339,7 @@ public class Home extends javax.swing.JFrame {
                 reserveActionPerformed(evt);
             }
         });
+        sidepanel.add(reserve, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 111, 171, -1));
 
         gallery.setBackground(new java.awt.Color(255, 255, 255));
         gallery.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -367,6 +371,7 @@ public class Home extends javax.swing.JFrame {
                 galleryActionPerformed(evt);
             }
         });
+        sidepanel.add(gallery, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 187, 171, -1));
 
         contact.setBackground(new java.awt.Color(255, 255, 255));
         contact.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -390,6 +395,7 @@ public class Home extends javax.swing.JFrame {
                 contactActionPerformed(evt);
             }
         });
+        sidepanel.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 641, 171, -1));
 
         about.setBackground(new java.awt.Color(255, 255, 255));
         about.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -421,6 +427,7 @@ public class Home extends javax.swing.JFrame {
                 aboutActionPerformed(evt);
             }
         });
+        sidepanel.add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 722, -1, -1));
 
         admin.setBackground(new java.awt.Color(255, 255, 255));
         admin.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -452,6 +459,7 @@ public class Home extends javax.swing.JFrame {
                 adminActionPerformed(evt);
             }
         });
+        sidepanel.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 263, 171, -1));
 
         logout.setBackground(new java.awt.Color(255, 0, 0));
         logout.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
@@ -464,42 +472,11 @@ public class Home extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
+        sidepanel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 803, 171, -1));
 
-        javax.swing.GroupLayout sidepanelLayout = new javax.swing.GroupLayout(sidepanel);
-        sidepanel.setLayout(sidepanelLayout);
-        sidepanelLayout.setHorizontalGroup(
-            sidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidepanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(sidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(about, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(reserve, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gallery, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        sidepanelLayout.setVerticalGroup(
-            sidepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidepanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(home)
-                .addGap(35, 35, 35)
-                .addComponent(reserve)
-                .addGap(35, 35, 35)
-                .addComponent(gallery)
-                .addGap(35, 35, 35)
-                .addComponent(admin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
-                .addComponent(contact)
-                .addGap(40, 40, 40)
-                .addComponent(about)
-                .addGap(40, 40, 40)
-                .addComponent(logout)
-                .addGap(30, 30, 30))
-        );
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sidepanel-bg-gold.png"))); // NOI18N
+        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 27, 260, 60));
 
         insidepanel.setBackground(new java.awt.Color(255, 255, 255));
         insidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1658,9 +1635,9 @@ public class Home extends javax.swing.JFrame {
             panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(toppanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelWrapperLayout.createSequentialGroup()
-                .addComponent(sidepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sidepanel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(insidepanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1705, Short.MAX_VALUE))
+                .addComponent(insidepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelWrapperLayout.setVerticalGroup(
             panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2301,6 +2278,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
