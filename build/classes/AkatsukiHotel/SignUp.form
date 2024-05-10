@@ -375,6 +375,7 @@
                   <ComponentRef name="gender"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Male"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="maleActionPerformed"/>
@@ -389,6 +390,7 @@
                   <ComponentRef name="gender"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Female"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="others">
@@ -400,6 +402,7 @@
                   <ComponentRef name="gender"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Others"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="inputLN">
@@ -451,6 +454,7 @@
                 </Property>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="signupActionPerformed"/>
@@ -472,6 +476,7 @@
                 <Property name="text" type="java.lang.String" value="Login"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>

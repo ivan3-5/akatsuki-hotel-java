@@ -35,6 +35,35 @@ public class Reserve extends javax.swing.JFrame {
         setBackground(new Color(255,255,255));
         setForeground(gold);
     }
+    public void sidepanelChoice(int choice) {
+        Home home = new Home();
+        Reserve reserve = new Reserve();
+        Gallery gallery = new Gallery();
+        Contact contact = new Contact();
+        About about = new About();
+        Profile profile = new Profile();
+        
+        int c = choice;
+        if (c == 0) {
+            home.setVisible(true);
+        }
+        if (c == 1) {
+            reserve.setVisible(true);
+        }
+        if (c == 2) {
+            gallery.setVisible(true);
+        }
+        if (c == 3) {
+            contact.setVisible(true);
+        }
+        if (c == 4) {
+            about.setVisible(true);
+        }
+        if (c == 5) {
+            profile.setVisible(true);
+        }
+        this.dispose();
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -118,6 +147,7 @@ public class Reserve extends javax.swing.JFrame {
         gallery1.setBorderPainted(false);
         gallery1.setContentAreaFilled(false);
         gallery1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery1.setFocusable(false);
         gallery1.setPreferredSize(new java.awt.Dimension(80, 80));
         gallery1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -185,6 +215,7 @@ public class Reserve extends javax.swing.JFrame {
         home.setBorderPainted(false);
         home.setContentAreaFilled(false);
         home.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        home.setFocusable(false);
         home.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         home.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -220,6 +251,7 @@ public class Reserve extends javax.swing.JFrame {
         reserve.setBorderPainted(false);
         reserve.setContentAreaFilled(false);
         reserve.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        reserve.setFocusable(false);
         reserve.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         reserve.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -252,6 +284,7 @@ public class Reserve extends javax.swing.JFrame {
         gallery.setBorderPainted(false);
         gallery.setContentAreaFilled(false);
         gallery.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery.setFocusable(false);
         gallery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gallery.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -284,6 +317,7 @@ public class Reserve extends javax.swing.JFrame {
         contact.setBorderPainted(false);
         contact.setContentAreaFilled(false);
         contact.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        contact.setFocusable(false);
         contact.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         contact.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -347,7 +381,7 @@ public class Reserve extends javax.swing.JFrame {
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sidepanel-bg-gold.png"))); // NOI18N
-        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 98, 260, 70));
+        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 96, 260, 70));
 
         insidepanel.setBackground(new java.awt.Color(255, 255, 255));
         insidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -382,6 +416,7 @@ public class Reserve extends javax.swing.JFrame {
         bookSmall.setForeground(new java.awt.Color(230, 192, 104));
         bookSmall.setText("Book");
         bookSmall.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        bookSmall.setFocusable(false);
         bookSmall.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bookSmallMouseEntered(evt);
@@ -404,6 +439,7 @@ public class Reserve extends javax.swing.JFrame {
         detailsSmall.setForeground(new java.awt.Color(230, 192, 104));
         detailsSmall.setText("Details");
         detailsSmall.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        detailsSmall.setFocusable(false);
         detailsSmall.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 detailsSmallMouseEntered(evt);
@@ -471,6 +507,7 @@ public class Reserve extends javax.swing.JFrame {
         bookMedium.setForeground(new java.awt.Color(230, 192, 104));
         bookMedium.setText("Book");
         bookMedium.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        bookMedium.setFocusable(false);
         bookMedium.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bookMediumMouseEntered(evt);
@@ -493,6 +530,7 @@ public class Reserve extends javax.swing.JFrame {
         detailsMedium.setForeground(new java.awt.Color(230, 192, 104));
         detailsMedium.setText("Details");
         detailsMedium.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        detailsMedium.setFocusable(false);
         detailsMedium.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 detailsMediumMouseEntered(evt);
@@ -553,6 +591,7 @@ public class Reserve extends javax.swing.JFrame {
         bookLarge.setForeground(new java.awt.Color(230, 192, 104));
         bookLarge.setText("Book");
         bookLarge.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        bookLarge.setFocusable(false);
         bookLarge.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bookLargeMouseEntered(evt);
@@ -578,6 +617,7 @@ public class Reserve extends javax.swing.JFrame {
         detailsLarge.setForeground(new java.awt.Color(230, 192, 104));
         detailsLarge.setText("Details");
         detailsLarge.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        detailsLarge.setFocusable(false);
         detailsLarge.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 detailsLargeMouseEntered(evt);
@@ -641,6 +681,7 @@ public class Reserve extends javax.swing.JFrame {
         bookVIP.setForeground(new java.awt.Color(230, 192, 104));
         bookVIP.setText("Book");
         bookVIP.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        bookVIP.setFocusable(false);
         bookVIP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bookVIPMouseEntered(evt);
@@ -663,6 +704,7 @@ public class Reserve extends javax.swing.JFrame {
         detailsVIP.setForeground(new java.awt.Color(230, 192, 104));
         detailsVIP.setText("Details");
         detailsVIP.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        detailsVIP.setFocusable(false);
         detailsVIP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 detailsVIPMouseEntered(evt);
@@ -767,7 +809,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-       
+        this.sidepanelChoice(4);
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
@@ -783,7 +825,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-       
+       this.sidepanelChoice(3);
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
@@ -799,7 +841,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-       
+       this.sidepanelChoice(2);
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -819,15 +861,11 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
-        // TODO add your handling code here:
-        Color white = new Color(255,255,255);
-        reserve.setForeground(white);
+        
     }//GEN-LAST:event_reserveMouseExited
 
     private void reserveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        reserve.setForeground(gold);
+
     }//GEN-LAST:event_reserveMouseEntered
 
     private void homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseEntered
@@ -842,7 +880,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseExited
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-       
+        this.sidepanelChoice(0);
     }//GEN-LAST:event_homeActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
@@ -898,7 +936,7 @@ public class Reserve extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-      
+      this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
 
     private void bookSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookSmallActionPerformed

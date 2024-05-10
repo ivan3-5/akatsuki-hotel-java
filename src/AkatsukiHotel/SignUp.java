@@ -112,6 +112,7 @@ public class SignUp extends javax.swing.JFrame {
         male.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(male);
         male.setText("Male");
+        male.setFocusable(false);
         male.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maleActionPerformed(evt);
@@ -121,10 +122,12 @@ public class SignUp extends javax.swing.JFrame {
         female.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(female);
         female.setText("Female");
+        female.setFocusable(false);
 
         others.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(others);
         others.setText("Others");
+        others.setFocusable(false);
 
         text8.setText("Birthday");
 
@@ -145,6 +148,7 @@ public class SignUp extends javax.swing.JFrame {
         signup.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         signup.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
         signup.setFocusPainted(false);
+        signup.setFocusable(false);
         signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signupActionPerformed(evt);
@@ -158,6 +162,7 @@ public class SignUp extends javax.swing.JFrame {
         login.setText("Login");
         login.setContentAreaFilled(false);
         login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        login.setFocusable(false);
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);

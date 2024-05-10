@@ -475,15 +475,11 @@ public class Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
-        Color white;
-        white = new Color(255,255,255);
-        gallery.setForeground(white);
+        
     }//GEN-LAST:event_galleryMouseExited
 
     private void galleryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        gallery.setForeground(gold);
+        
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed

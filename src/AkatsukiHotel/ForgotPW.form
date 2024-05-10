@@ -167,6 +167,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Send Code"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sendcodeActionPerformed"/>
@@ -201,6 +202,7 @@
                 <Property name="text" type="java.lang.String" value="Back to Login"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
@@ -224,6 +226,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Change Password"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changepwActionPerformed"/>

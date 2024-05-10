@@ -39,6 +39,7 @@ public class PWChanged extends javax.swing.JFrame {
         setTitle("Change Password");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(839, 535));
         setResizable(false);
 
         panelWrapper.setBackground(new java.awt.Color(230, 192, 104));

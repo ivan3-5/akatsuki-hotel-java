@@ -86,6 +86,7 @@ public class ForgotPW extends javax.swing.JFrame {
         sendcode.setForeground(new java.awt.Color(255, 255, 255));
         sendcode.setText("Send Code");
         sendcode.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        sendcode.setFocusable(false);
         sendcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendcodeActionPerformed(evt);
@@ -101,6 +102,7 @@ public class ForgotPW extends javax.swing.JFrame {
         login.setText("Back to Login");
         login.setContentAreaFilled(false);
         login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        login.setFocusable(false);
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -112,6 +114,7 @@ public class ForgotPW extends javax.swing.JFrame {
         changepw.setForeground(new java.awt.Color(255, 255, 255));
         changepw.setText("Change Password");
         changepw.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        changepw.setFocusable(false);
         changepw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changepwActionPerformed(evt);
