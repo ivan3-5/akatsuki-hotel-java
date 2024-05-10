@@ -94,23 +94,33 @@ public class SignUp extends javax.swing.JFrame {
         panelRight.setPreferredSize(new java.awt.Dimension(400, 500));
 
         text1.setBackground(new java.awt.Color(0, 0, 0));
-        text1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        text1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text1.setForeground(new java.awt.Color(28, 42, 57));
         text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text1.setText("Sign Up");
 
+        text2.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text2.setText("First Name");
 
+        text3.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text3.setText("Last Name");
 
+        inputFN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text4.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text4.setText("Username");
 
+        username.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text5.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text5.setText("Email");
 
+        text7.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text7.setText("Gender");
 
         male.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(male);
+        male.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         male.setText("Male");
         male.setFocusable(false);
         male.addActionListener(new java.awt.event.ActionListener() {
@@ -121,27 +131,38 @@ public class SignUp extends javax.swing.JFrame {
 
         female.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(female);
+        female.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         female.setText("Female");
         female.setFocusable(false);
 
         others.setBackground(new java.awt.Color(255, 255, 255));
         gender.add(others);
+        others.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         others.setText("Others");
         others.setFocusable(false);
 
+        inputLN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text8.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text8.setText("Birthday");
 
+        dd1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd1.setText(":");
 
+        dd6.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd6.setText(":");
 
+        dd4.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd4.setText(":");
 
+        dd2.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd2.setText(":");
 
+        dd3.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd3.setText(":");
 
         signup.setBackground(new java.awt.Color(28, 42, 57));
+        signup.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         signup.setForeground(new java.awt.Color(255, 255, 255));
         signup.setText("Sign Up");
         signup.setBorder(null);
@@ -155,9 +176,11 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        text9.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text9.setText("Already have an account?");
 
         login.setBackground(new java.awt.Color(0, 0, 0));
+        login.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         login.setForeground(new java.awt.Color(0, 104, 104));
         login.setText("Login");
         login.setContentAreaFilled(false);
@@ -169,107 +192,128 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        pw.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         pw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwActionPerformed(evt);
             }
         });
 
+        dd7.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd7.setText(":");
 
+        email.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text6.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text6.setText("Password");
 
+        dd5.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd5.setText(":");
 
+        jCalendar1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text10.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text10.setText("Phone");
 
+        dd8.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd8.setText(":");
 
+        email1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        text11.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text11.setText("Address");
 
+        dd9.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd9.setText(":");
+
+        email2.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout panelRightLayout = new javax.swing.GroupLayout(panelRight);
         panelRight.setLayout(panelRightLayout);
         panelRightLayout.setHorizontalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(text1))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd1)
-                .addGap(5, 5, 5)
-                .addComponent(inputFN, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(text3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(dd2)
-                .addGap(5, 5, 5)
-                .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd3)
-                .addGap(5, 5, 5)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd4)
-                .addGap(5, 5, 5)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd5)
-                .addGap(5, 5, 5)
-                .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd6)
-                .addGap(1, 1, 1)
-                .addComponent(male)
-                .addGap(4, 4, 4)
-                .addComponent(female)
-                .addGap(4, 4, 4)
-                .addComponent(others))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd7)
-                .addGap(5, 5, 5)
-                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(text9))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184)
-                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
+                .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd1)
+                        .addGap(5, 5, 5)
+                        .addComponent(inputFN, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(text3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(dd2)
+                        .addGap(5, 5, 5)
+                        .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd3)
+                        .addGap(5, 5, 5)
+                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd4)
+                        .addGap(5, 5, 5)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd5)
+                        .addGap(5, 5, 5)
+                        .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd6)
+                        .addGap(1, 1, 1)
+                        .addComponent(male)
+                        .addGap(4, 4, 4)
+                        .addComponent(female)
+                        .addGap(4, 4, 4)
+                        .addComponent(others))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(text9))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(text10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd8)
+                        .addGap(5, 5, 5)
+                        .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(dd9)
+                        .addGap(5, 5, 5)
+                        .addComponent(email2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRightLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(panelRightLayout.createSequentialGroup()
+                                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelRightLayout.createSequentialGroup()
+                                .addComponent(text8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addComponent(dd7)
+                                .addGap(5, 5, 5)
+                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRightLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(text10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd8)
-                .addGap(5, 5, 5)
-                .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(dd9)
-                .addGap(5, 5, 5)
-                .addComponent(email2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(text1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelRightLayout.setVerticalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,13 +385,13 @@ public class SignUp extends javax.swing.JFrame {
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(text8)
                     .addComponent(dd7)
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addComponent(text9)
+                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
-                .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(text9)
+                .addGap(0, 0, 0)
+                .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 

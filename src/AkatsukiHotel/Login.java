@@ -77,7 +77,7 @@ public class Login extends javax.swing.JFrame {
         text1.setText("Login");
         panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 30, -1, -1));
 
-        email.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        email.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         email.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
         email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
         });
         panelRight.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 122, 389, 50));
 
-        pw.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        pw.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         pw.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
         panelRight.add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 188, 389, 50));
 
@@ -98,7 +98,6 @@ public class Login extends javax.swing.JFrame {
         login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
         login.setFocusPainted(false);
-        login.setFocusable(false);
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);

@@ -32,13 +32,10 @@ public class ForgotPW extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         panelRight = new javax.swing.JPanel();
         text1 = new javax.swing.JLabel();
-        text2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         sendcode = new javax.swing.JButton();
-        text3 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         changepw = new javax.swing.JButton();
-        text4 = new javax.swing.JLabel();
         code = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
 
@@ -72,15 +69,15 @@ public class ForgotPW extends javax.swing.JFrame {
         panelRight.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         text1.setBackground(new java.awt.Color(0, 0, 0));
-        text1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        text1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text1.setForeground(new java.awt.Color(28, 42, 57));
         text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text1.setText("Forgot Password");
-        panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 31, -1, -1));
+        panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 31, 310, -1));
 
-        text2.setText("Enter Email, Username or Phone Number:");
-        panelRight.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 88, -1, -1));
-        panelRight.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 111, 288, 37));
+        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 288, 50));
 
         sendcode.setBackground(new java.awt.Color(28, 42, 57));
         sendcode.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,12 +89,10 @@ public class ForgotPW extends javax.swing.JFrame {
                 sendcodeActionPerformed(evt);
             }
         });
-        panelRight.add(sendcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 111, -1, 37));
-
-        text3.setText("Enter New Password:");
-        panelRight.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 155, -1, -1));
+        panelRight.add(sendcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 117, -1, 40));
 
         login.setBackground(new java.awt.Color(0, 0, 0));
+        login.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         login.setForeground(new java.awt.Color(0, 104, 104));
         login.setText("Back to Login");
         login.setContentAreaFilled(false);
@@ -120,12 +115,15 @@ public class ForgotPW extends javax.swing.JFrame {
                 changepwActionPerformed(evt);
             }
         });
-        panelRight.add(changepw, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 233, -1, 37));
+        panelRight.add(changepw, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 230, 140, 37));
 
-        text4.setText("Code:");
-        panelRight.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 155, -1, -1));
-        panelRight.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 178, 95, 37));
-        panelRight.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 178, 288, 37));
+        code.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        code.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Code", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 100, 50));
+
+        jPasswordField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 288, 50));
 
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
         panelRight.getAccessibleContext().setAccessibleName("panelRight");
@@ -169,8 +167,5 @@ public class ForgotPW extends javax.swing.JFrame {
     private javax.swing.JPanel panelWrapper;
     public javax.swing.JButton sendcode;
     private javax.swing.JLabel text1;
-    private javax.swing.JLabel text2;
-    private javax.swing.JLabel text3;
-    private javax.swing.JLabel text4;
     // End of variables declaration//GEN-END:variables
 }
