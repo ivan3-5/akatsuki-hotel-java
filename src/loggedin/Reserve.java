@@ -35,6 +35,7 @@ public class Reserve extends javax.swing.JFrame {
         setBackground(new Color(255,255,255));
         setForeground(gold);
     }
+    
     public void sidepanelChoice(int choice) {
         Home home = new Home();
         Reserve reserve = new Reserve();
@@ -46,21 +47,27 @@ public class Reserve extends javax.swing.JFrame {
         int c = choice;
         if (c == 0) {
             home.setVisible(true);
+            home.setLocationRelativeTo(null);
         }
         if (c == 1) {
             reserve.setVisible(true);
+            reserve.setLocationRelativeTo(null);
         }
         if (c == 2) {
             gallery.setVisible(true);
+            gallery.setLocationRelativeTo(null);
         }
         if (c == 3) {
             contact.setVisible(true);
+            contact.setLocationRelativeTo(null);
         }
         if (c == 4) {
             about.setVisible(true);
+            about.setLocationRelativeTo(null);
         }
         if (c == 5) {
             profile.setVisible(true);
+            profile.setLocationRelativeTo(null);
         }
         this.dispose();
     }

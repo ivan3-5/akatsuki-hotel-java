@@ -34,6 +34,42 @@ public class About extends javax.swing.JFrame {
         setBackground(new Color(255,255,255));
         setForeground(gold);
     }
+    
+    public void sidepanelChoice(int choice) {
+        Home home = new Home();
+        Reserve reserve = new Reserve();
+        Gallery gallery = new Gallery();
+        Contact contact = new Contact();
+        About about = new About();
+        Profile profile = new Profile();
+        
+        int c = choice;
+        if (c == 0) {
+            home.setVisible(true);
+            home.setLocationRelativeTo(null);
+        }
+        if (c == 1) {
+            reserve.setVisible(true);
+            reserve.setLocationRelativeTo(null);
+        }
+        if (c == 2) {
+            gallery.setVisible(true);
+            gallery.setLocationRelativeTo(null);
+        }
+        if (c == 3) {
+            contact.setVisible(true);
+            contact.setLocationRelativeTo(null);
+        }
+        if (c == 4) {
+            about.setVisible(true);
+            about.setLocationRelativeTo(null);
+        }
+        if (c == 5) {
+            profile.setVisible(true);
+            profile.setLocationRelativeTo(null);
+        }
+        this.dispose();
+    }
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -392,21 +428,21 @@ public class About extends javax.swing.JFrame {
         panelTextAbout.setLayout(panelTextAboutLayout);
         panelTextAboutLayout.setHorizontalGroup(
             panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelTextAboutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(allrights, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textWelcom1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTextAboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(allrights, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textWelcom1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelTextAboutLayout.setVerticalGroup(
             panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,19 +545,15 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
-        Color white;
-        white = new Color(255,255,255);
-        about.setForeground(white);
+        
     }//GEN-LAST:event_aboutMouseExited
 
     private void aboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        about.setForeground(gold);
+        
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-      
+        this.sidepanelChoice(3);
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
@@ -537,7 +569,7 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-        
+        this.sidepanelChoice(2);
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -553,7 +585,7 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed
-       
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
@@ -580,7 +612,7 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseExited
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        
+        this.sidepanelChoice(0);
     }//GEN-LAST:event_homeActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
@@ -648,7 +680,7 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-      
+        this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
 
     /**

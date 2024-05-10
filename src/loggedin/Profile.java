@@ -35,6 +35,42 @@ public class Profile extends javax.swing.JFrame {
         setForeground(gold);
     }
     
+    public void sidepanelChoice(int choice) {
+        Home home = new Home();
+        Reserve reserve = new Reserve();
+        Gallery gallery = new Gallery();
+        Contact contact = new Contact();
+        About about = new About();
+        Profile profile = new Profile();
+        
+        int c = choice;
+        if (c == 0) {
+            home.setVisible(true);
+            home.setLocationRelativeTo(null);
+        }
+        if (c == 1) {
+            reserve.setVisible(true);
+            reserve.setLocationRelativeTo(null);
+        }
+        if (c == 2) {
+            gallery.setVisible(true);
+            gallery.setLocationRelativeTo(null);
+        }
+        if (c == 3) {
+            contact.setVisible(true);
+            contact.setLocationRelativeTo(null);
+        }
+        if (c == 4) {
+            about.setVisible(true);
+            about.setLocationRelativeTo(null);
+        }
+        if (c == 5) {
+            profile.setVisible(true);
+            profile.setLocationRelativeTo(null);
+        }
+        this.dispose();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -581,7 +617,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-       
+        this.sidepanelChoice(4);
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
@@ -597,7 +633,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-       
+        this.sidepanelChoice(3);
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
@@ -613,7 +649,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-        
+        this.sidepanelChoice(2);
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -629,7 +665,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed
-      
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
@@ -656,7 +692,7 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseExited
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-       
+        this.sidepanelChoice(0);
     }//GEN-LAST:event_homeActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked

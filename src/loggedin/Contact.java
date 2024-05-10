@@ -35,6 +35,42 @@ public class Contact extends javax.swing.JFrame {
         setForeground(gold);
     }
     
+    public void sidepanelChoice(int choice) {
+        Home home = new Home();
+        Reserve reserve = new Reserve();
+        Gallery gallery = new Gallery();
+        Contact contact = new Contact();
+        About about = new About();
+        Profile profile = new Profile();
+        
+        int c = choice;
+        if (c == 0) {
+            home.setVisible(true);
+            home.setLocationRelativeTo(null);
+        }
+        if (c == 1) {
+            reserve.setVisible(true);
+            reserve.setLocationRelativeTo(null);
+        }
+        if (c == 2) {
+            gallery.setVisible(true);
+            gallery.setLocationRelativeTo(null);
+        }
+        if (c == 3) {
+            contact.setVisible(true);
+            contact.setLocationRelativeTo(null);
+        }
+        if (c == 4) {
+            about.setVisible(true);
+            about.setLocationRelativeTo(null);
+        }
+        if (c == 5) {
+            profile.setVisible(true);
+            profile.setLocationRelativeTo(null);
+        }
+        this.dispose();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,6 +202,7 @@ public class Contact extends javax.swing.JFrame {
         home.setBorderPainted(false);
         home.setContentAreaFilled(false);
         home.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        home.setFocusable(false);
         home.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         home.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -201,6 +238,7 @@ public class Contact extends javax.swing.JFrame {
         reserve.setBorderPainted(false);
         reserve.setContentAreaFilled(false);
         reserve.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        reserve.setFocusable(false);
         reserve.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         reserve.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -233,6 +271,7 @@ public class Contact extends javax.swing.JFrame {
         gallery.setBorderPainted(false);
         gallery.setContentAreaFilled(false);
         gallery.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery.setFocusable(false);
         gallery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gallery.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -265,6 +304,7 @@ public class Contact extends javax.swing.JFrame {
         contact.setBorderPainted(false);
         contact.setContentAreaFilled(false);
         contact.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        contact.setFocusable(false);
         contact.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         contact.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -289,6 +329,7 @@ public class Contact extends javax.swing.JFrame {
         about.setBorderPainted(false);
         about.setContentAreaFilled(false);
         about.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        about.setFocusable(false);
         about.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         about.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -319,6 +360,7 @@ public class Contact extends javax.swing.JFrame {
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logout.png"))); // NOI18N
         logout.setText("Log Out");
         logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        logout.setFocusable(false);
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
@@ -441,7 +483,7 @@ public class Contact extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-       
+        this.sidepanelChoice(4);
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
@@ -461,19 +503,15 @@ public class Contact extends javax.swing.JFrame {
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
-        Color white;
-        white = new Color(255,255,255);
-        contact.setForeground(white);
+        
     }//GEN-LAST:event_contactMouseExited
 
     private void contactMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        contact.setForeground(gold);
+        
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-   
+        this.sidepanelChoice(2);
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -489,7 +527,7 @@ public class Contact extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed
-       
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
@@ -516,7 +554,7 @@ public class Contact extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseExited
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-      
+        this.sidepanelChoice(0);
     }//GEN-LAST:event_homeActionPerformed
 
     private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
@@ -572,7 +610,7 @@ public class Contact extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-       
+        this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
 
     /**
