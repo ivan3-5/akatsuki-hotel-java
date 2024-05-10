@@ -171,6 +171,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[80, 80]"/>
                 </Property>
@@ -217,6 +218,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
               <Events>
@@ -254,6 +256,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
               <Events>
@@ -290,6 +293,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
               <Events>
@@ -326,6 +330,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
               <Events>
@@ -416,7 +421,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="-50" y="98" width="260" height="70"/>
+                  <AbsoluteConstraints x="-50" y="96" width="260" height="70"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -586,6 +591,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Book"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bookSmallMouseEntered"/>
@@ -617,6 +623,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Details"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="detailsSmallMouseEntered"/>
@@ -724,6 +731,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Book"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bookMediumMouseEntered"/>
@@ -755,6 +763,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Details"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="detailsMediumMouseEntered"/>
@@ -840,6 +849,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Book"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bookLargeMouseEntered"/>
@@ -892,6 +902,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Details"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="detailsLargeMouseEntered"/>
@@ -998,6 +1009,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Book"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bookVIPMouseEntered"/>
@@ -1029,6 +1041,7 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Details"/>
                                 <Property name="debugGraphicsOptions" type="int" value="1"/>
+                                <Property name="focusable" type="boolean" value="false"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="detailsVIPMouseEntered"/>

@@ -39,6 +39,7 @@ public class PWChanged extends javax.swing.JFrame {
         setTitle("Change Password");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(839, 535));
         setResizable(false);
 
         panelWrapper.setBackground(new java.awt.Color(230, 192, 104));
@@ -74,18 +75,19 @@ public class PWChanged extends javax.swing.JFrame {
         panelRight.setPreferredSize(new java.awt.Dimension(400, 500));
 
         text1.setBackground(new java.awt.Color(0, 0, 0));
-        text1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        text1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text1.setForeground(new java.awt.Color(28, 42, 57));
         text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text1.setText("Password Changed");
 
         text5.setBackground(new java.awt.Color(0, 0, 0));
-        text5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        text5.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text5.setForeground(new java.awt.Color(28, 42, 57));
         text5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text5.setText("Successfully!");
 
         signup.setBackground(new java.awt.Color(0, 0, 0));
+        signup.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         signup.setForeground(new java.awt.Color(0, 104, 104));
         signup.setText("Back to Login");
         signup.setContentAreaFilled(false);
@@ -101,20 +103,16 @@ public class PWChanged extends javax.swing.JFrame {
         panelRightLayout.setHorizontalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRightLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(signup)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelRightLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(text5)
-                            .addComponent(text1)))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(signup)))
-                .addGap(39, 39, 39))
+                    .addComponent(text1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                    .addComponent(text5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-
-        panelRightLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {text1, text5});
-
         panelRightLayout.setVerticalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRightLayout.createSequentialGroup()

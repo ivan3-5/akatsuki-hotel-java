@@ -34,9 +34,7 @@ public class Login extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         panelRight = new javax.swing.JPanel();
         text1 = new javax.swing.JLabel();
-        text2 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
-        text3 = new javax.swing.JLabel();
         pw = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
         text4 = new javax.swing.JLabel();
@@ -73,27 +71,27 @@ public class Login extends javax.swing.JFrame {
         panelRight.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         text1.setBackground(new java.awt.Color(0, 0, 0));
-        text1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        text1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text1.setForeground(new java.awt.Color(28, 42, 57));
         text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text1.setText("Login");
         panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 30, -1, -1));
 
-        text2.setText("Email, Username or Phone Number:");
-        panelRight.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 113, -1, -1));
-
+        email.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
         email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 emailFocusGained(evt);
             }
         });
-        panelRight.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 136, 389, 36));
+        panelRight.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 122, 389, 50));
 
-        text3.setText("Password:");
-        panelRight.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 179, -1, -1));
-        panelRight.add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 202, 389, 36));
+        pw.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        pw.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 188, 389, 50));
 
         login.setBackground(new java.awt.Color(28, 42, 57));
+        login.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("Login");
         login.setBorder(null);
@@ -107,28 +105,33 @@ public class Login extends javax.swing.JFrame {
         });
         panelRight.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 256, 98, 37));
 
+        text4.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text4.setText("No account? Create one.");
         panelRight.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 417, -1, -1));
 
         signup.setBackground(new java.awt.Color(0, 0, 0));
+        signup.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         signup.setForeground(new java.awt.Color(0, 104, 104));
         signup.setText("Sign Up");
         signup.setContentAreaFilled(false);
         signup.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        signup.setFocusable(false);
         signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signupActionPerformed(evt);
             }
         });
-        panelRight.add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 407, 97, 37));
+        panelRight.add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 406, 97, 37));
 
         forgotpw.setBackground(new java.awt.Color(255, 255, 255));
+        forgotpw.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         forgotpw.setText("Forgot Password?");
         forgotpw.setBorder(null);
         forgotpw.setBorderPainted(false);
         forgotpw.setContentAreaFilled(false);
         forgotpw.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         forgotpw.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        forgotpw.setFocusable(false);
         forgotpw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 forgotpwActionPerformed(evt);
@@ -187,8 +190,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField pw;
     public javax.swing.JButton signup;
     private javax.swing.JLabel text1;
-    private javax.swing.JLabel text2;
-    private javax.swing.JLabel text3;
     private javax.swing.JLabel text4;
     // End of variables declaration//GEN-END:variables
 }

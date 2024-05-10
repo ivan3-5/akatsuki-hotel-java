@@ -40,6 +40,42 @@ public class Home extends javax.swing.JFrame {
         setForeground(gold);
     }
     
+    public void sidepanelChoice(int choice) {
+        Home home = new Home();
+        Reserve reserve = new Reserve();
+        Gallery gallery = new Gallery();
+        Contact contact = new Contact();
+        About about = new About();
+        Profile profile = new Profile();
+        
+        int c = choice;
+        if (c == 0) {
+            home.setVisible(true);
+            home.setLocationRelativeTo(null);
+        }
+        if (c == 1) {
+            reserve.setVisible(true);
+            reserve.setLocationRelativeTo(null);
+        }
+        if (c == 2) {
+            gallery.setVisible(true);
+            gallery.setLocationRelativeTo(null);
+        }
+        if (c == 3) {
+            contact.setVisible(true);
+            contact.setLocationRelativeTo(null);
+        }
+        if (c == 4) {
+            about.setVisible(true);
+            about.setLocationRelativeTo(null);
+        }
+        if (c == 5) {
+            profile.setVisible(true);
+            profile.setLocationRelativeTo(null);
+        }
+        this.dispose();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -109,6 +145,7 @@ public class Home extends javax.swing.JFrame {
         gallery1.setBorderPainted(false);
         gallery1.setContentAreaFilled(false);
         gallery1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery1.setFocusable(false);
         gallery1.setPreferredSize(new java.awt.Dimension(80, 80));
         gallery1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -176,6 +213,7 @@ public class Home extends javax.swing.JFrame {
         home.setBorderPainted(false);
         home.setContentAreaFilled(false);
         home.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        home.setFocusable(false);
         home.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         home.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -211,6 +249,7 @@ public class Home extends javax.swing.JFrame {
         reserve.setBorderPainted(false);
         reserve.setContentAreaFilled(false);
         reserve.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        reserve.setFocusable(false);
         reserve.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         reserve.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -243,6 +282,7 @@ public class Home extends javax.swing.JFrame {
         gallery.setBorderPainted(false);
         gallery.setContentAreaFilled(false);
         gallery.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery.setFocusable(false);
         gallery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gallery.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -275,6 +315,7 @@ public class Home extends javax.swing.JFrame {
         contact.setBorderPainted(false);
         contact.setContentAreaFilled(false);
         contact.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        contact.setFocusable(false);
         contact.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         contact.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -295,10 +336,11 @@ public class Home extends javax.swing.JFrame {
         about.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         about.setForeground(new java.awt.Color(255, 255, 255));
         about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/about.png"))); // NOI18N
-        about.setText("About Us");
+        about.setText("About");
         about.setBorderPainted(false);
         about.setContentAreaFilled(false);
         about.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        about.setFocusable(false);
         about.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         about.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -329,6 +371,7 @@ public class Home extends javax.swing.JFrame {
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logout.png"))); // NOI18N
         logout.setText("Log Out");
         logout.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        logout.setFocusable(false);
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
@@ -338,7 +381,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sidepanel-bg-gold.png"))); // NOI18N
-        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 27, 260, 60));
+        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 26, 260, 60));
 
         insidepanel.setBackground(new java.awt.Color(255, 255, 255));
         insidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -507,6 +550,7 @@ public class Home extends javax.swing.JFrame {
         book.setForeground(new java.awt.Color(230, 192, 104));
         book.setText("Book Now!");
         book.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book.setFocusable(false);
         book.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 bookMouseEntered(evt);
@@ -578,18 +622,18 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        Login login = new Login();
         int out = JOptionPane.showConfirmDialog(null, "Do you really want to logout?", "Select", JOptionPane.YES_NO_OPTION);
         if (out == 0) {
-            Login login = new Login();
             this.setVisible(false);
             login.setVisible(true);
             login.setLocationRelativeTo(null);
-            this.dispose();
         }
+        this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-        
+        this.sidepanelChoice(4);
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
@@ -605,7 +649,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-        
+        this.sidepanelChoice(3);
     }//GEN-LAST:event_contactActionPerformed
 
     private void contactMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMouseExited
@@ -621,7 +665,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMouseEntered
 
     private void galleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_galleryActionPerformed
-       
+        this.sidepanelChoice(2);
     }//GEN-LAST:event_galleryActionPerformed
 
     private void galleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_galleryMouseExited
@@ -637,7 +681,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_galleryMouseEntered
 
     private void reserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveActionPerformed
-        
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_reserveActionPerformed
 
     private void reserveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reserveMouseExited
@@ -717,7 +761,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-       
+       this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
 
     private void pic1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic1FocusGained

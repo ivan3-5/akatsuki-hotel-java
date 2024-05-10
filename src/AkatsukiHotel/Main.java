@@ -6,6 +6,7 @@ public class Main {
         
         Login frameLogin = new Login();
         frameLogin.setVisible(true);
+        frameLogin.pack();
         frameLogin.setLocationRelativeTo(null);
         frameLogin.setResizable(false);
     }
