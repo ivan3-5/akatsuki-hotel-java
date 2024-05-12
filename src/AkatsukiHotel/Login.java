@@ -5,6 +5,21 @@
  */
 package AkatsukiHotel;
 
+import admin.Admin;
+import java.awt.HeadlessException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import loggedin.Home;
 
 /**
@@ -12,12 +27,32 @@ import loggedin.Home;
  * @author Ivan Adcan
  */
 public class Login extends javax.swing.JFrame {
+    
+    public String emailDB;
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+    }
+    
+    public void emailCheck() {                        
+        try {
+            System.out.println("Creating 'username.txt'...");
+            File file = new File("emailCheck.txt");
+                            
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());       
+            } else {
+                System.out.println("File already exists.");
+            }
+            
+            System.out.println("File written.");
+        } catch (Exception e) {
+            System.err.println("Error: Failed to create/read/write file.");
+            System.err.println("Error: " + e.getMessage());
+        }
     }
 
     /**
@@ -164,11 +199,64 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        Home t = new Home();
-        t.setVisible(true);
-        t.pack();
-        t.setLocationRelativeTo(null);
-        this.dispose();
+        String Email, password;
+            Email = this.email.getText();
+            password = this.pw.getText();
+        String SUrl, SUser, SPass, query, passwordDB = null;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        System.out.println("Login button clicked!");
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            try {
+                Statement st;
+                st = con.createStatement();
+                int notFound = 0;
+
+                if ("".equals(Email)) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if ("".equals(password)) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Password is required!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    query = "SELECT * FROM user WHERE email = '" + Email + "' OR username = '" + Email +  "' OR phone = '" + Email + "'";
+                    ResultSet rs; 
+                        rs = st.executeQuery(query);
+                    while (rs.next()) {
+                        passwordDB = rs.getString("password");
+                        notFound = 1;
+                    }if (notFound == 1 && "admin".equals(Email) && "admin".equals(passwordDB)) {
+                        Admin a = new Admin();
+                        a.setVisible(true);
+                        a.pack();
+                        a.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else if (notFound == 1 && password.equals(passwordDB)) {  
+                        emailCheck();
+                        
+                        try (FileWriter fw = new FileWriter("username.txt")) {
+                            fw.write(passwordDB);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        
+                        Home t = new Home();
+                        t.setVisible(true);
+                        t.pack();
+                        t.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Incorrect email or password", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }catch (SQLException | HeadlessException e){
+                JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
+                System.err.println("Error: " + e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error connecting to the database: " + e.getMessage());
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained

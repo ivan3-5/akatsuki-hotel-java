@@ -5,12 +5,21 @@
  */
 package AkatsukiHotel;
 
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ivan Adcan
  */
 public class SignUp extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Login
      */
@@ -35,7 +44,7 @@ public class SignUp extends javax.swing.JFrame {
         text1 = new javax.swing.JLabel();
         text2 = new javax.swing.JLabel();
         text3 = new javax.swing.JLabel();
-        inputFN = new javax.swing.JTextField();
+        fname = new javax.swing.JTextField();
         text4 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         text5 = new javax.swing.JLabel();
@@ -43,7 +52,7 @@ public class SignUp extends javax.swing.JFrame {
         male = new javax.swing.JRadioButton();
         female = new javax.swing.JRadioButton();
         others = new javax.swing.JRadioButton();
-        inputLN = new javax.swing.JTextField();
+        lname = new javax.swing.JTextField();
         text8 = new javax.swing.JLabel();
         dd1 = new javax.swing.JLabel();
         dd6 = new javax.swing.JLabel();
@@ -53,18 +62,18 @@ public class SignUp extends javax.swing.JFrame {
         signup = new javax.swing.JButton();
         text9 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
-        pw = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         dd7 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         text6 = new javax.swing.JLabel();
         dd5 = new javax.swing.JLabel();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         text10 = new javax.swing.JLabel();
         dd8 = new javax.swing.JLabel();
-        email1 = new javax.swing.JTextField();
+        phone = new javax.swing.JTextField();
         text11 = new javax.swing.JLabel();
         dd9 = new javax.swing.JLabel();
-        email2 = new javax.swing.JTextField();
+        address = new javax.swing.JTextField();
+        birthday = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sign Up");
@@ -105,7 +114,7 @@ public class SignUp extends javax.swing.JFrame {
         text3.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text3.setText("Last Name");
 
-        inputFN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        fname.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
         text4.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text4.setText("Username");
@@ -141,7 +150,7 @@ public class SignUp extends javax.swing.JFrame {
         others.setText("Others");
         others.setFocusable(false);
 
-        inputLN.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        lname.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
         text8.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text8.setText("Birthday");
@@ -192,10 +201,10 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        pw.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        pw.addActionListener(new java.awt.event.ActionListener() {
+        password.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pwActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
 
@@ -210,15 +219,13 @@ public class SignUp extends javax.swing.JFrame {
         dd5.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd5.setText(":");
 
-        jCalendar1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-
         text10.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        text10.setText("Phone");
+        text10.setText("Phone No.");
 
         dd8.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd8.setText(":");
 
-        email1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        phone.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
         text11.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text11.setText("Address");
@@ -226,94 +233,99 @@ public class SignUp extends javax.swing.JFrame {
         dd9.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         dd9.setText(":");
 
-        email2.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        address.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+
+        birthday.setDate(new java.util.Date(946656000000L));
+        birthday.setDateFormatString("dd-MM-yyyy");
+        birthday.setFocusCycleRoot(true);
 
         javax.swing.GroupLayout panelRightLayout = new javax.swing.GroupLayout(panelRight);
         panelRight.setLayout(panelRightLayout);
         panelRightLayout.setHorizontalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRightLayout.createSequentialGroup()
-                .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd1)
-                        .addGap(5, 5, 5)
-                        .addComponent(inputFN, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(text3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(dd2)
-                        .addGap(5, 5, 5)
-                        .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd3)
-                        .addGap(5, 5, 5)
-                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd4)
-                        .addGap(5, 5, 5)
-                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd5)
-                        .addGap(5, 5, 5)
-                        .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd6)
-                        .addGap(1, 1, 1)
-                        .addComponent(male)
-                        .addGap(4, 4, 4)
-                        .addComponent(female)
-                        .addGap(4, 4, 4)
-                        .addComponent(others))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(text9))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(text10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd8)
-                        .addGap(5, 5, 5)
-                        .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(dd9)
-                        .addGap(5, 5, 5)
-                        .addComponent(email2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRightLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(panelRightLayout.createSequentialGroup()
-                                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelRightLayout.createSequentialGroup()
-                                .addComponent(text8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(dd7)
-                                .addGap(5, 5, 5)
-                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRightLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(text1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(panelRightLayout.createSequentialGroup()
+                .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(birthday, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd1)
+                            .addGap(5, 5, 5)
+                            .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(5, 5, 5)
+                            .addComponent(text3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(5, 5, 5)
+                            .addComponent(dd2)
+                            .addGap(5, 5, 5)
+                            .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd3)
+                            .addGap(5, 5, 5)
+                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd4)
+                            .addGap(5, 5, 5)
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd5)
+                            .addGap(5, 5, 5)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd6)
+                            .addGap(1, 1, 1)
+                            .addComponent(male)
+                            .addGap(4, 4, 4)
+                            .addComponent(female)
+                            .addGap(4, 4, 4)
+                            .addComponent(others))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(text9))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(text10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd8)
+                            .addGap(5, 5, 5)
+                            .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(text11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(7, 7, 7)
+                            .addComponent(dd9)
+                            .addGap(5, 5, 5)
+                            .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelRightLayout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(panelRightLayout.createSequentialGroup()
+                                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panelRightLayout.createSequentialGroup()
+                                    .addComponent(text8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(7, 7, 7)
+                                    .addComponent(dd7)
+                                    .addGap(280, 280, 280))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRightLayout.setVerticalGroup(
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,8 +334,8 @@ public class SignUp extends javax.swing.JFrame {
                 .addComponent(text1)
                 .addGap(18, 18, 18)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputFN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputLN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRightLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +361,7 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(dd4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRightLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +369,7 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(dd8))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRightLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,13 +377,13 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(dd9))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRightLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(text6)
                             .addComponent(dd5))))
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(male)
                     .addComponent(female)
@@ -381,18 +393,18 @@ public class SignUp extends javax.swing.JFrame {
                         .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(text7)
                             .addComponent(dd6))))
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(text8)
                     .addComponent(dd7)
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(2, 2, 2)
+                    .addComponent(birthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addComponent(text9)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
 
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
@@ -413,10 +425,91 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
-        SignedUp signedup = new SignedUp();
-        signedup.setVisible(true);
-        signedup.setLocationRelativeTo(null);
-        this.dispose();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        
+        String g;
+ 
+        if (male.isSelected()) {
+            g = "Male";
+        } else if (female.isSelected()) {
+            g = "Female";
+        } else if (others.isSelected()) {
+            g = "Others";
+        } else {
+            g = "";
+        }
+        
+        String bd;
+        bd = sdf.format(birthday.getDate());
+        
+        String firstname, lastname, usern, em, mobile, addres, pw, gend, birthd;
+            firstname = this.fname.getText();
+            lastname = this.lname.getText();
+            usern = this.username.getText();
+            em = this.email.getText();
+            mobile = this.phone.getText();
+            addres = this.address.getText();
+            pw = this.password.getText();
+            gend = g;
+            birthd = bd;
+        String SUrl, SUser, SPass, query, queryt;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        System.out.println("Sign up button clicked!");
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
+            Statement st, stt;
+            st = con.createStatement();
+            stt = con.createStatement();
+            
+            if ("".equals(firstname)) {
+                JOptionPane.showMessageDialog(new JFrame(), "First Name is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(lastname)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Last Name is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(usern)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Username is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(em)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Email is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(mobile)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Phone is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(addres)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Address is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(pw)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Password is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(gend)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Gender is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(birthd)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Birthday is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday) " +
+                        "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "')";
+                st.execute(query);
+                
+                queryt = "CREATE TABLE " + pw + " ("
+                        + "id INT(11) ZEROFILL NOT NULL AUTO_INCREMENT,"
+                        + "DateBooked varchar(127) NOT NULL,"
+                        + "RoomType varchar(127) NOT NULL,"
+                        + "Price varchar(127) NOT NULL,"
+                        + "RoomSchedule varchar(127) NOT NULL,"
+                        + "PRIMARY KEY (id)"
+                        + ");";
+                
+                stt.execute(queryt);
+                
+                SignedUp signedup = new SignedUp();
+                signedup.setVisible(true);
+                signedup.pack();
+                signedup.setLocationRelativeTo(null);
+                this.dispose();
+            }
+        }catch (ClassNotFoundException | SQLException | HeadlessException e){
+            JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.err.println("Error: " + e.getMessage());
+        }
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -426,9 +519,9 @@ public class SignUp extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_loginActionPerformed
 
-    private void pwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pwActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
 
     private void maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleActionPerformed
         // TODO add your handling code here:
@@ -439,6 +532,8 @@ public class SignUp extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField address;
+    private com.toedter.calendar.JDateChooser birthday;
     private javax.swing.JLabel dd1;
     private javax.swing.JLabel dd2;
     private javax.swing.JLabel dd3;
@@ -449,13 +544,10 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel dd8;
     private javax.swing.JLabel dd9;
     private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
-    private javax.swing.JTextField email2;
     private javax.swing.JRadioButton female;
+    private javax.swing.JTextField fname;
     private javax.swing.ButtonGroup gender;
-    private javax.swing.JTextField inputFN;
-    private javax.swing.JTextField inputLN;
-    private com.toedter.calendar.JCalendar jCalendar1;
+    private javax.swing.JTextField lname;
     public javax.swing.JButton login;
     private javax.swing.JLabel logo;
     private javax.swing.JRadioButton male;
@@ -463,7 +555,8 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPanel panelLeft;
     private javax.swing.JPanel panelRight;
     private javax.swing.JPanel panelWrapper;
-    private javax.swing.JPasswordField pw;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField phone;
     private javax.swing.JButton signup;
     private javax.swing.JLabel text1;
     private javax.swing.JLabel text10;

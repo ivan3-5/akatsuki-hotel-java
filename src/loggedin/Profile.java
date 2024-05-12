@@ -7,19 +7,33 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Ivan Adcan
  */
 public class Profile extends javax.swing.JFrame {
+    
+    String textFileRead;
 
     /**
      * Creates new form Login
      */
     public Profile() {
         initComponents();
+        tableDataLoad();
     }
     
     public void bgGoldfgWhite() {
@@ -33,6 +47,61 @@ public class Profile extends javax.swing.JFrame {
         gold = new Color(230,192,104);
         setBackground(new Color(255,255,255));
         setForeground(gold);
+    }
+    
+    public String readData() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("username.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                textFileRead = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return textFileRead;
+    }
+    
+    public void tableDataLoad() {
+        String SUrl, SUser, SPass, query, queryt;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+
+        try {
+            readData();
+            
+            DefaultTableModel dt = (DefaultTableModel) userData.getModel();
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
+            dt.setRowCount(0);
+            Statement s = con.createStatement();
+            String sql = "SELECT * FROM " + textFileRead;
+            
+            System.out.println(sql);
+            ResultSet rs = s.executeQuery(sql);
+                
+            while (rs.next()) {
+                Vector v = new Vector();
+                
+                v.add(rs.getString(2)); //DateBooked
+                v.add(rs.getString(3)); //RoomType
+                v.add(rs.getString(4)); //Price
+                v.add(rs.getString(5)); //RoomSchedule
+                
+                dt.addRow(v);
+                
+//                String datebook = String.valueOf(rs.getArray("DateBooked")); 
+//                String roomtype = String.valueOf(rs.getArray("RoomType")); 
+//                String price = String.valueOf(rs.getArray("Price")); 
+//                String roomschedule = String.valueOf(rs.getArray("RoomSchedule")); 
+                
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(new JFrame(), "Something wrong with getting the user database.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.err.println("Error: Something wrong with getting the user database.");
+            System.err.println("Error Message: " + e.getMessage());
+        }
     }
     
     public void sidepanelChoice(int choice) {
@@ -115,7 +184,7 @@ public class Profile extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        userData = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -426,7 +495,7 @@ public class Profile extends javax.swing.JFrame {
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        userData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -437,8 +506,8 @@ public class Profile extends javax.swing.JFrame {
                 "Date", "Room Type", "Price", "Schedule"
             }
         ));
-        jTable1.setEnabled(false);
-        jScrollPane3.setViewportView(jTable1);
+        userData.setEnabled(false);
+        jScrollPane3.setViewportView(userData);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -718,7 +787,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
     private javax.swing.JPanel panelProfile;
@@ -728,5 +796,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
     private javax.swing.JPanel toppanel;
+    private javax.swing.JTable userData;
     // End of variables declaration//GEN-END:variables
 }
