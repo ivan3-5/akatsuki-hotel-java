@@ -9,6 +9,7 @@ import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
@@ -462,9 +463,14 @@ public class SignUp extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
-            Statement st, stt;
-            st = con.createStatement();
-            stt = con.createStatement();
+            Statement stAddUser, stCreateUserTable, stCheckUser, stFindNewUser;
+                stAddUser = con.createStatement();
+                stCreateUserTable = con.createStatement();
+                stCheckUser = con.createStatement();
+                stFindNewUser = con.createStatement();
+            
+            String queryS = "SELECT * FROM user WHERE username = '" + usern + "' OR email = '" + em + "' OR phone = '" + mobile + "'";
+            ResultSet rsCheckUser = stCheckUser.executeQuery(queryS);
             
             if ("".equals(firstname)) {
                 JOptionPane.showMessageDialog(new JFrame(), "First Name is required!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -485,27 +491,39 @@ public class SignUp extends javax.swing.JFrame {
             } else if ("".equals(birthd)) {
                 JOptionPane.showMessageDialog(new JFrame(), "Birthday is required!", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday) " +
-                        "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "')";
-                st.execute(query);
-                
-                queryt = "CREATE TABLE " + pw + " ("
-                        + "id INT(11) ZEROFILL NOT NULL AUTO_INCREMENT,"
-                        + "DateBooked varchar(127) NOT NULL,"
-                        + "RoomType varchar(127) NOT NULL,"
-                        + "Price varchar(127) NOT NULL,"
-                        + "RoomSchedule varchar(127) NOT NULL,"
-                        + "PRIMARY KEY (id)"
-                        + ");";
-                
-                stt.execute(queryt);
-                
-                SignedUp signedup = new SignedUp();
-                signedup.setVisible(true);
-                signedup.pack();
-                signedup.setLocationRelativeTo(null);
-                this.dispose();
-            }
+                if (rsCheckUser.next()) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Username, email, or phone no. already existed!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday) " +
+                            "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "')";
+                    stAddUser.execute(query);
+                    
+                    ResultSet rsFindNewUser = stFindNewUser.executeQuery(queryS);
+                    
+                    if (rsFindNewUser.next()) {
+                        String getNewUserID = rsFindNewUser.getString("id");
+                        
+                        queryt = "CREATE TABLE u" + getNewUserID + " ("
+                                + "id INT(11) NOT NULL AUTO_INCREMENT,"
+                                + "DateBooked varchar(127) NOT NULL,"
+                                + "RoomType varchar(127) NOT NULL,"
+                                + "Price varchar(127) NOT NULL,"
+                                + "RoomSchedule varchar(127) NOT NULL,"
+                                + "PRIMARY KEY (id)"
+                                + ");";
+
+                        stCreateUserTable.execute(queryt);
+
+                        SignedUp signedup = new SignedUp();
+                        signedup.setVisible(true);
+                        signedup.pack();
+                        signedup.setLocationRelativeTo(null);
+                        this.dispose(); 
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Failed to create new user's database.", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            } 
         }catch (ClassNotFoundException | SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
             System.err.println("Error: " + e.getMessage());

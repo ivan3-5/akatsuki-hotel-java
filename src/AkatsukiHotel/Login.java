@@ -15,7 +15,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -39,7 +38,7 @@ public class Login extends javax.swing.JFrame {
     
     public void emailCheck() {                        
         try {
-            System.out.println("Creating 'username.txt'...");
+            System.out.println("Creating 'emailCheck.txt'...");
             File file = new File("emailCheck.txt");
                             
             if (file.createNewFile()) {
@@ -211,9 +210,16 @@ public class Login extends javax.swing.JFrame {
         
         try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
             try {
-                Statement st;
-                st = con.createStatement();
+                Statement st, stAdmin, stIDCheck;
+                    st = con.createStatement();
+                    stAdmin  = con.createStatement();
+                    stIDCheck = con.createStatement();
                 int notFound = 0;
+                
+                int admin = 0;
+                if ("admin".equals(Email) && "admin".equals(password)) {
+                    admin = 1;
+                }
 
                 if ("".equals(Email)) {
                     JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -226,7 +232,7 @@ public class Login extends javax.swing.JFrame {
                     while (rs.next()) {
                         passwordDB = rs.getString("password");
                         notFound = 1;
-                    }if (notFound == 1 && "admin".equals(Email) && "admin".equals(passwordDB)) {
+                    }if (admin == 1) {
                         Admin a = new Admin();
                         a.setVisible(true);
                         a.pack();
@@ -235,10 +241,16 @@ public class Login extends javax.swing.JFrame {
                     } else if (notFound == 1 && password.equals(passwordDB)) {  
                         emailCheck();
                         
-                        try (FileWriter fw = new FileWriter("username.txt")) {
-                            fw.write(passwordDB);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                        ResultSet rsID = stIDCheck.executeQuery(query);
+                        rsID.next();
+                        String stringID = rsID.getString("id");
+                        
+                        System.out.println("User ID: " + stringID);
+                        
+                        try (FileWriter fw = new FileWriter("emailCheck.txt")) {
+                            fw.write(stringID);
+                        } catch (Exception e) {
+                            System.err.println("Error: " + e.getMessage());
                         }
                         
                         Home t = new Home();

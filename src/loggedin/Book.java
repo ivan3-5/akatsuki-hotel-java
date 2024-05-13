@@ -7,33 +7,19 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.List;
-import java.util.Vector;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Ivan Adcan
  */
-public class Profile extends javax.swing.JFrame {
-    
-    String textFileRead;
+public class Book extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Profile() {
+    public Book() {
         initComponents();
-        tableDataLoad();
     }
     
     public void bgGoldfgWhite() {
@@ -49,67 +35,12 @@ public class Profile extends javax.swing.JFrame {
         setForeground(gold);
     }
     
-    public String readData() {
-        try {
-            List<String> lines = Files.readAllLines(Paths.get("emailCheck.txt"));
-            for (String line : lines) {
-                System.out.println(line);
-                textFileRead = line;
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred while reading the file.");
-            e.printStackTrace();
-        }
-        return textFileRead;
-    }
-    
-    public void tableDataLoad() {
-        String SUrl, SUser, SPass;
-            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
-            SUser = "root";
-            SPass = "";
-
-        try {
-            readData();
-            
-            DefaultTableModel dt = (DefaultTableModel) userData.getModel();
-            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
-            dt.setRowCount(0);
-            Statement s = con.createStatement();
-            String sql = "SELECT * FROM u" + textFileRead;
-            
-            System.out.println(sql);
-            ResultSet rs = s.executeQuery(sql);
-                
-            while (rs.next()) {
-                Vector v = new Vector();
-                
-                v.add(rs.getString(2)); //DateBooked
-                v.add(rs.getString(3)); //RoomType
-                v.add(rs.getString(4)); //Price
-                v.add(rs.getString(5)); //RoomSchedule
-                
-                dt.addRow(v);
-                
-//                String datebook = String.valueOf(rs.getArray("DateBooked")); 
-//                String roomtype = String.valueOf(rs.getArray("RoomType")); 
-//                String price = String.valueOf(rs.getArray("Price")); 
-//                String roomschedule = String.valueOf(rs.getArray("RoomSchedule")); 
-                
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(new JFrame(), "Something wrong with getting the user database.", "Error", JOptionPane.ERROR_MESSAGE);
-            System.err.println("Error: Something wrong with getting the user database.");
-            System.err.println("Error Message: " + e.getMessage());
-        }
-    }
-    
     public void sidepanelChoice(int choice) {
         Home home = new Home();
         Reserve reserve = new Reserve();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
-        About about = new About();
+        Book about = new Book();
         Profile profile = new Profile();
         
         int c = choice;
@@ -139,7 +70,7 @@ public class Profile extends javax.swing.JFrame {
         }
         this.dispose();
     }
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -155,7 +86,6 @@ public class Profile extends javax.swing.JFrame {
         textWelcom = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         gallery1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         sidepanel = new javax.swing.JPanel();
         home = new javax.swing.JButton();
         reserve = new javax.swing.JButton();
@@ -163,29 +93,23 @@ public class Profile extends javax.swing.JFrame {
         contact = new javax.swing.JButton();
         about = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
         insidepanel = new javax.swing.JPanel();
-        panelProfile = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel57 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        userData = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        panelAbout = new javax.swing.JPanel();
+        panelTextAbout = new javax.swing.JPanel();
+        textWelcom1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        allrights = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -197,21 +121,17 @@ public class Profile extends javax.swing.JFrame {
         panelWrapper.setPreferredSize(new java.awt.Dimension(1900, 980));
 
         toppanel.setBackground(new java.awt.Color(28, 42, 57));
-        toppanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textQuote.setFont(new java.awt.Font("Freestyle Script", 0, 30)); // NOI18N
         textQuote.setForeground(new java.awt.Color(255, 255, 255));
         textQuote.setText("Your home away from home");
-        toppanel.add(textQuote, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
 
         textWelcom.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
         textWelcom.setForeground(new java.awt.Color(255, 255, 255));
         textWelcom.setText("Akatsuki Hotel Inc.");
-        toppanel.add(textWelcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logoMini.png"))); // NOI18N
-        toppanel.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 13, 99, 101));
 
         gallery1.setBackground(new java.awt.Color(255, 255, 255));
         gallery1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -242,11 +162,39 @@ public class Profile extends javax.swing.JFrame {
                 gallery1ActionPerformed(evt);
             }
         });
-        toppanel.add(gallery1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1809, 13, -1, 88));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pfp-gold-bg.png"))); // NOI18N
-        toppanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1809, -6, -1, -1));
+        javax.swing.GroupLayout toppanelLayout = new javax.swing.GroupLayout(toppanel);
+        toppanel.setLayout(toppanelLayout);
+        toppanelLayout.setHorizontalGroup(
+            toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toppanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textWelcom)
+                    .addGroup(toppanelLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(textQuote)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gallery1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        toppanelLayout.setVerticalGroup(
+            toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toppanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(textWelcom)
+                .addGap(4, 4, 4)
+                .addComponent(textQuote))
+            .addGroup(toppanelLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(toppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(toppanelLayout.createSequentialGroup()
+                        .addComponent(gallery1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
 
         sidepanel.setBackground(new java.awt.Color(28, 42, 57));
         sidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -419,152 +367,134 @@ public class Profile extends javax.swing.JFrame {
         });
         sidepanel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 803, 171, -1));
 
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/sidepanel-bg-gold.png"))); // NOI18N
+        sidepanel.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 713, 260, 60));
+
         insidepanel.setBackground(new java.awt.Color(255, 255, 255));
         insidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelProfile.setBackground(new java.awt.Color(255, 255, 255));
+        panelAbout.setBackground(new java.awt.Color(255, 255, 255));
+        panelAbout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255, 175));
-        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelTextAbout.setBackground(new java.awt.Color(255, 255, 255, 0));
 
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/profileBlack.png"))); // NOI18N
-        jPanel10.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 30, 715, -1));
+        textWelcom1.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
+        textWelcom1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textWelcom1.setText("About Us");
 
-        jLabel35.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("Username");
-        jPanel10.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 161, 715, -1));
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Welcome to the Akatsuki Hotel, a place where elegance and peace reside together.");
 
-        jPanel11.setBackground(new java.awt.Color(255, 255, 255,100));
-        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Our hotel, located in the middle of stunning surroundings, provides guests looking for");
 
-        jLabel36.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel36.setText("Descriptions:");
-        jPanel11.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("an exceptional experience with a sophisticated for travelers seeking an unforgettable");
 
-        jLabel47.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel47.setText("Name:");
-        jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 63, -1, -1));
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("experience. Akatsuki Hotel encourages you to immerse yourself in an elegant and restful");
 
-        jLabel48.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel48.setText("Juan Dela Cruz");
-        jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 227, -1));
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("atmosphere, all while maintaining a commitment to providing outstanding service and");
 
-        jLabel49.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel49.setText("Email:");
-        jPanel11.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 99, 59, -1));
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("attention to detail. Our committed staff is here to make sure your stay is nothing less");
 
-        jLabel50.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel50.setText("juandelacruz@email.com");
-        jPanel11.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 99, 225, -1));
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("than extraordinary, whether you are here on business or for pleasure. Experience the true");
 
-        jLabel51.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel51.setText("Gender:");
-        jPanel11.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 135, 89, -1));
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("meaning of hospitality at the Akatsuki Hotel, where each moment is thoughtfully");
 
-        jLabel52.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel52.setText("Male");
-        jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 135, 105, -1));
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("designed to go above and beyond your expectations.");
 
-        jLabel53.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel53.setText("Birthday:");
-        jPanel11.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 171, 89, -1));
+        allrights.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        allrights.setForeground(new java.awt.Color(102, 102, 102));
+        allrights.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allrights.setText("Copyright © 2024 Akatsuki Hotel Inc. All rights reserved.");
 
-        jLabel54.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel54.setText("January 25, 20xx");
-        jPanel11.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 171, 197, -1));
-
-        jLabel55.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel55.setText("Address:");
-        jPanel11.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 207, 89, -1));
-
-        jLabel56.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel56.setText("Isabela Homes, New Visayas, Panabo City");
-        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 207, -1, -1));
-
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel57.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel57.setText("Reservations");
-
-        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
-
-        userData.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Date", "Room Type", "Price", "Schedule"
-            }
-        ));
-        userData.setEnabled(false);
-        jScrollPane3.setViewportView(userData);
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelTextAboutLayout = new javax.swing.GroupLayout(panelTextAbout);
+        panelTextAbout.setLayout(panelTextAboutLayout);
+        panelTextAboutLayout.setHorizontalGroup(
+            panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTextAboutLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 11, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(allrights, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textWelcom1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel57)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jScrollPane2.setViewportView(jPanel13);
-
-        jPanel11.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 510, 270));
-
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
-        jLabel2.setText("Change Password");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
-
-        jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 251, 590, 550));
-
-        javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
-        panelProfile.setLayout(panelProfileLayout);
-        panelProfileLayout.setHorizontalGroup(
-            panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfileLayout.createSequentialGroup()
-                .addGap(478, 478, 478)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(494, Short.MAX_VALUE))
-        );
-        panelProfileLayout.setVerticalGroup(
-            panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfileLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+        panelTextAboutLayout.setVerticalGroup(
+            panelTextAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTextAboutLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(textWelcom1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addComponent(allrights)
+                .addGap(48, 48, 48))
         );
 
-        insidepanel.add(panelProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+        panelAbout.add(panelTextAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 890));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255, 130));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1700, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 880, Short.MAX_VALUE)
+        );
+
+        panelAbout.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aboutbg.png"))); // NOI18N
+        panelAbout.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+
+        insidepanel.add(panelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
         panelWrapper.setLayout(panelWrapperLayout);
@@ -574,7 +504,7 @@ public class Profile extends javax.swing.JFrame {
             .addGroup(panelWrapperLayout.createSequentialGroup()
                 .addComponent(sidepanel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(insidepanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1705, Short.MAX_VALUE))
+                .addComponent(insidepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelWrapperLayout.setVerticalGroup(
             panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -611,19 +541,15 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-        this.sidepanelChoice(4);
+     
     }//GEN-LAST:event_aboutActionPerformed
 
     private void aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseExited
-        Color white;
-        white = new Color(255,255,255);
-        about.setForeground(white);
+        
     }//GEN-LAST:event_aboutMouseExited
 
     private void aboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        about.setForeground(gold);
+        
     }//GEN-LAST:event_aboutMouseEntered
 
     private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
@@ -694,35 +620,47 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_homeMouseClicked
 
     private void homeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeFocusGained
-     
+        Color gold;
+        gold = new Color(230,192,104);
+        home.setForeground(gold);
     }//GEN-LAST:event_homeFocusGained
 
     private void homeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeFocusLost
-       
+        Color white = new Color(255,255,255);
+        home.setForeground(white);
     }//GEN-LAST:event_homeFocusLost
 
     private void reserveFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reserveFocusGained
-       
+        Color gold;
+        gold = new Color(230,192,104);
+        reserve.setForeground(gold);
     }//GEN-LAST:event_reserveFocusGained
 
     private void reserveFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_reserveFocusLost
-      
+        Color white = new Color(255,255,255);
+        reserve.setForeground(white);
     }//GEN-LAST:event_reserveFocusLost
 
     private void galleryFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_galleryFocusGained
-     
+        Color gold;
+        gold = new Color(230,192,104);
+        gallery.setForeground(gold);
     }//GEN-LAST:event_galleryFocusGained
 
     private void galleryFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_galleryFocusLost
-       
+        Color white = new Color(255,255,255);
+        gallery.setForeground(white);
     }//GEN-LAST:event_galleryFocusLost
 
     private void aboutFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_aboutFocusGained
-        
+        Color gold;
+        gold = new Color(230,192,104);
+        about.setForeground(gold);
     }//GEN-LAST:event_aboutFocusGained
 
     private void aboutFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_aboutFocusLost
-    
+        Color white = new Color(255,255,255);
+        about.setForeground(white);
     }//GEN-LAST:event_aboutFocusLost
 
     private void gallery1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gallery1FocusGained
@@ -742,16 +680,8 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1MouseExited
 
     private void gallery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery1ActionPerformed
-     
+        this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        PWForgot pwforgot = new PWForgot();
-        pwforgot.setVisible(true);
-        pwforgot.pack();
-        pwforgot.setLocationRelativeTo(null);
-        this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -761,41 +691,34 @@ public class Profile extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton about;
+    private javax.swing.JLabel allrights;
     public javax.swing.JButton contact;
     public javax.swing.JButton gallery;
     public javax.swing.JButton gallery1;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
-    private javax.swing.JPanel panelProfile;
+    private javax.swing.JPanel panelAbout;
+    private javax.swing.JPanel panelTextAbout;
     private javax.swing.JPanel panelWrapper;
     public javax.swing.JButton reserve;
     private javax.swing.JPanel sidepanel;
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
+    private javax.swing.JLabel textWelcom1;
     private javax.swing.JPanel toppanel;
-    private javax.swing.JTable userData;
     // End of variables declaration//GEN-END:variables
 }
