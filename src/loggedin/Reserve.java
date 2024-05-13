@@ -100,30 +100,78 @@ public class Reserve extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         textWelcom4 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        bookSmall = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        detailsSmall = new javax.swing.JButton();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        bookMedium = new javax.swing.JButton();
-        jLabel32 = new javax.swing.JLabel();
-        detailsMedium = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        bookLarge = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        detailsLarge = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        book = new javax.swing.JButton();
+        book1 = new javax.swing.JButton();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        book2 = new javax.swing.JButton();
+        book3 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        book4 = new javax.swing.JButton();
+        book5 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        book6 = new javax.swing.JButton();
+        book7 = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        book10 = new javax.swing.JButton();
+        book11 = new javax.swing.JButton();
+        jPanel20 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        book12 = new javax.swing.JButton();
+        book13 = new javax.swing.JButton();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        book14 = new javax.swing.JButton();
+        book15 = new javax.swing.JButton();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        book8 = new javax.swing.JButton();
+        book9 = new javax.swing.JButton();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        book20 = new javax.swing.JButton();
+        book21 = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        book18 = new javax.swing.JButton();
+        book19 = new javax.swing.JButton();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        book16 = new javax.swing.JButton();
+        book17 = new javax.swing.JButton();
+        jPanel25 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        bookVIP = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
-        detailsVIP = new javax.swing.JButton();
+        book22 = new javax.swing.JButton();
+        book23 = new javax.swing.JButton();
+        jPanel22 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -400,7 +448,7 @@ public class Reserve extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setPreferredSize(new java.awt.Dimension(1700, 1309));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1700, 2009));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textWelcom4.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
@@ -408,362 +456,869 @@ public class Reserve extends javax.swing.JFrame {
         textWelcom4.setText("Reserve a Hotel");
         jPanel3.add(textWelcom4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1700, -1));
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("VIP Room");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel1.setText("P 12,999.99 per night");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book.setBackground(new java.awt.Color(255, 255, 255));
+        book.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book.setForeground(new java.awt.Color(230, 192, 104));
+        book.setText("Details");
+        book.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book.setFocusable(false);
+        book.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bookMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bookMouseExited(evt);
+            }
+        });
+        book.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookActionPerformed(evt);
+            }
+        });
+        jPanel4.add(book, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book1.setBackground(new java.awt.Color(255, 255, 255));
+        book1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book1.setForeground(new java.awt.Color(230, 192, 104));
+        book1.setText("Book");
+        book1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book1.setFocusable(false);
+        book1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book1MouseExited(evt);
+            }
+        });
+        book1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(book1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel17.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel17.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 170, 400, 570));
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Small Room");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel2.setText("P 2,499.99 per night");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book2.setBackground(new java.awt.Color(255, 255, 255));
+        book2.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book2.setForeground(new java.awt.Color(230, 192, 104));
+        book2.setText("Details");
+        book2.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book2.setFocusable(false);
+        book2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book2MouseExited(evt);
+            }
+        });
+        book2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book2ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(book2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book3.setBackground(new java.awt.Color(255, 255, 255));
+        book3.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book3.setForeground(new java.awt.Color(230, 192, 104));
+        book3.setText("Book");
+        book3.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book3.setFocusable(false);
+        book3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book3MouseExited(evt);
+            }
+        });
+        book3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book3ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(book3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel1.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 400, 570));
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Medium Room");
+        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel6.setText("P 4,999.99 per night");
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 180, 20));
+
+        book4.setBackground(new java.awt.Color(255, 255, 255));
+        book4.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book4.setForeground(new java.awt.Color(230, 192, 104));
+        book4.setText("Details");
+        book4.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book4.setFocusable(false);
+        book4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book4MouseExited(evt);
+            }
+        });
+        book4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book4ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(book4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book5.setBackground(new java.awt.Color(255, 255, 255));
+        book5.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book5.setForeground(new java.awt.Color(230, 192, 104));
+        book5.setText("Book");
+        book5.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book5.setFocusable(false);
+        book5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book5MouseExited(evt);
+            }
+        });
+        book5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book5ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(book5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel2.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel2.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel6.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 400, 570));
+
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel25.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Small Room");
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Large Room");
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
 
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservesmallpic1.jpg"))); // NOI18N
-        jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel8.setText("P 7,499.99 per night");
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
 
-        bookSmall.setBackground(new java.awt.Color(255, 255, 255));
-        bookSmall.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        bookSmall.setForeground(new java.awt.Color(230, 192, 104));
-        bookSmall.setText("Book");
-        bookSmall.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        bookSmall.setFocusable(false);
-        bookSmall.addMouseListener(new java.awt.event.MouseAdapter() {
+        book6.setBackground(new java.awt.Color(255, 255, 255));
+        book6.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book6.setForeground(new java.awt.Color(230, 192, 104));
+        book6.setText("Details");
+        book6.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book6.setFocusable(false);
+        book6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bookSmallMouseEntered(evt);
+                book6MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bookSmallMouseExited(evt);
+                book6MouseExited(evt);
             }
         });
-        bookSmall.addActionListener(new java.awt.event.ActionListener() {
+        book6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookSmallActionPerformed(evt);
+                book6ActionPerformed(evt);
             }
         });
+        jPanel7.add(book6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
 
-        jLabel28.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel28.setText("P 4,999.99");
-
-        detailsSmall.setBackground(new java.awt.Color(255, 255, 255));
-        detailsSmall.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        detailsSmall.setForeground(new java.awt.Color(230, 192, 104));
-        detailsSmall.setText("Details");
-        detailsSmall.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        detailsSmall.setFocusable(false);
-        detailsSmall.addMouseListener(new java.awt.event.MouseAdapter() {
+        book7.setBackground(new java.awt.Color(255, 255, 255));
+        book7.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book7.setForeground(new java.awt.Color(230, 192, 104));
+        book7.setText("Book");
+        book7.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book7.setFocusable(false);
+        book7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                detailsSmallMouseEntered(evt);
+                book7MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                detailsSmallMouseExited(evt);
+                book7MouseExited(evt);
             }
         });
-        detailsSmall.addActionListener(new java.awt.event.ActionListener() {
+        book7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsSmallActionPerformed(evt);
+                book7ActionPerformed(evt);
             }
         });
+        jPanel7.add(book7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel26)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(detailsSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel16.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel16.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel25)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28)
-                    .addComponent(detailsSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 430, 540));
+        jPanel7.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel27.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Medium Room");
-
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservemediumpic1.jpg"))); // NOI18N
-        jLabel29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        bookMedium.setBackground(new java.awt.Color(255, 255, 255));
-        bookMedium.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        bookMedium.setForeground(new java.awt.Color(230, 192, 104));
-        bookMedium.setText("Book");
-        bookMedium.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        bookMedium.setFocusable(false);
-        bookMedium.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bookMediumMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bookMediumMouseExited(evt);
-            }
-        });
-        bookMedium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookMediumActionPerformed(evt);
-            }
-        });
-
-        jLabel32.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel32.setText("P 9,999.99");
-
-        detailsMedium.setBackground(new java.awt.Color(255, 255, 255));
-        detailsMedium.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        detailsMedium.setForeground(new java.awt.Color(230, 192, 104));
-        detailsMedium.setText("Details");
-        detailsMedium.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        detailsMedium.setFocusable(false);
-        detailsMedium.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                detailsMediumMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                detailsMediumMouseExited(evt);
-            }
-        });
-        detailsMedium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsMediumActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel29)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(detailsMedium, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookMedium, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel27)
-                .addGap(15, 15, 15)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookMedium, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32)
-                    .addComponent(detailsMedium, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
-        );
-
-        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 130, 430, 540));
+        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 170, 400, 570));
 
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bookLarge.setBackground(new java.awt.Color(255, 255, 255));
-        bookLarge.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        bookLarge.setForeground(new java.awt.Color(230, 192, 104));
-        bookLarge.setText("Book");
-        bookLarge.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        bookLarge.setFocusable(false);
-        bookLarge.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("null");
+        jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel12.setText("null");
+        jPanel9.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book10.setBackground(new java.awt.Color(255, 255, 255));
+        book10.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book10.setForeground(new java.awt.Color(230, 192, 104));
+        book10.setText("Details");
+        book10.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book10.setFocusable(false);
+        book10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bookLargeMouseEntered(evt);
+                book10MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bookLargeMouseExited(evt);
+                book10MouseExited(evt);
             }
         });
-
-        jLabel33.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel33.setText("P 14,999.99");
-
-        jLabel30.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Large Room");
-
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservelargepic1.jpg"))); // NOI18N
-        jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        detailsLarge.setBackground(new java.awt.Color(255, 255, 255));
-        detailsLarge.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        detailsLarge.setForeground(new java.awt.Color(230, 192, 104));
-        detailsLarge.setText("Details");
-        detailsLarge.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        detailsLarge.setFocusable(false);
-        detailsLarge.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                detailsLargeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                detailsLargeMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel31)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel33)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(detailsLarge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookLarge, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel30)
-                .addGap(15, 15, 15)
-                .addComponent(jLabel31)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookLarge, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33)
-                    .addComponent(detailsLarge, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 710, 430, 540));
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 26)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("VIP Room");
-
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservevippic1.jpg"))); // NOI18N
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        bookVIP.setBackground(new java.awt.Color(255, 255, 255));
-        bookVIP.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        bookVIP.setForeground(new java.awt.Color(230, 192, 104));
-        bookVIP.setText("Book");
-        bookVIP.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        bookVIP.setFocusable(false);
-        bookVIP.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bookVIPMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bookVIPMouseExited(evt);
-            }
-        });
-        bookVIP.addActionListener(new java.awt.event.ActionListener() {
+        book10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookVIPActionPerformed(evt);
+                book10ActionPerformed(evt);
             }
         });
+        jPanel9.add(book10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
 
-        jLabel34.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        jLabel34.setText("P 24,999.99");
-
-        detailsVIP.setBackground(new java.awt.Color(255, 255, 255));
-        detailsVIP.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        detailsVIP.setForeground(new java.awt.Color(230, 192, 104));
-        detailsVIP.setText("Details");
-        detailsVIP.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        detailsVIP.setFocusable(false);
-        detailsVIP.addMouseListener(new java.awt.event.MouseAdapter() {
+        book11.setBackground(new java.awt.Color(255, 255, 255));
+        book11.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book11.setForeground(new java.awt.Color(230, 192, 104));
+        book11.setText("Book");
+        book11.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book11.setFocusable(false);
+        book11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                detailsVIPMouseEntered(evt);
+                book11MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                detailsVIPMouseExited(evt);
+                book11MouseExited(evt);
             }
         });
-        detailsVIP.addActionListener(new java.awt.event.ActionListener() {
+        book11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                detailsVIPActionPerformed(evt);
+                book11ActionPerformed(evt);
             }
         });
+        jPanel9.add(book11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel24)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(detailsVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bookVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel20.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel20.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel7)
-                .addGap(15, 15, 15)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(detailsVIP, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 710, 430, 540));
+        jPanel9.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 770, -1, 570));
+
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("null");
+        jPanel10.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel14.setText("null");
+        jPanel10.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book12.setBackground(new java.awt.Color(255, 255, 255));
+        book12.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book12.setForeground(new java.awt.Color(230, 192, 104));
+        book12.setText("Details");
+        book12.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book12.setFocusable(false);
+        book12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book12MouseExited(evt);
+            }
+        });
+        book12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book12ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(book12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book13.setBackground(new java.awt.Color(255, 255, 255));
+        book13.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book13.setForeground(new java.awt.Color(230, 192, 104));
+        book13.setText("Book");
+        book13.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book13.setFocusable(false);
+        book13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book13MouseExited(evt);
+            }
+        });
+        book13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book13ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(book13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel19.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel19.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel10.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 770, -1, 570));
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("null");
+        jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel16.setText("null");
+        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book14.setBackground(new java.awt.Color(255, 255, 255));
+        book14.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book14.setForeground(new java.awt.Color(230, 192, 104));
+        book14.setText("Details");
+        book14.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book14.setFocusable(false);
+        book14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book14MouseExited(evt);
+            }
+        });
+        book14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book14ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(book14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book15.setBackground(new java.awt.Color(255, 255, 255));
+        book15.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book15.setForeground(new java.awt.Color(230, 192, 104));
+        book15.setText("Book");
+        book15.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book15.setFocusable(false);
+        book15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book15MouseExited(evt);
+            }
+        });
+        book15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book15ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(book15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel18.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel18.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel11.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 770, -1, 570));
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("null");
+        jPanel8.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel10.setText("null");
+        jPanel8.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book8.setBackground(new java.awt.Color(255, 255, 255));
+        book8.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book8.setForeground(new java.awt.Color(230, 192, 104));
+        book8.setText("Details");
+        book8.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book8.setFocusable(false);
+        book8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book8MouseExited(evt);
+            }
+        });
+        book8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book8ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(book8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book9.setBackground(new java.awt.Color(255, 255, 255));
+        book9.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book9.setForeground(new java.awt.Color(230, 192, 104));
+        book9.setText("Book");
+        book9.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book9.setFocusable(false);
+        book9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book9MouseExited(evt);
+            }
+        });
+        book9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book9ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(book9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel21.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel21.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel8.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 770, 400, 570));
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("null");
+        jPanel14.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel22.setText("null");
+        jPanel14.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book20.setBackground(new java.awt.Color(255, 255, 255));
+        book20.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book20.setForeground(new java.awt.Color(230, 192, 104));
+        book20.setText("Details");
+        book20.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book20.setFocusable(false);
+        book20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book20MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book20MouseExited(evt);
+            }
+        });
+        book20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book20ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(book20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book21.setBackground(new java.awt.Color(255, 255, 255));
+        book21.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book21.setForeground(new java.awt.Color(230, 192, 104));
+        book21.setText("Book");
+        book21.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book21.setFocusable(false);
+        book21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book21MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book21MouseExited(evt);
+            }
+        });
+        book21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book21ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(book21, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel23.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel23.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel14.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 1370, -1, 570));
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("null");
+        jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel20.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel20.setText("null");
+        jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book18.setBackground(new java.awt.Color(255, 255, 255));
+        book18.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book18.setForeground(new java.awt.Color(230, 192, 104));
+        book18.setText("Details");
+        book18.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book18.setFocusable(false);
+        book18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book18MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book18MouseExited(evt);
+            }
+        });
+        book18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book18ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(book18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book19.setBackground(new java.awt.Color(255, 255, 255));
+        book19.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book19.setForeground(new java.awt.Color(230, 192, 104));
+        book19.setText("Book");
+        book19.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book19.setFocusable(false);
+        book19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book19MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book19MouseExited(evt);
+            }
+        });
+        book19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book19ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(book19, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel24.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel24.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel13.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 1370, -1, 570));
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("null");
+        jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel18.setText("null");
+        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book16.setBackground(new java.awt.Color(255, 255, 255));
+        book16.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book16.setForeground(new java.awt.Color(230, 192, 104));
+        book16.setText("Details");
+        book16.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book16.setFocusable(false);
+        book16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book16MouseExited(evt);
+            }
+        });
+        book16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book16ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(book16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book17.setBackground(new java.awt.Color(255, 255, 255));
+        book17.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book17.setForeground(new java.awt.Color(230, 192, 104));
+        book17.setText("Book");
+        book17.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book17.setFocusable(false);
+        book17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book17MouseExited(evt);
+            }
+        });
+        book17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book17ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(book17, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel25.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel25.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel12.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 1370, 400, 570));
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel23.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("null");
+        jPanel15.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 400, -1));
+
+        jLabel24.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel24.setText("null");
+        jPanel15.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, 20));
+
+        book22.setBackground(new java.awt.Color(255, 255, 255));
+        book22.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book22.setForeground(new java.awt.Color(230, 192, 104));
+        book22.setText("Details");
+        book22.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book22.setFocusable(false);
+        book22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book22MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book22MouseExited(evt);
+            }
+        });
+        book22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book22ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(book22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 100, 40));
+
+        book23.setBackground(new java.awt.Color(255, 255, 255));
+        book23.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book23.setForeground(new java.awt.Color(230, 192, 104));
+        book23.setText("Book");
+        book23.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book23.setFocusable(false);
+        book23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                book23MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                book23MouseExited(evt);
+            }
+        });
+        book23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book23ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(book23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 90, 40));
+
+        jPanel22.setMaximumSize(new java.awt.Dimension(380, 380));
+        jPanel22.setMinimumSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 380, 380));
+
+        jPanel3.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1370, -1, 570));
 
         jScrollPane1.setViewportView(jPanel3);
 
@@ -946,141 +1501,299 @@ public class Reserve extends javax.swing.JFrame {
       this.sidepanelChoice(5);
     }//GEN-LAST:event_gallery1ActionPerformed
 
-    private void bookSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookSmallActionPerformed
+    private void bookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseEntered
+        Color gold;
+        gold = new Color(230,192,104);
+        book.setBackground(gold);
+        book.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_bookMouseEntered
+
+    private void bookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseExited
+        Color gold;
+        gold = new Color(230,192,104);
+        book.setBackground(new Color(255,255,255));
+        book.setForeground(gold);
+    }//GEN-LAST:event_bookMouseExited
+
+    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
+
+    }//GEN-LAST:event_bookActionPerformed
+
+    private void book1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book1MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_bookSmallActionPerformed
+    }//GEN-LAST:event_book1MouseEntered
 
-    private void bookSmallMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookSmallMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        bookSmall.setBackground(new Color(255,255,255));
-        bookSmall.setForeground(gold);
-    }//GEN-LAST:event_bookSmallMouseExited
-
-    private void bookSmallMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookSmallMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        bookSmall.setBackground(gold);
-        bookSmall.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_bookSmallMouseEntered
-
-    private void bookMediumMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMediumMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        bookMedium.setBackground(gold);
-        bookMedium.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_bookMediumMouseEntered
-
-    private void bookMediumMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMediumMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        bookMedium.setBackground(new Color(255,255,255));
-        bookMedium.setForeground(gold);
-    }//GEN-LAST:event_bookMediumMouseExited
-
-    private void bookMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookMediumActionPerformed
+    private void book1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book1MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_bookMediumActionPerformed
+    }//GEN-LAST:event_book1MouseExited
 
-    private void bookVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookVIPActionPerformed
+    private void book1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bookVIPActionPerformed
+    }//GEN-LAST:event_book1ActionPerformed
 
-    private void detailsSmallMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsSmallMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsSmall.setBackground(gold);
-        detailsSmall.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_detailsSmallMouseEntered
-
-    private void detailsSmallMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsSmallMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsSmall.setBackground(new Color(255,255,255));
-        detailsSmall.setForeground(gold);
-    }//GEN-LAST:event_detailsSmallMouseExited
-
-    private void detailsSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsSmallActionPerformed
+    private void book2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book2MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_detailsSmallActionPerformed
+    }//GEN-LAST:event_book2MouseEntered
 
-    private void detailsMediumMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsMediumMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsMedium.setBackground(gold);
-        detailsMedium.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_detailsMediumMouseEntered
-
-    private void detailsMediumMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsMediumMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsMedium.setBackground(new Color(255,255,255));
-        detailsMedium.setForeground(gold);
-    }//GEN-LAST:event_detailsMediumMouseExited
-
-    private void detailsMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsMediumActionPerformed
+    private void book2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book2MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_detailsMediumActionPerformed
+    }//GEN-LAST:event_book2MouseExited
 
-    private void detailsVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detailsVIPActionPerformed
+    private void book2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_detailsVIPActionPerformed
+    }//GEN-LAST:event_book2ActionPerformed
 
-    private void detailsLargeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsLargeMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsLarge.setBackground(gold);
-        detailsLarge.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_detailsLargeMouseEntered
+    private void book3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book3MouseEntered
 
-    private void detailsLargeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsLargeMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsLarge.setBackground(new Color(255,255,255));
-        detailsLarge.setForeground(gold);
-    }//GEN-LAST:event_detailsLargeMouseExited
+    private void book3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book3MouseExited
 
-    private void bookLargeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookLargeMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        bookLarge.setBackground(gold);
-        bookLarge.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_bookLargeMouseEntered
+    private void book3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book3ActionPerformed
 
-    private void bookLargeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookLargeMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        bookLarge.setBackground(new Color(255,255,255));
-        bookLarge.setForeground(gold);
-    }//GEN-LAST:event_bookLargeMouseExited
+    private void book4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book4MouseEntered
 
-    private void detailsVIPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsVIPMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsVIP.setBackground(gold);
-        detailsVIP.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_detailsVIPMouseEntered
+    private void book4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book4MouseExited
 
-    private void detailsVIPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detailsVIPMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        detailsVIP.setBackground(new Color(255,255,255));
-        detailsVIP.setForeground(gold);
-    }//GEN-LAST:event_detailsVIPMouseExited
+    private void book4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book4ActionPerformed
 
-    private void bookVIPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookVIPMouseEntered
-        Color gold;
-        gold = new Color(230,192,104);
-        bookVIP.setBackground(gold);
-        bookVIP.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_bookVIPMouseEntered
+    private void book5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book5MouseEntered
 
-    private void bookVIPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookVIPMouseExited
-        Color gold;
-        gold = new Color(230,192,104);
-        bookVIP.setBackground(new Color(255,255,255));
-        bookVIP.setForeground(gold);
-    }//GEN-LAST:event_bookVIPMouseExited
+    private void book5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book5MouseExited
+
+    private void book5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book5ActionPerformed
+
+    private void book6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book6MouseEntered
+
+    private void book6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book6MouseExited
+
+    private void book6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book6ActionPerformed
+
+    private void book7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book7MouseEntered
+
+    private void book7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book7MouseExited
+
+    private void book7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book7ActionPerformed
+
+    private void book8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book8MouseEntered
+
+    private void book8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book8MouseExited
+
+    private void book8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book8ActionPerformed
+
+    private void book9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book9MouseEntered
+
+    private void book9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book9MouseExited
+
+    private void book9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book9ActionPerformed
+
+    private void book10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book10MouseEntered
+
+    private void book10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book10MouseExited
+
+    private void book10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book10ActionPerformed
+
+    private void book11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book11MouseEntered
+
+    private void book11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book11MouseExited
+
+    private void book11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book11ActionPerformed
+
+    private void book12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book12MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book12MouseEntered
+
+    private void book12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book12MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book12MouseExited
+
+    private void book12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book12ActionPerformed
+
+    private void book13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book13MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book13MouseEntered
+
+    private void book13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book13MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book13MouseExited
+
+    private void book13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book13ActionPerformed
+
+    private void book14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book14MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book14MouseEntered
+
+    private void book14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book14MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book14MouseExited
+
+    private void book14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book14ActionPerformed
+
+    private void book15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book15MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book15MouseEntered
+
+    private void book15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book15MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book15MouseExited
+
+    private void book15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book15ActionPerformed
+
+    private void book16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book16MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book16MouseEntered
+
+    private void book16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book16MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book16MouseExited
+
+    private void book16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book16ActionPerformed
+
+    private void book17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book17MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book17MouseEntered
+
+    private void book17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book17MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book17MouseExited
+
+    private void book17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book17ActionPerformed
+
+    private void book18MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book18MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book18MouseEntered
+
+    private void book18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book18MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book18MouseExited
+
+    private void book18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book18ActionPerformed
+
+    private void book19MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book19MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book19MouseEntered
+
+    private void book19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book19MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book19MouseExited
+
+    private void book19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book19ActionPerformed
+
+    private void book20MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book20MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book20MouseEntered
+
+    private void book20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book20MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book20MouseExited
+
+    private void book20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book20ActionPerformed
+
+    private void book21MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book21MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book21MouseEntered
+
+    private void book21MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book21MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book21MouseExited
+
+    private void book21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book21ActionPerformed
+
+    private void book22MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book22MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book22MouseEntered
+
+    private void book22MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book22MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book22MouseExited
+
+    private void book22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book22ActionPerformed
+
+    private void book23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book23MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book23MouseEntered
+
+    private void book23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book23MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book23MouseExited
+
+    private void book23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_book23ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1090,34 +1803,82 @@ public class Reserve extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton about;
-    public javax.swing.JButton bookLarge;
-    public javax.swing.JButton bookMedium;
-    public javax.swing.JButton bookSmall;
-    public javax.swing.JButton bookVIP;
+    public javax.swing.JButton book;
+    public javax.swing.JButton book1;
+    public javax.swing.JButton book10;
+    public javax.swing.JButton book11;
+    public javax.swing.JButton book12;
+    public javax.swing.JButton book13;
+    public javax.swing.JButton book14;
+    public javax.swing.JButton book15;
+    public javax.swing.JButton book16;
+    public javax.swing.JButton book17;
+    public javax.swing.JButton book18;
+    public javax.swing.JButton book19;
+    public javax.swing.JButton book2;
+    public javax.swing.JButton book20;
+    public javax.swing.JButton book21;
+    public javax.swing.JButton book22;
+    public javax.swing.JButton book23;
+    public javax.swing.JButton book3;
+    public javax.swing.JButton book4;
+    public javax.swing.JButton book5;
+    public javax.swing.JButton book6;
+    public javax.swing.JButton book7;
+    public javax.swing.JButton book8;
+    public javax.swing.JButton book9;
     public javax.swing.JButton contact;
-    public javax.swing.JButton detailsLarge;
-    public javax.swing.JButton detailsMedium;
-    public javax.swing.JButton detailsSmall;
-    public javax.swing.JButton detailsVIP;
     public javax.swing.JButton gallery;
     public javax.swing.JButton gallery1;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
