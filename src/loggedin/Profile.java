@@ -90,12 +90,6 @@ public class Profile extends javax.swing.JFrame {
                 v.add(rs.getString(5)); //RoomSchedule
                 
                 dt.addRow(v);
-                
-//                String datebook = String.valueOf(rs.getArray("DateBooked")); 
-//                String roomtype = String.valueOf(rs.getArray("RoomType")); 
-//                String price = String.valueOf(rs.getArray("Price")); 
-//                String roomschedule = String.valueOf(rs.getArray("RoomSchedule")); 
-                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(new JFrame(), "Something wrong with getting the user database.", "Error", JOptionPane.ERROR_MESSAGE);

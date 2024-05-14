@@ -6,6 +6,7 @@
 package loggedin;
 
 import AkatsukiHotel.Login;
+import AppPackage.AnimationClass;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import panelsImages.homepic1;
@@ -19,6 +20,8 @@ import panelsImages.homepic5;
  * @author Ivan Adcan
  */
 public class Home extends javax.swing.JFrame {
+    
+    AnimationClass ac = new AnimationClass();
 
     /**
      * Creates new form Login
@@ -103,7 +106,6 @@ public class Home extends javax.swing.JFrame {
         panelHome = new javax.swing.JPanel();
         scrollPanel = new javax.swing.JScrollPane();
         panelIn = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pic1 = new javax.swing.JButton();
         pic2 = new javax.swing.JButton();
@@ -397,19 +399,6 @@ public class Home extends javax.swing.JFrame {
         panelIn.setBackground(new java.awt.Color(255, 255, 255,255));
         panelIn.setMinimumSize(new java.awt.Dimension(856, 631));
 
-        jPanel2.setMinimumSize(new java.awt.Dimension(808, 429));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg1.jpg"))); // NOI18N
 
@@ -417,19 +406,13 @@ public class Home extends javax.swing.JFrame {
         panelIn.setLayout(panelInLayout);
         panelInLayout.setHorizontalGroup(
             panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 856, Short.MAX_VALUE)
         );
         panelInLayout.setVerticalGroup(
             panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(487, Short.MAX_VALUE))
         );
 
         scrollPanel.setViewportView(panelIn);
@@ -930,7 +913,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
     private javax.swing.JPanel panelHome;

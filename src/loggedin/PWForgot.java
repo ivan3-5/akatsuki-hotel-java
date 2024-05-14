@@ -5,19 +5,47 @@
  */
 package loggedin;
 
-import AkatsukiHotel.*;
+import java.awt.HeadlessException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.Random;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Ivan Adcan
  */
 public class PWForgot extends javax.swing.JFrame {
+    int randomCode;
+    String textFileRead;
 
     /**
      * Creates new form Login
      */
     public PWForgot() {
         initComponents();
+    }
+    
+    public String readData() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("emailCheck.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                textFileRead = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return textFileRead;
     }
 
     /**
@@ -34,11 +62,10 @@ public class PWForgot extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         panelRight = new javax.swing.JPanel();
         text1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         sendcode = new javax.swing.JButton();
         changepw = new javax.swing.JButton();
-        code = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        codeInput = new javax.swing.JTextField();
+        newPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Forgot Password");
@@ -76,10 +103,6 @@ public class PWForgot extends javax.swing.JFrame {
         text1.setText("Forgot Password");
         panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 31, 310, -1));
 
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
-        panelRight.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 288, 50));
-
         sendcode.setBackground(new java.awt.Color(28, 42, 57));
         sendcode.setForeground(new java.awt.Color(255, 255, 255));
         sendcode.setText("Send Code");
@@ -90,27 +113,28 @@ public class PWForgot extends javax.swing.JFrame {
                 sendcodeActionPerformed(evt);
             }
         });
-        panelRight.add(sendcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 117, -1, 40));
+        panelRight.add(sendcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 177, -1, 40));
 
         changepw.setBackground(new java.awt.Color(0, 104, 104));
         changepw.setForeground(new java.awt.Color(255, 255, 255));
         changepw.setText("Change Password");
         changepw.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
         changepw.setFocusable(false);
+        changepw.setInheritsPopupMenu(true);
         changepw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 changepwActionPerformed(evt);
             }
         });
-        panelRight.add(changepw, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 230, 140, 37));
+        panelRight.add(changepw, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 177, 140, 40));
 
-        code.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        code.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Code", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
-        panelRight.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 100, 50));
+        codeInput.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        codeInput.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Code", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(codeInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 100, 50));
 
-        jPasswordField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
-        panelRight.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 288, 50));
+        newPassword.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        newPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 400, 50));
 
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
         panelRight.getAccessibleContext().setAccessibleName("panelRight");
@@ -121,14 +145,59 @@ public class PWForgot extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendcodeActionPerformed
-
+        System.out.println("Send code button clicked!");
+        Random random = new Random();
+        randomCode = random.nextInt(999999);
+        JOptionPane.showMessageDialog(new JFrame(), randomCode, "Send Code", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_sendcodeActionPerformed
 
     private void changepwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changepwActionPerformed
-        ChangedPW changepw = new ChangedPW();
-        changepw.setVisible(true);
-        changepw.setLocationRelativeTo(null);
-        this.dispose();
+        System.out.println("Change password button clicked!");
+        String passwordNew;
+            passwordNew = this.newPassword.getText();
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        readData();
+            
+        System.out.println("Change password clicked!");
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            Statement stChangePW = con.createStatement();
+            String queryFindEmail = "SELECT * FROM user WHERE id = " + textFileRead;
+            ResultSet rsFindEmail = st.executeQuery(queryFindEmail);
+            
+            String codeSendCode = "" + randomCode;
+            String code = this.codeInput.getText();
+            
+            while (rsFindEmail.next()) {
+            } if ("".equals(passwordNew)) {
+                JOptionPane.showMessageDialog(new JFrame(), "New password is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                try {
+                    if (code.equals(codeSendCode)) {
+                        String queryPWChange = "UPDATE user "
+                                + "SET password = '" + passwordNew + "' "
+                                + "WHERE id = " + textFileRead;
+                        stChangePW.executeUpdate(queryPWChange);
+                            
+                        ChangedPW changepw = new ChangedPW();
+                        changepw.setVisible(true);
+                        changepw.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Wrong code!", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (SQLException | HeadlessException e) {
+                    System.err.println("Error: Something wrong with the code of the program.");
+                    System.err.println("Error Message: " + e.getMessage());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
     }//GEN-LAST:event_changepwActionPerformed
 
     /**
@@ -137,10 +206,9 @@ public class PWForgot extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton changepw;
-    private javax.swing.JTextField code;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField codeInput;
     private javax.swing.JLabel logo;
+    private javax.swing.JPasswordField newPassword;
     private javax.swing.JPanel panelLeft;
     private javax.swing.JPanel panelRight;
     private javax.swing.JPanel panelWrapper;

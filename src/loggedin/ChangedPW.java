@@ -33,13 +33,13 @@ public class ChangedPW extends javax.swing.JFrame {
         panelRight = new javax.swing.JPanel();
         text1 = new javax.swing.JLabel();
         text5 = new javax.swing.JLabel();
-        signup = new javax.swing.JButton();
+        profile = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Change Password");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(839, 535));
+        setPreferredSize(new java.awt.Dimension(833, 500));
         setResizable(false);
 
         panelWrapper.setBackground(new java.awt.Color(230, 192, 104));
@@ -86,15 +86,15 @@ public class ChangedPW extends javax.swing.JFrame {
         text5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text5.setText("Successfully!");
 
-        signup.setBackground(new java.awt.Color(0, 0, 0));
-        signup.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        signup.setForeground(new java.awt.Color(0, 104, 104));
-        signup.setText("Back to Profile");
-        signup.setContentAreaFilled(false);
-        signup.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        signup.addActionListener(new java.awt.event.ActionListener() {
+        profile.setBackground(new java.awt.Color(0, 0, 0));
+        profile.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        profile.setForeground(new java.awt.Color(0, 104, 104));
+        profile.setText("Back to Profile");
+        profile.setContentAreaFilled(false);
+        profile.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupActionPerformed(evt);
+                profileActionPerformed(evt);
             }
         });
 
@@ -104,7 +104,7 @@ public class ChangedPW extends javax.swing.JFrame {
             panelRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRightLayout.createSequentialGroup()
                 .addGap(157, 157, 157)
-                .addComponent(signup)
+                .addComponent(profile)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelRightLayout.createSequentialGroup()
                 .addContainerGap()
@@ -121,7 +121,7 @@ public class ChangedPW extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(text5)
                 .addGap(46, 46, 46)
-                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -169,13 +169,13 @@ public class ChangedPW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         Profile pfp = new Profile();
         pfp.setVisible(true);
         pfp.pack();
         pfp.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_signupActionPerformed
+    }//GEN-LAST:event_profileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,7 +186,7 @@ public class ChangedPW extends javax.swing.JFrame {
     private javax.swing.JPanel panelLeft;
     private javax.swing.JPanel panelRight;
     private javax.swing.JPanel panelWrapper;
-    public javax.swing.JButton signup;
+    public javax.swing.JButton profile;
     private javax.swing.JLabel text1;
     private javax.swing.JLabel text5;
     // End of variables declaration//GEN-END:variables

@@ -494,8 +494,8 @@ public class SignUp extends javax.swing.JFrame {
                 if (rsCheckUser.next()) {
                     JOptionPane.showMessageDialog(new JFrame(), "Username, email, or phone no. already existed!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday) " +
-                            "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "')";
+                    query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday, old) " +
+                            "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "', 0)";
                     stAddUser.execute(query);
                     
                     ResultSet rsFindNewUser = stFindNewUser.executeQuery(queryS);

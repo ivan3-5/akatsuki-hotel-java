@@ -53,6 +53,83 @@ public class Login extends javax.swing.JFrame {
             System.err.println("Error: " + e.getMessage());
         }
     }
+    
+    public void userCheck() {
+        String Email, password;
+            Email = this.email.getText();
+            password = this.pw.getText();
+        String SUrl, SUser, SPass, query, passwordDB = null, adminCheck = null;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        System.out.println("Login button clicked!");
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            try {
+                Statement st, stIDCheck;
+                    st = con.createStatement();
+                    stIDCheck = con.createStatement();
+                int notFound = 0;
+                int admin = 0;
+                if ("admin".equals(Email) && "admin".equals(password)) {
+                    admin = 1;
+                }
+
+                if ("".equals(Email)) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else if ("".equals(password)) {
+                    JOptionPane.showMessageDialog(new JFrame(), "Password is required!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    query = "SELECT * FROM user WHERE email = '" + Email + "' OR username = '" + Email +  "' OR phone = '" + Email + "'";
+                    ResultSet rs; 
+                        rs = st.executeQuery(query);
+                    while (rs.next()) {
+                        passwordDB = rs.getString("password");
+                        adminCheck = rs.getString("id");
+                            if ("0".equals(adminCheck)) {
+                                admin = 1;
+                            } else {
+                                notFound = 1;
+                            }
+                    }if (admin == 1) {
+                        Admin a = new Admin();
+                        a.setVisible(true);
+                        a.pack();
+                        a.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else if (notFound == 1 && password.equals(passwordDB)) {  
+                        emailCheck();
+                        
+                        ResultSet rsID = stIDCheck.executeQuery(query);
+                        rsID.next();
+                        String stringID = rsID.getString("id");
+                        
+                        System.out.println("User ID: " + stringID);
+                        
+                        try (FileWriter fw = new FileWriter("emailCheck.txt")) {
+                            fw.write(stringID);
+                        } catch (Exception e) {
+                            System.err.println("Error: " + e.getMessage());
+                        }
+                        
+                        Home t = new Home();
+                        t.setVisible(true);
+                        t.pack();
+                        t.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(new JFrame(), "Incorrect email or password", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }catch (SQLException | HeadlessException e){
+                JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
+                System.err.println("Error: " + e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error connecting to the database: " + e.getMessage());
+        }
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,7 +208,7 @@ public class Login extends javax.swing.JFrame {
         login.setBorder(null);
         login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        login.setFocusPainted(false);
+        login.setSelected(true);
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -198,77 +275,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_signupActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String Email, password;
-            Email = this.email.getText();
-            password = this.pw.getText();
-        String SUrl, SUser, SPass, query, passwordDB = null;
-            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
-            SUser = "root";
-            SPass = "";
-        
-        System.out.println("Login button clicked!");
-        
-        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
-            try {
-                Statement st, stAdmin, stIDCheck;
-                    st = con.createStatement();
-                    stAdmin  = con.createStatement();
-                    stIDCheck = con.createStatement();
-                int notFound = 0;
-                
-                int admin = 0;
-                if ("admin".equals(Email) && "admin".equals(password)) {
-                    admin = 1;
-                }
-
-                if ("".equals(Email)) {
-                    JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else if ("".equals(password)) {
-                    JOptionPane.showMessageDialog(new JFrame(), "Password is required!", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    query = "SELECT * FROM user WHERE email = '" + Email + "' OR username = '" + Email +  "' OR phone = '" + Email + "'";
-                    ResultSet rs; 
-                        rs = st.executeQuery(query);
-                    while (rs.next()) {
-                        passwordDB = rs.getString("password");
-                        notFound = 1;
-                    }if (admin == 1) {
-                        Admin a = new Admin();
-                        a.setVisible(true);
-                        a.pack();
-                        a.setLocationRelativeTo(null);
-                        this.dispose();
-                    } else if (notFound == 1 && password.equals(passwordDB)) {  
-                        emailCheck();
-                        
-                        ResultSet rsID = stIDCheck.executeQuery(query);
-                        rsID.next();
-                        String stringID = rsID.getString("id");
-                        
-                        System.out.println("User ID: " + stringID);
-                        
-                        try (FileWriter fw = new FileWriter("emailCheck.txt")) {
-                            fw.write(stringID);
-                        } catch (Exception e) {
-                            System.err.println("Error: " + e.getMessage());
-                        }
-                        
-                        Home t = new Home();
-                        t.setVisible(true);
-                        t.pack();
-                        t.setLocationRelativeTo(null);
-                        this.dispose();
-                    } else {
-                        JOptionPane.showMessageDialog(new JFrame(), "Incorrect email or password", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
-                }
-            }catch (SQLException | HeadlessException e){
-                JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
-                System.err.println("Error: " + e.getMessage());
-            }
-        } catch (SQLException e) {
-            System.out.println("Error connecting to the database: " + e.getMessage());
-        }
+        userCheck();
     }//GEN-LAST:event_loginActionPerformed
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
