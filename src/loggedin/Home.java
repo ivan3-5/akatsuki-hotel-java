@@ -6,7 +6,6 @@
 package loggedin;
 
 import AkatsukiHotel.Login;
-import AppPackage.AnimationClass;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import panelsImages.homepic1;
@@ -20,8 +19,6 @@ import panelsImages.homepic5;
  * @author Ivan Adcan
  */
 public class Home extends javax.swing.JFrame {
-    
-    AnimationClass ac = new AnimationClass();
 
     /**
      * Creates new form Login
@@ -892,7 +889,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_bookMouseExited
 
     private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
-        
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_bookActionPerformed
 
     /**

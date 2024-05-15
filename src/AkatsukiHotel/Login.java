@@ -9,14 +9,11 @@ import admin.Admin;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import loggedin.Home;
@@ -26,8 +23,6 @@ import loggedin.Home;
  * @author Ivan Adcan
  */
 public class Login extends javax.swing.JFrame {
-    
-    public String emailDB;
 
     /**
      * Creates new form Login
@@ -72,9 +67,6 @@ public class Login extends javax.swing.JFrame {
                     stIDCheck = con.createStatement();
                 int notFound = 0;
                 int admin = 0;
-                if ("admin".equals(Email) && "admin".equals(password)) {
-                    admin = 1;
-                }
 
                 if ("".equals(Email)) {
                     JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -87,18 +79,18 @@ public class Login extends javax.swing.JFrame {
                     while (rs.next()) {
                         passwordDB = rs.getString("password");
                         adminCheck = rs.getString("id");
-                            if ("0".equals(adminCheck)) {
+                            if ("1".equals(adminCheck)) {
                                 admin = 1;
                             } else {
                                 notFound = 1;
                             }
-                    }if (admin == 1) {
+                    }if (admin != 0) {
                         Admin a = new Admin();
                         a.setVisible(true);
                         a.pack();
                         a.setLocationRelativeTo(null);
                         this.dispose();
-                    } else if (notFound == 1 && password.equals(passwordDB)) {  
+                    } else if (notFound != 0 && password.equals(passwordDB)) {  
                         emailCheck();
                         
                         ResultSet rsID = stIDCheck.executeQuery(query);
