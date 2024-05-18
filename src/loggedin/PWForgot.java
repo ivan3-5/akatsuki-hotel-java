@@ -66,6 +66,7 @@ public class PWForgot extends javax.swing.JFrame {
         changepw = new javax.swing.JButton();
         codeInput = new javax.swing.JTextField();
         newPassword = new javax.swing.JPasswordField();
+        login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Forgot Password");
@@ -136,6 +137,20 @@ public class PWForgot extends javax.swing.JFrame {
         newPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
         panelRight.add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 400, 50));
 
+        login.setBackground(new java.awt.Color(0, 0, 0));
+        login.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        login.setForeground(new java.awt.Color(0, 104, 104));
+        login.setText("Back to Profile");
+        login.setContentAreaFilled(false);
+        login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        login.setFocusable(false);
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+        panelRight.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 401, -1, 39));
+
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
         panelRight.getAccessibleContext().setAccessibleName("panelRight");
 
@@ -200,6 +215,13 @@ public class PWForgot extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_changepwActionPerformed
 
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        Profile pf = new Profile();
+        pf.setVisible(true);
+        pf.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_loginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -207,6 +229,7 @@ public class PWForgot extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton changepw;
     private javax.swing.JTextField codeInput;
+    public javax.swing.JButton login;
     private javax.swing.JLabel logo;
     private javax.swing.JPasswordField newPassword;
     private javax.swing.JPanel panelLeft;

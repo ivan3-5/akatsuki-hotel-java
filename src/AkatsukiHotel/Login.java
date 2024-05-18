@@ -84,7 +84,7 @@ public class Login extends javax.swing.JFrame {
                             } else {
                                 notFound = 1;
                             }
-                    }if (admin != 0) {
+                    }if (admin != 0 && password.equals(passwordDB)) {
                         Admin a = new Admin();
                         a.setVisible(true);
                         a.pack();

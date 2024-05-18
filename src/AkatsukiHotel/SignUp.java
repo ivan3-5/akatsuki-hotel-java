@@ -26,6 +26,7 @@ public class SignUp extends javax.swing.JFrame {
      */
     public SignUp() {
         initComponents();
+        
     }
 
     /**
@@ -227,6 +228,11 @@ public class SignUp extends javax.swing.JFrame {
         dd8.setText(":");
 
         phone.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        phone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                phoneKeyTyped(evt);
+            }
+        });
 
         text11.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text11.setText("Address");
@@ -544,6 +550,13 @@ public class SignUp extends javax.swing.JFrame {
     private void maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_maleActionPerformed
+
+    private void phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_phoneKeyTyped
 
     /**
      * @param args the command line arguments

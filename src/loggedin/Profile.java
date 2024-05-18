@@ -76,10 +76,10 @@ public class Profile extends javax.swing.JFrame {
             DefaultTableModel dt = (DefaultTableModel) userData.getModel();
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             dt.setRowCount(0);
-            Statement s = con.createStatement();
+            Statement st = con.createStatement();
             String query = "SELECT * FROM u" + textFileRead;
             
-            ResultSet rs = s.executeQuery(query);
+            ResultSet rs = st.executeQuery(query);
                 
             while (rs.next()) {
                 Vector v = new Vector();
@@ -137,7 +137,7 @@ public class Profile extends javax.swing.JFrame {
     
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        Reserve reserve = new Reserve();
+        ReserveOld reserve = new ReserveOld();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();

@@ -5,17 +5,118 @@
  */
 package admin;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Ivan Adcan
  */
 public class UserReservations extends javax.swing.JFrame {
-
+    
+    int selectUser;
+    
     /**
      * Creates new form Login
      */
     public UserReservations() {
         initComponents();
+        tableDataLoad();
+        loadUserData();
+    }
+    
+    public void tableDataLoad() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+
+        try {
+            DefaultTableModel dt = (DefaultTableModel) userDetails.getModel();
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
+            dt.setRowCount(0);
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM user";
+            
+            ResultSet rs = st.executeQuery(query);
+                
+            while (rs.next()) {
+                Vector v = new Vector();
+                
+                v.add(rs.getString(1)); //ID
+                v.add(rs.getString(2)); //First Name
+                v.add(rs.getString(3)); //Last Name
+                v.add(rs.getString(4)); //Username
+                v.add(rs.getString(5)); //Email
+                v.add(rs.getString(6)); //Phone
+                v.add(rs.getString(7)); //Address
+                v.add(rs.getString(9)); //Gender
+                v.add(rs.getString(10)); //Birthday
+                v.add(rs.getString(11)); //Old
+                
+                dt.addRow(v);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(new JFrame(), "Something wrong with getting the user database.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.err.println("Error: Something wrong with getting the user database.");
+            System.err.println("Error Message: " + e.getMessage());
+        }
+    }
+    
+    public void loadUserData() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM user ORDER BY username";
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {
+                String usernames = rs.getString("username");
+                userSelection.addItem(usernames);
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    
+    public void selectedUser() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            DefaultTableModel dt = (DefaultTableModel) userReservations.getModel();
+            dt.setRowCount(0);
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM u" + selectUser;
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {
+                Vector v = new Vector();
+                
+                v.add(rs.getString(1)); //ID
+                v.add(rs.getString(2)); //Date
+                v.add(rs.getString(3)); //Room Type
+                v.add(rs.getString(4)); //Price
+                v.add(rs.getString(5)); //Schedule
+                
+                dt.addRow(v);
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
     }
     
     /**
@@ -34,15 +135,16 @@ public class UserReservations extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         gallery1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
+        userSelection = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        userReservations = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        userDetails = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        book = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -132,51 +234,77 @@ public class UserReservations extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "user 1", "user 2", "user 3", "user 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 230, 60));
+        userSelection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userSelectionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(userSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 230, 60));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        userReservations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Date", "Room Type", "Price", "Schedule"
+                "ID", "Date", "Room Type", "Price", "Schedule"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        userReservations.setEnabled(false);
+        jScrollPane1.setViewportView(userReservations);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 630, 680));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 470, 680));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel1.setText("User Details");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 60, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 60, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel2.setText("Select User");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        userDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "First Name", "Last Name", "Username", "Birthday", "Email", "Phone No.", "Address"
+                "ID", "First Name", "Last Name", "Username", "Email", "Phone", "Address", "Gender", "Birthday", "New User"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        userDetails.setEnabled(false);
+        jScrollPane2.setViewportView(userDetails);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 110, 860, 680));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 110, 1040, 680));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel3.setText("User Reservations");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, -10, 10, 900));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, -10, 10, 900));
+
+        book.setBackground(new java.awt.Color(255, 255, 255));
+        book.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        book.setForeground(new java.awt.Color(230, 192, 104));
+        book.setText("Go Back");
+        book.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        book.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bookMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bookMouseExited(evt);
+            }
+        });
+        book.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookActionPerformed(evt);
+            }
+        });
+        jPanel1.add(book, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 160, 40));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
         panelWrapper.setLayout(panelWrapperLayout);
@@ -227,6 +355,28 @@ public class UserReservations extends javax.swing.JFrame {
         
     }//GEN-LAST:event_gallery1ActionPerformed
 
+    private void bookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseEntered
+       
+    }//GEN-LAST:event_bookMouseEntered
+
+    private void bookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseExited
+        
+    }//GEN-LAST:event_bookMouseExited
+
+    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
+        Admin a = new Admin();
+        a.setVisible(true);
+        a.pack();
+        a.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_bookActionPerformed
+
+    private void userSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSelectionActionPerformed
+        selectUser = userSelection.getSelectedIndex() + 1;
+        System.out.println(selectUser);
+        selectedUser();
+    }//GEN-LAST:event_userSelectionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -234,8 +384,8 @@ public class UserReservations extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton book;
     public javax.swing.JButton gallery1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -243,12 +393,13 @@ public class UserReservations extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panelWrapper;
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
     private javax.swing.JPanel toppanel;
+    private javax.swing.JTable userDetails;
+    private javax.swing.JTable userReservations;
+    private javax.swing.JComboBox userSelection;
     // End of variables declaration//GEN-END:variables
 }

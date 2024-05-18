@@ -40,8 +40,8 @@ public class Admin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        book = new javax.swing.JButton();
-        book1 = new javax.swing.JButton();
+        userReservations = new javax.swing.JButton();
+        editRooms = new javax.swing.JButton();
         logout = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -135,51 +135,51 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-reservation.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, -1, -1));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-room.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 260, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 250, -1, -1));
 
-        book.setBackground(new java.awt.Color(255, 255, 255));
-        book.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        book.setForeground(new java.awt.Color(230, 192, 104));
-        book.setText("User Reservations");
-        book.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        book.addMouseListener(new java.awt.event.MouseAdapter() {
+        userReservations.setBackground(new java.awt.Color(255, 255, 255));
+        userReservations.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        userReservations.setForeground(new java.awt.Color(230, 192, 104));
+        userReservations.setText("User Reservations");
+        userReservations.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        userReservations.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bookMouseEntered(evt);
+                userReservationsMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                bookMouseExited(evt);
+                userReservationsMouseExited(evt);
             }
         });
-        book.addActionListener(new java.awt.event.ActionListener() {
+        userReservations.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookActionPerformed(evt);
+                userReservationsActionPerformed(evt);
             }
         });
-        jPanel1.add(book, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 223, 52));
+        jPanel1.add(userReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 223, 52));
 
-        book1.setBackground(new java.awt.Color(255, 255, 255));
-        book1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        book1.setForeground(new java.awt.Color(230, 192, 104));
-        book1.setText("Edit Rooms");
-        book1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        book1.addMouseListener(new java.awt.event.MouseAdapter() {
+        editRooms.setBackground(new java.awt.Color(255, 255, 255));
+        editRooms.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        editRooms.setForeground(new java.awt.Color(230, 192, 104));
+        editRooms.setText("Edit Rooms");
+        editRooms.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        editRooms.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                book1MouseEntered(evt);
+                editRoomsMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                book1MouseExited(evt);
+                editRoomsMouseExited(evt);
             }
         });
-        book1.addActionListener(new java.awt.event.ActionListener() {
+        editRooms.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                book1ActionPerformed(evt);
+                editRoomsActionPerformed(evt);
             }
         });
-        jPanel1.add(book1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 410, 223, 52));
+        jPanel1.add(editRooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 400, 223, 52));
 
         logout.setBackground(new java.awt.Color(255, 0, 0));
         logout.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
@@ -191,11 +191,11 @@ public class Admin extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(813, 650, 220, 50));
+        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, 220, 50));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logout-admin.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 480, -1, -1));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
         panelWrapper.setLayout(panelWrapperLayout);
@@ -246,45 +246,49 @@ public class Admin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_gallery1ActionPerformed
 
-    private void bookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseEntered
+    private void userReservationsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userReservationsMouseEntered
         Color gold;
         gold = new Color(230,192,104);
-        book.setBackground(gold);
-        book.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_bookMouseEntered
+        userReservations.setBackground(gold);
+        userReservations.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_userReservationsMouseEntered
 
-    private void bookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseExited
+    private void userReservationsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userReservationsMouseExited
         Color gold;
         gold = new Color(230,192,104);
-        book.setBackground(new Color(255,255,255));
-        book.setForeground(gold);
-    }//GEN-LAST:event_bookMouseExited
+        userReservations.setBackground(new Color(255,255,255));
+        userReservations.setForeground(gold);
+    }//GEN-LAST:event_userReservationsMouseExited
 
-    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
+    private void userReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userReservationsActionPerformed
         UserReservations ur = new UserReservations();
         ur.setVisible(true);
         ur.pack();
         ur.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_bookActionPerformed
+    }//GEN-LAST:event_userReservationsActionPerformed
 
-    private void book1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book1MouseEntered
+    private void editRoomsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editRoomsMouseEntered
         Color gold;
         gold = new Color(230,192,104);
-        book1.setBackground(gold);
-        book1.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_book1MouseEntered
+        editRooms.setBackground(gold);
+        editRooms.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_editRoomsMouseEntered
 
-    private void book1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book1MouseExited
+    private void editRoomsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editRoomsMouseExited
         Color gold;
         gold = new Color(230,192,104);
-        book1.setBackground(new Color(255,255,255));
-        book1.setForeground(gold);
-    }//GEN-LAST:event_book1MouseExited
+        editRooms.setBackground(new Color(255,255,255));
+        editRooms.setForeground(gold);
+    }//GEN-LAST:event_editRoomsMouseExited
 
-    private void book1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book1ActionPerformed
-        
-    }//GEN-LAST:event_book1ActionPerformed
+    private void editRoomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRoomsActionPerformed
+        EditRooms er = new EditRooms();
+        this.setVisible(false);
+        er.setVisible(true);
+        er.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_editRoomsActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         int out = JOptionPane.showConfirmDialog(null, "Do you really want to logout?", "Select", JOptionPane.YES_NO_OPTION);
@@ -304,8 +308,7 @@ public class Admin extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton book;
-    public javax.swing.JButton book1;
+    public javax.swing.JButton editRooms;
     public javax.swing.JButton gallery1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -317,6 +320,7 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
     private javax.swing.JPanel toppanel;
+    public javax.swing.JButton userReservations;
     // End of variables declaration//GEN-END:variables
 
 //    private UserReservations UserReservations() {

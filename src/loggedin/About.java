@@ -37,7 +37,7 @@ public class About extends javax.swing.JFrame {
     
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        Reserve reserve = new Reserve();
+        ReserveOld reserve = new ReserveOld();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
