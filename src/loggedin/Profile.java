@@ -26,7 +26,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Profile extends javax.swing.JFrame {
     
-    String textFileRead;
+    String profileID;
+    String oldUser;
 
     /**
      * Creates new form Login
@@ -35,6 +36,7 @@ public class Profile extends javax.swing.JFrame {
         initComponents();
         tableDataLoad();
         userData();
+        oldUserCheck();
     }
     
     public void bgGoldfgWhite() {
@@ -55,13 +57,27 @@ public class Profile extends javax.swing.JFrame {
             List<String> lines = Files.readAllLines(Paths.get("emailCheck.txt"));
             for (String line : lines) {
                 System.out.println(line);
-                textFileRead = line;
+                profileID = line;
             }
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file.");
             e.printStackTrace();
         }
-        return textFileRead;
+        return profileID;
+    }
+    
+    public String oldUserCheck() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("old.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                oldUser = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return oldUser;
     }
     
     public void tableDataLoad() {
@@ -77,7 +93,7 @@ public class Profile extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             dt.setRowCount(0);
             Statement st = con.createStatement();
-            String query = "SELECT * FROM u" + textFileRead;
+            String query = "SELECT * FROM u" + profileID;
             
             ResultSet rs = st.executeQuery(query);
                 
@@ -109,7 +125,7 @@ public class Profile extends javax.swing.JFrame {
             
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             Statement s = con.createStatement();
-            String query = "SELECT * FROM user WHERE id = " + textFileRead;
+            String query = "SELECT * FROM user WHERE id = " + profileID;
             ResultSet rs = s.executeQuery(query);
             
             while (rs.next()) {
@@ -149,8 +165,13 @@ public class Profile extends javax.swing.JFrame {
             home.setLocationRelativeTo(null);
         }
         if (c == 1) {
-            reserve.setVisible(true);
-            reserve.setLocationRelativeTo(null);
+            if ("0".equals(oldUser)) {
+                reserve.setVisible(true);
+                reserve.setLocationRelativeTo(null);
+            } else {
+                reserve.setVisible(true);
+                reserve.setLocationRelativeTo(null);
+            }
         }
         if (c == 2) {
             gallery.setVisible(true);

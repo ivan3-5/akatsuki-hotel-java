@@ -42,7 +42,25 @@ public class Login extends javax.swing.JFrame {
                 System.out.println("File already exists.");
             }
             
-            System.out.println("File written.");
+            System.out.println("Creating 'old.txt'...");
+            File file1 = new File("old.txt");
+            
+            if (file1.createNewFile()) {
+                System.out.println("File created: " + file1.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+            
+            System.out.println("Creating 'room.txt'...");
+            File file2 = new File("room.txt");
+            
+            if (file2.createNewFile()) {
+                System.out.println("File created: " + file2.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+            
+            System.out.println("Files created.");
         } catch (Exception e) {
             System.err.println("Error: Failed to create/read/write file.");
             System.err.println("Error: " + e.getMessage());
@@ -65,7 +83,7 @@ public class Login extends javax.swing.JFrame {
                 Statement st, stIDCheck;
                     st = con.createStatement();
                     stIDCheck = con.createStatement();
-                int notFound = 0;
+                int found = 0;
                 int admin = 0;
 
                 if ("".equals(Email)) {
@@ -82,7 +100,7 @@ public class Login extends javax.swing.JFrame {
                             if ("1".equals(adminCheck)) {
                                 admin = 1;
                             } else {
-                                notFound = 1;
+                                found = 1;
                             }
                     }if (admin != 0 && password.equals(passwordDB)) {
                         Admin a = new Admin();
@@ -90,17 +108,25 @@ public class Login extends javax.swing.JFrame {
                         a.pack();
                         a.setLocationRelativeTo(null);
                         this.dispose();
-                    } else if (notFound != 0 && password.equals(passwordDB)) {  
+                    } else if (found != 0 && password.equals(passwordDB)) {  
                         emailCheck();
                         
                         ResultSet rsID = stIDCheck.executeQuery(query);
                         rsID.next();
                         String stringID = rsID.getString("id");
+                        String oldUser = rsID.getString("old");
                         
                         System.out.println("User ID: " + stringID);
+                        System.out.println("Old User: " + oldUser);
                         
                         try (FileWriter fw = new FileWriter("emailCheck.txt")) {
                             fw.write(stringID);
+                        } catch (Exception e) {
+                            System.err.println("Error: " + e.getMessage());
+                        }
+                        
+                        try (FileWriter fw = new FileWriter("old.txt")) {
+                            fw.write(oldUser);
                         } catch (Exception e) {
                             System.err.println("Error: " + e.getMessage());
                         }

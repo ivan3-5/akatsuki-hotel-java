@@ -228,6 +228,11 @@ public class SignUp extends javax.swing.JFrame {
         dd8.setText(":");
 
         phone.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        phone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneActionPerformed(evt);
+            }
+        });
         phone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 phoneKeyTyped(evt);
@@ -557,6 +562,10 @@ public class SignUp extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_phoneKeyTyped
+
+    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneActionPerformed
 
     /**
      * @param args the command line arguments

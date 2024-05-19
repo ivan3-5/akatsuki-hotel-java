@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -78,7 +77,7 @@ public class UserReservations extends javax.swing.JFrame {
         
         try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
             Statement st = con.createStatement();
-            String query = "SELECT * FROM user ORDER BY username";
+            String query = "SELECT * FROM user ORDER BY id";
             ResultSet rs = st.executeQuery(query);
             
             while (rs.next()) {
