@@ -247,7 +247,7 @@ public class SignUp extends javax.swing.JFrame {
 
         address.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
-        birthday.setDate(new java.util.Date(946656000000L));
+        birthday.setDate(new java.util.Date(1704038400000L));
         birthday.setDateFormatString("dd-MM-yyyy");
         birthday.setFocusCycleRoot(true);
 
@@ -535,7 +535,7 @@ public class SignUp extends javax.swing.JFrame {
                     }
                 }
             } 
-        }catch (ClassNotFoundException | SQLException | HeadlessException e){
+        } catch (ClassNotFoundException | SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
             System.err.println("Error: " + e.getMessage());
         }

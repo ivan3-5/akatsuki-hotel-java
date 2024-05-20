@@ -79,12 +79,15 @@ public class Login extends javax.swing.JFrame {
         System.out.println("Login button clicked!");
         
         try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement stMaxAllowedPacket = con.createStatement();
+            String queryMaxAllowedPacket = "SET GLOBAL max_allowed_packet = 500000000";
+            stMaxAllowedPacket.execute(queryMaxAllowedPacket);
             try {
                 Statement st, stIDCheck;
                     st = con.createStatement();
                     stIDCheck = con.createStatement();
-                int found = 0;
-                int admin = 0;
+                int userAcc = 0;
+                int adminAcc = 0;
 
                 if ("".equals(Email)) {
                     JOptionPane.showMessageDialog(new JFrame(), "Username, Email, or Phone Number is required!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -98,17 +101,17 @@ public class Login extends javax.swing.JFrame {
                         passwordDB = rs.getString("password");
                         adminCheck = rs.getString("id");
                             if ("1".equals(adminCheck)) {
-                                admin = 1;
+                                adminAcc = 1;
                             } else {
-                                found = 1;
+                                userAcc = 1;
                             }
-                    }if (admin != 0 && password.equals(passwordDB)) {
+                    } if (adminAcc != 0 && password.equals(passwordDB)) {
                         Admin a = new Admin();
                         a.setVisible(true);
                         a.pack();
                         a.setLocationRelativeTo(null);
                         this.dispose();
-                    } else if (found != 0 && password.equals(passwordDB)) {  
+                    } else if (userAcc != 0 && password.equals(passwordDB)) {  
                         emailCheck();
                         
                         ResultSet rsID = stIDCheck.executeQuery(query);
@@ -131,10 +134,10 @@ public class Login extends javax.swing.JFrame {
                             System.err.println("Error: " + e.getMessage());
                         }
                         
-                        Home t = new Home();
-                        t.setVisible(true);
-                        t.pack();
-                        t.setLocationRelativeTo(null);
+                        Home h = new Home();
+                        h.setVisible(true);
+                        h.pack();
+                        h.setLocationRelativeTo(null);
                         this.dispose();
                     } else {
                         JOptionPane.showMessageDialog(new JFrame(), "Incorrect email or password", "Error", JOptionPane.ERROR_MESSAGE);

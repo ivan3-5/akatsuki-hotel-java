@@ -16,11 +16,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.sql.SQLException;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *

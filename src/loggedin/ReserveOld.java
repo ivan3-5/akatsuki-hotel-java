@@ -113,42 +113,42 @@ public class ReserveOld extends javax.swing.JFrame {
                     dPrice = Double.parseDouble(price);
                 switch (i) {
                     case 1:
-                        room1.setText(roomtype + " Room");
+                        room1.setText(roomtype);
                         roomPic1.setIcon(new ImageIcon(image));
                         roomPrice1.setText("P " + dPrice + " per night");
                         break;
                     case 2:
-                        room2.setText(roomtype + " Room");
+                        room2.setText(roomtype);
                         roomPic2.setIcon(new ImageIcon(image));
                         roomPrice2.setText("P " + dPrice + " per night");
                         break;
                     case 3:
-                        room3.setText(roomtype + " Room");
+                        room3.setText(roomtype);
                         roomPic3.setIcon(new ImageIcon(image));
                         roomPrice3.setText("P " + dPrice + " per night");
                         break;
                     case 4:
-                        room4.setText(roomtype + " Room");
+                        room4.setText(roomtype);
                         roomPic4.setIcon(new ImageIcon(image));
                         roomPrice4.setText("P " + dPrice + " per night");
                         break;
                     case 5:
-                        room5.setText(roomtype + " Room");
+                        room5.setText(roomtype);
                         roomPic5.setIcon(new ImageIcon(image));
                         roomPrice5.setText("P " + dPrice + " per night");
                         break;
                     case 6:
-                        room6.setText(roomtype + " Room");
+                        room6.setText(roomtype);
                         roomPic6.setIcon(new ImageIcon(image));
                         roomPrice6.setText("P " + dPrice + " per night");
                         break;
                     case 7:
-                        room7.setText(roomtype + " Room");
+                        room7.setText(roomtype);
                         roomPic7.setIcon(new ImageIcon(image));
                         roomPrice7.setText("P " + dPrice + " per night");
                         break;
                     case 8:
-                        room8.setText(roomtype + " Room");
+                        room8.setText(roomtype);
                         roomPic8.setIcon(new ImageIcon(image));
                         roomPrice8.setText("P " + dPrice + " per night");
                         break;

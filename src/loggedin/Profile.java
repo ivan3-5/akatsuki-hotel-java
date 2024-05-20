@@ -153,7 +153,8 @@ public class Profile extends javax.swing.JFrame {
     
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        ReserveOld reserve = new ReserveOld();
+        ReserveOld reserveOld = new ReserveOld();
+        ReserveNew reserveNew = new ReserveNew();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
@@ -166,11 +167,11 @@ public class Profile extends javax.swing.JFrame {
         }
         if (c == 1) {
             if ("0".equals(oldUser)) {
-                reserve.setVisible(true);
-                reserve.setLocationRelativeTo(null);
+                reserveNew.setVisible(true);
+                reserveNew.setLocationRelativeTo(null);
             } else {
-                reserve.setVisible(true);
-                reserve.setLocationRelativeTo(null);
+                reserveOld.setVisible(true);
+                reserveOld.setLocationRelativeTo(null);
             }
         }
         if (c == 2) {

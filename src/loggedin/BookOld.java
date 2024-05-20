@@ -6,22 +6,15 @@
 package loggedin;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -305,7 +298,7 @@ public class BookOld extends javax.swing.JFrame {
             }
         });
 
-        schedule.setDate(new java.util.Date(946656000000L));
+        schedule.setDate(new java.util.Date(1704038400000L));
         schedule.setDateFormatString("dd-MM-yyyy");
         schedule.setFocusCycleRoot(true);
         schedule.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -497,9 +490,7 @@ public class BookOld extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelWrapper1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelWrapper1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,8 +534,6 @@ public class BookOld extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton booknow;
     public javax.swing.JButton close;

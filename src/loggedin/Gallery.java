@@ -7,6 +7,10 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,11 +19,14 @@ import javax.swing.JOptionPane;
  */
 public class Gallery extends javax.swing.JFrame {
 
+    String oldUser;
+
     /**
      * Creates new form Login
      */
     public Gallery() {
         initComponents();
+        oldUserCheck();
     }
     
     public void bgGoldfgWhite() {
@@ -35,9 +42,25 @@ public class Gallery extends javax.swing.JFrame {
         setForeground(gold);
     }
     
+    public String oldUserCheck() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("old.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                oldUser = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return oldUser;
+    }
+
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        ReserveOld reserve = new ReserveOld();
+        ReserveOld reserveOld = new ReserveOld();
+        ReserveNew reserveNew = new ReserveNew();
+
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
@@ -49,8 +72,13 @@ public class Gallery extends javax.swing.JFrame {
             home.setLocationRelativeTo(null);
         }
         if (c == 1) {
-            reserve.setVisible(true);
-            reserve.setLocationRelativeTo(null);
+            if ("0".equals(oldUser)) {
+                reserveNew.setVisible(true);
+                reserveNew.setLocationRelativeTo(null);
+            } else {
+                reserveOld.setVisible(true);
+                reserveOld.setLocationRelativeTo(null);
+            }
         }
         if (c == 2) {
             gallery.setVisible(true);

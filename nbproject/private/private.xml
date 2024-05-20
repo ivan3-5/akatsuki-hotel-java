@@ -10,11 +10,12 @@
             <file>file:/D:/NetBeansProjects/GUI/src/admin/EditRooms.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/UserReservations.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/SignUp.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/BookOld.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Home.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Profile.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/PWForgot.java</file>
-            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/RoomDetails.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/PWChanged.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/RoomDetailsOld.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/Admin.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/About.java</file>
         </group>
