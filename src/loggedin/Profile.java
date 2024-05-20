@@ -26,7 +26,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Profile extends javax.swing.JFrame {
     
-    String textFileRead;
+    String profileID;
+    String oldUser;
 
     /**
      * Creates new form Login
@@ -34,6 +35,8 @@ public class Profile extends javax.swing.JFrame {
     public Profile() {
         initComponents();
         tableDataLoad();
+        userData();
+        oldUserCheck();
     }
     
     public void bgGoldfgWhite() {
@@ -54,13 +57,27 @@ public class Profile extends javax.swing.JFrame {
             List<String> lines = Files.readAllLines(Paths.get("emailCheck.txt"));
             for (String line : lines) {
                 System.out.println(line);
-                textFileRead = line;
+                profileID = line;
             }
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file.");
             e.printStackTrace();
         }
-        return textFileRead;
+        return profileID;
+    }
+    
+    public String oldUserCheck() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("old.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                oldUser = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return oldUser;
     }
     
     public void tableDataLoad() {
@@ -75,11 +92,10 @@ public class Profile extends javax.swing.JFrame {
             DefaultTableModel dt = (DefaultTableModel) userData.getModel();
             Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
             dt.setRowCount(0);
-            Statement s = con.createStatement();
-            String sql = "SELECT * FROM u" + textFileRead;
+            Statement st = con.createStatement();
+            String query = "SELECT * FROM u" + profileID;
             
-            System.out.println(sql);
-            ResultSet rs = s.executeQuery(sql);
+            ResultSet rs = st.executeQuery(query);
                 
             while (rs.next()) {
                 Vector v = new Vector();
@@ -90,12 +106,6 @@ public class Profile extends javax.swing.JFrame {
                 v.add(rs.getString(5)); //RoomSchedule
                 
                 dt.addRow(v);
-                
-//                String datebook = String.valueOf(rs.getArray("DateBooked")); 
-//                String roomtype = String.valueOf(rs.getArray("RoomType")); 
-//                String price = String.valueOf(rs.getArray("Price")); 
-//                String roomschedule = String.valueOf(rs.getArray("RoomSchedule")); 
-                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(new JFrame(), "Something wrong with getting the user database.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -104,9 +114,47 @@ public class Profile extends javax.swing.JFrame {
         }
     }
     
+    public void userData() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+            
+        try {
+            readData();
+            
+            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
+            Statement s = con.createStatement();
+            String query = "SELECT * FROM user WHERE id = " + profileID;
+            ResultSet rs = s.executeQuery(query);
+            
+            while (rs.next()) {
+                String name, username, email, phone, gender, birthday, address;
+                    name = rs.getString("first_name") + " " + rs.getString("last_name");
+                    username = rs.getString("username");
+                    email = rs.getString("email");
+                    phone =  rs.getString("phone");
+                    gender = rs.getString("gender");
+                    birthday = rs.getString("birthday");
+                    address = rs.getString("address");
+                
+                textName.setText(name);
+                textUsername.setText(username);
+                textEmail.setText(email);
+                textPhone.setText(phone);
+                textGender.setText(gender);
+                textBirthday.setText(birthday);
+                textAddress.setText(address);
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        Reserve reserve = new Reserve();
+        ReserveOld reserveOld = new ReserveOld();
+        ReserveNew reserveNew = new ReserveNew();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
@@ -118,8 +166,13 @@ public class Profile extends javax.swing.JFrame {
             home.setLocationRelativeTo(null);
         }
         if (c == 1) {
-            reserve.setVisible(true);
-            reserve.setLocationRelativeTo(null);
+            if ("0".equals(oldUser)) {
+                reserveNew.setVisible(true);
+                reserveNew.setLocationRelativeTo(null);
+            } else {
+                reserveOld.setVisible(true);
+                reserveOld.setLocationRelativeTo(null);
+            }
         }
         if (c == 2) {
             gallery.setVisible(true);
@@ -167,25 +220,27 @@ public class Profile extends javax.swing.JFrame {
         panelProfile = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
+        textUsername = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
+        textName = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
+        textEmail = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
+        textGender = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
+        textBirthday = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
+        textAddress = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        textPhone = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel13 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         userData = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -432,10 +487,10 @@ public class Profile extends javax.swing.JFrame {
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/profileBlack.png"))); // NOI18N
         jPanel10.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 30, 715, -1));
 
-        jLabel35.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("Username");
-        jPanel10.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 161, 715, -1));
+        textUsername.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
+        textUsername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textUsername.setText("Username");
+        jPanel10.add(textUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 161, 715, -1));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255,100));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -447,43 +502,60 @@ public class Profile extends javax.swing.JFrame {
 
         jLabel47.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel47.setText("Name:");
-        jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 63, -1, -1));
+        jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
-        jLabel48.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel48.setText("Juan Dela Cruz");
-        jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 63, 227, -1));
+        textName.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textName.setText("Null");
+        jPanel11.add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 470, -1));
 
         jLabel49.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel49.setText("Email:");
-        jPanel11.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 99, 59, -1));
+        jPanel11.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 59, -1));
 
-        jLabel50.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel50.setText("juandelacruz@email.com");
-        jPanel11.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 99, 225, -1));
+        textEmail.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textEmail.setText("Null");
+        jPanel11.add(textEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 470, -1));
 
         jLabel51.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel51.setText("Gender:");
-        jPanel11.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 135, 89, -1));
+        jPanel11.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 89, -1));
 
-        jLabel52.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel52.setText("Male");
-        jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 135, 105, -1));
+        textGender.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textGender.setText("Null");
+        jPanel11.add(textGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 440, -1));
 
         jLabel53.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel53.setText("Birthday:");
-        jPanel11.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 171, 89, -1));
+        jPanel11.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 89, -1));
 
-        jLabel54.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel54.setText("January 25, 20xx");
-        jPanel11.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 171, 197, -1));
+        textBirthday.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textBirthday.setText("Null");
+        jPanel11.add(textBirthday, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 440, -1));
 
         jLabel55.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel55.setText("Address:");
-        jPanel11.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 207, 89, -1));
+        jPanel11.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 89, -1));
 
-        jLabel56.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel56.setText("Isabela Homes, New Visayas, Panabo City");
-        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 207, -1, -1));
+        textAddress.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textAddress.setText("Null");
+        jPanel11.add(textAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 440, -1));
+
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        jLabel2.setText("Change Password");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
+
+        jLabel58.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel58.setText("Phone:");
+        jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 90, -1));
+
+        textPhone.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textPhone.setText("Null");
+        jPanel11.add(textPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 450, -1));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -534,16 +606,7 @@ public class Profile extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel13);
 
-        jPanel11.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 510, 270));
-
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
-        jLabel2.setText("Change Password");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
+        jPanel11.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 510, 250));
 
         jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 251, 590, 550));
 
@@ -769,19 +832,14 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -793,7 +851,14 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JPanel panelWrapper;
     public javax.swing.JButton reserve;
     private javax.swing.JPanel sidepanel;
+    private javax.swing.JLabel textAddress;
+    private javax.swing.JLabel textBirthday;
+    private javax.swing.JLabel textEmail;
+    private javax.swing.JLabel textGender;
+    private javax.swing.JLabel textName;
+    private javax.swing.JLabel textPhone;
     private javax.swing.JLabel textQuote;
+    private javax.swing.JLabel textUsername;
     private javax.swing.JLabel textWelcom;
     private javax.swing.JPanel toppanel;
     private javax.swing.JTable userData;

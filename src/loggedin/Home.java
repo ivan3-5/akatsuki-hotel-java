@@ -7,6 +7,10 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.swing.JOptionPane;
 import panelsImages.homepic1;
 import panelsImages.homepic2;
@@ -20,11 +24,14 @@ import panelsImages.homepic5;
  */
 public class Home extends javax.swing.JFrame {
 
+    String oldUser;
+
     /**
      * Creates new form Login
      */
     public Home() {
         initComponents();
+        oldUserCheck();
     }
     
     public void bgGoldfgWhite() {
@@ -40,9 +47,24 @@ public class Home extends javax.swing.JFrame {
         setForeground(gold);
     }
     
+    public String oldUserCheck() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("old.txt"));
+            for (String line : lines) {
+                System.out.println(line);
+                oldUser = line;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+        return oldUser;
+    }
+
     public void sidepanelChoice(int choice) {
         Home home = new Home();
-        Reserve reserve = new Reserve();
+        ReserveOld reserveOld = new ReserveOld();
+        ReserveNew reserveNew = new ReserveNew();
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
@@ -54,8 +76,13 @@ public class Home extends javax.swing.JFrame {
             home.setLocationRelativeTo(null);
         }
         if (c == 1) {
-            reserve.setVisible(true);
-            reserve.setLocationRelativeTo(null);
+            if ("0".equals(oldUser)) {
+                reserveNew.setVisible(true);
+                reserveNew.setLocationRelativeTo(null);
+            } else {
+                reserveOld.setVisible(true);
+                reserveOld.setLocationRelativeTo(null);
+            }
         }
         if (c == 2) {
             gallery.setVisible(true);
@@ -103,7 +130,6 @@ public class Home extends javax.swing.JFrame {
         panelHome = new javax.swing.JPanel();
         scrollPanel = new javax.swing.JScrollPane();
         panelIn = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pic1 = new javax.swing.JButton();
         pic2 = new javax.swing.JButton();
@@ -397,19 +423,6 @@ public class Home extends javax.swing.JFrame {
         panelIn.setBackground(new java.awt.Color(255, 255, 255,255));
         panelIn.setMinimumSize(new java.awt.Dimension(856, 631));
 
-        jPanel2.setMinimumSize(new java.awt.Dimension(808, 429));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg1.jpg"))); // NOI18N
 
@@ -417,19 +430,13 @@ public class Home extends javax.swing.JFrame {
         panelIn.setLayout(panelInLayout);
         panelInLayout.setHorizontalGroup(
             panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 856, Short.MAX_VALUE)
         );
         panelInLayout.setVerticalGroup(
             panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(487, Short.MAX_VALUE))
         );
 
         scrollPanel.setViewportView(panelIn);
@@ -909,7 +916,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_bookMouseExited
 
     private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
-        
+        this.sidepanelChoice(1);
     }//GEN-LAST:event_bookActionPerformed
 
     /**
@@ -930,7 +937,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
     private javax.swing.JPanel panelHome;

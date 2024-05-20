@@ -5,11 +5,25 @@
  */
 package AkatsukiHotel;
 
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ivan Adcan
  */
 public class ForgotPW extends javax.swing.JFrame {
+    
+    int randomCode;
 
     /**
      * Creates new form Login
@@ -32,12 +46,12 @@ public class ForgotPW extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         panelRight = new javax.swing.JPanel();
         text1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         sendcode = new javax.swing.JButton();
         login = new javax.swing.JButton();
         changepw = new javax.swing.JButton();
         code = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        newPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Forgot Password");
@@ -75,9 +89,9 @@ public class ForgotPW extends javax.swing.JFrame {
         text1.setText("Forgot Password");
         panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 31, 310, -1));
 
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
-        panelRight.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 288, 50));
+        email.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter Email, Username or Phone Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 288, 50));
 
         sendcode.setBackground(new java.awt.Color(28, 42, 57));
         sendcode.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,11 +133,16 @@ public class ForgotPW extends javax.swing.JFrame {
 
         code.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         code.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Code", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeActionPerformed(evt);
+            }
+        });
         panelRight.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 100, 50));
 
-        jPasswordField1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
-        panelRight.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 288, 50));
+        newPassword.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        newPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
+        panelRight.add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 288, 50));
 
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
         panelRight.getAccessibleContext().setAccessibleName("panelRight");
@@ -133,10 +152,6 @@ public class ForgotPW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendcodeActionPerformed
-
-    }//GEN-LAST:event_sendcodeActionPerformed
-
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         Login login = new Login();
         login.setVisible(true);
@@ -145,11 +160,74 @@ public class ForgotPW extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void changepwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changepwActionPerformed
-        PWChanged pwchanged = new PWChanged();
-        pwchanged.setVisible(true);
-        pwchanged.setLocationRelativeTo(null);
-        this.dispose();
+        System.out.println("Change password button clicked!");
+        String Email, passwordNew;
+            Email = this.email.getText();
+            passwordNew = this.newPassword.getText();
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+            
+        System.out.println("Change password clicked!");
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            Statement stChangePW = con.createStatement();
+            String queryFindEmail = "SELECT * FROM user WHERE username = '" + Email + "' OR email = '" + Email + "' OR phone = '" + Email + "'";
+            ResultSet rsFindEmail = st.executeQuery(queryFindEmail);
+            
+            int emailFound = 0;
+            
+            String codeSendCode = "" + randomCode;
+            String codeInput = this.code.getText();
+            
+            while (rsFindEmail.next()) {
+                emailFound = 1;
+            } if ("".equals(Email)) {
+                JOptionPane.showMessageDialog(new JFrame(), "Email is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(passwordNew)) {
+                JOptionPane.showMessageDialog(new JFrame(), "New password is required!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (emailFound == 1) {
+                    try {
+                        if (codeInput.equals(codeSendCode)) {
+                            String queryPWChange = "UPDATE user "
+                                    + "SET password = '" + passwordNew + "' "
+                                    + "WHERE username = '" + Email + "' OR email = '" + Email + "' OR phone = '" + Email + "'";
+                            stChangePW.executeUpdate(queryPWChange);
+                            
+                            PWChanged pwchanged = new PWChanged();
+                            pwchanged.setVisible(true);
+                            pwchanged.setLocationRelativeTo(null);
+                            this.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(new JFrame(), "Wrong code!", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (SQLException | HeadlessException e) {
+                        System.err.println("Error: Something wrong with the code of the program.");
+                        System.err.println("Error Message: " + e.getMessage());
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(new JFrame(), "Email not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error: Something wrong with the code of the program.");
+            Logger.getLogger(ForgotPW.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_changepwActionPerformed
+
+    private void sendcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendcodeActionPerformed
+        System.out.println("Send code button clicked!");
+        Random random = new Random();
+        randomCode = random.nextInt(999999);
+        JOptionPane.showMessageDialog(new JFrame(), randomCode, "Send Code", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_sendcodeActionPerformed
+
+    private void codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +236,10 @@ public class ForgotPW extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton changepw;
     private javax.swing.JTextField code;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField email;
     public javax.swing.JButton login;
     private javax.swing.JLabel logo;
+    private javax.swing.JPasswordField newPassword;
     private javax.swing.JPanel panelLeft;
     private javax.swing.JPanel panelRight;
     private javax.swing.JPanel panelWrapper;

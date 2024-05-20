@@ -26,6 +26,7 @@ public class SignUp extends javax.swing.JFrame {
      */
     public SignUp() {
         initComponents();
+        
     }
 
     /**
@@ -227,6 +228,16 @@ public class SignUp extends javax.swing.JFrame {
         dd8.setText(":");
 
         phone.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        phone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phoneActionPerformed(evt);
+            }
+        });
+        phone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                phoneKeyTyped(evt);
+            }
+        });
 
         text11.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
         text11.setText("Address");
@@ -236,7 +247,7 @@ public class SignUp extends javax.swing.JFrame {
 
         address.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
 
-        birthday.setDate(new java.util.Date(946656000000L));
+        birthday.setDate(new java.util.Date(1704038400000L));
         birthday.setDateFormatString("dd-MM-yyyy");
         birthday.setFocusCycleRoot(true);
 
@@ -494,8 +505,8 @@ public class SignUp extends javax.swing.JFrame {
                 if (rsCheckUser.next()) {
                     JOptionPane.showMessageDialog(new JFrame(), "Username, email, or phone no. already existed!", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday) " +
-                            "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "')";
+                    query = "INSERT INTO user(first_name, last_name, username, email, phone, address, password, gender, birthday, old) " +
+                            "VALUES('" + firstname + "', '" + lastname + "', '" + usern + "', '" + em + "', '" + mobile + "', '" + addres + "', '" + pw + "', '" + gend + "', '" + birthd + "', 0)";
                     stAddUser.execute(query);
                     
                     ResultSet rsFindNewUser = stFindNewUser.executeQuery(queryS);
@@ -524,7 +535,7 @@ public class SignUp extends javax.swing.JFrame {
                     }
                 }
             } 
-        }catch (ClassNotFoundException | SQLException | HeadlessException e){
+        } catch (ClassNotFoundException | SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(new JFrame(), "Something wrong with the code of the program.", "Error", JOptionPane.ERROR_MESSAGE);
             System.err.println("Error: " + e.getMessage());
         }
@@ -544,6 +555,17 @@ public class SignUp extends javax.swing.JFrame {
     private void maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_maleActionPerformed
+
+    private void phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_phoneKeyTyped
+
+    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneActionPerformed
 
     /**
      * @param args the command line arguments
