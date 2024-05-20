@@ -23,14 +23,14 @@ import javax.swing.JOptionPane;
  *
  * @author Ivan Adcan
  */
-public class PWForgot extends javax.swing.JFrame {
+public class PWChange extends javax.swing.JFrame {
     int randomCode;
     String textFileRead;
 
     /**
      * Creates new form Login
      */
-    public PWForgot() {
+    public PWChange() {
         initComponents();
     }
     
@@ -66,12 +66,13 @@ public class PWForgot extends javax.swing.JFrame {
         changepw = new javax.swing.JButton();
         codeInput = new javax.swing.JTextField();
         newPassword = new javax.swing.JPasswordField();
-        login = new javax.swing.JButton();
+        profile = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Forgot Password");
+        setTitle("Change Password");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(839, 535));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -101,8 +102,8 @@ public class PWForgot extends javax.swing.JFrame {
         text1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         text1.setForeground(new java.awt.Color(28, 42, 57));
         text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        text1.setText("Forgot Password");
-        panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 31, 310, -1));
+        text1.setText("Change Password");
+        panelRight.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 31, 410, -1));
 
         sendcode.setBackground(new java.awt.Color(28, 42, 57));
         sendcode.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,19 +138,19 @@ public class PWForgot extends javax.swing.JFrame {
         newPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Enter New Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 13))); // NOI18N
         panelRight.add(newPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 400, 50));
 
-        login.setBackground(new java.awt.Color(0, 0, 0));
-        login.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        login.setForeground(new java.awt.Color(0, 104, 104));
-        login.setText("Back to Profile");
-        login.setContentAreaFilled(false);
-        login.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        login.setFocusable(false);
-        login.addActionListener(new java.awt.event.ActionListener() {
+        profile.setBackground(new java.awt.Color(0, 0, 0));
+        profile.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        profile.setForeground(new java.awt.Color(0, 104, 104));
+        profile.setText("Back to Profile");
+        profile.setContentAreaFilled(false);
+        profile.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        profile.setFocusable(false);
+        profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                profileActionPerformed(evt);
             }
         });
-        panelRight.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 401, -1, 39));
+        panelRight.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 401, -1, 39));
 
         panelWrapper.add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 13, 422, 474));
         panelRight.getAccessibleContext().setAccessibleName("panelRight");
@@ -215,12 +216,12 @@ public class PWForgot extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_changepwActionPerformed
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         Profile pf = new Profile();
         pf.setVisible(true);
         pf.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_profileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,12 +230,12 @@ public class PWForgot extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton changepw;
     private javax.swing.JTextField codeInput;
-    public javax.swing.JButton login;
     private javax.swing.JLabel logo;
     private javax.swing.JPasswordField newPassword;
     private javax.swing.JPanel panelLeft;
     private javax.swing.JPanel panelRight;
     private javax.swing.JPanel panelWrapper;
+    public javax.swing.JButton profile;
     public javax.swing.JButton sendcode;
     private javax.swing.JLabel text1;
     // End of variables declaration//GEN-END:variables

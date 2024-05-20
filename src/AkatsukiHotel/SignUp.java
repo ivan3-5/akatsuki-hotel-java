@@ -516,6 +516,7 @@ public class SignUp extends javax.swing.JFrame {
                         
                         queryt = "CREATE TABLE u" + getNewUserID + " ("
                                 + "id INT(11) NOT NULL AUTO_INCREMENT,"
+                                + "RoomNo varchar(127) NOT NULL,"
                                 + "DateBooked varchar(127) NOT NULL,"
                                 + "RoomType varchar(127) NOT NULL,"
                                 + "Price varchar(127) NOT NULL,"

@@ -113,8 +113,8 @@ public class BookNew extends javax.swing.JFrame {
                     Price1 = rs.getString("Price1");
                     Price2 = rs.getString("Price2");
                 double discountPrice1, discountPrice2;    
-                    discountPrice1 = Double.parseDouble(Price1);
-                    discountPrice2 = Double.parseDouble(Price2);
+                    discountPrice1 = (Double.parseDouble(Price1) * 0.8);
+                    discountPrice2 = (Double.parseDouble(Price2) * 0.8);
                 roomType.setText(roomtype);
                 goodFor.setText(goodfor);
                 goodFor1.setText("Good for " + goodfor1);
@@ -163,20 +163,24 @@ public class BookNew extends javax.swing.JFrame {
                 System.out.println("Price: " + roomPriceSelected);
                 
                 if (1 == selected) {
-                    String querySetSchedule = "INSERT INTO dateschedules (Room" + roomChosen + ") "
-                            + "VALUES ('" + roomSchedule + "')";
+                    String querySetSchedule = "INSERT INTO dateschedules (Room" + roomChosen + ", RoomNo) "
+                            + "VALUES ('" + roomSchedule + "', '" + roomChosen + "')";
                     System.out.println(querySetSchedule);
                     st.execute(querySetSchedule);
                     System.out.println(profileID);
                     
-                    String querySetUser = "INSERT INTO u" + profileID + " (DateBooked, RoomType, Price, RoomSchedule) "
-                            + "VALUES ('" + dateToday + "', '" + roomtype + "', '" + roomPriceSelected + "', '" + roomSchedule + "')";
+                    String querySetUser = "INSERT INTO u" + profileID + " (RoomNo, DateBooked, RoomType, Price, RoomSchedule) "
+                            + "VALUES ('" + roomChosen + "', '" + dateToday + "', '" + roomtype + "', '" + roomPriceSelected + "', '" + roomSchedule + "')";
                     System.out.println(querySetUser);
                     st.execute(querySetUser);
                     
                     String querySetOld = "UPDATE user SET old = '1' WHERE id = " + profileID;
                     System.out.println(querySetOld);
                     st.execute(querySetOld);
+                    
+                    JOptionPane.showMessageDialog(new JFrame(), "Successfully booked a hotel!", "Book", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    this.dispose();
                 }
             } else {
                 JOptionPane.showMessageDialog(new JFrame(), "This room is already scheduled on this date!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -397,33 +401,34 @@ public class BookNew extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(goodFor, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelWrapperLayout.createSequentialGroup()
-                                .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(goodFor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(goodFor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelWrapperLayout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel15)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(price1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(price2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(priceSelect1)
-                                    .addComponent(priceSelect2)))
-                            .addGroup(panelWrapperLayout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelWrapperLayout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel16)
                                 .addGap(12, 12, 12)
-                                .addComponent(today, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(today, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelWrapperLayout.createSequentialGroup()
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel14)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(schedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelWrapperLayout.createSequentialGroup()
+                                    .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(goodFor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(goodFor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelWrapperLayout.createSequentialGroup()
+                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel15)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(price1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(price2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panelWrapperLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(priceSelect1)
+                                        .addComponent(priceSelect2)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );

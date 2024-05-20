@@ -80,7 +80,7 @@ public class Login extends javax.swing.JFrame {
         
         try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
             Statement stMaxAllowedPacket = con.createStatement();
-            String queryMaxAllowedPacket = "SET GLOBAL max_allowed_packet = 500000000";
+            String queryMaxAllowedPacket = "SET GLOBAL max_allowed_packet = 1000000000";
             stMaxAllowedPacket.execute(queryMaxAllowedPacket);
             try {
                 Statement st, stIDCheck;
