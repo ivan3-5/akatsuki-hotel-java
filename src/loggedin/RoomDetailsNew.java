@@ -88,8 +88,8 @@ public class RoomDetailsNew extends javax.swing.JFrame {
                     Price1 = rs.getString("Price1");
                     Price2 = rs.getString("Price2");
                 double discountPrice1, discountPrice2;    
-                    discountPrice1 = Double.parseDouble(Price1);
-                    discountPrice2 = Double.parseDouble(Price2);
+                    discountPrice1 = (Double.parseDouble(Price1) * 0.8);
+                    discountPrice2 = (Double.parseDouble(Price2) * 0.8);
                 roomType.setText(roomtype);
                 goodFor.setText(goodfor);
                 goodFor1.setText("Good for " + goodfor1);
@@ -184,7 +184,7 @@ public class RoomDetailsNew extends javax.swing.JFrame {
         panelWrapper.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 147, -1));
 
         imageShow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageShow.setMaximumSize(null);
+        imageShow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         imageShow.setMinimumSize(new java.awt.Dimension(380, 380));
         imageShow.setPreferredSize(new java.awt.Dimension(380, 380));
         panelWrapper.add(imageShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));

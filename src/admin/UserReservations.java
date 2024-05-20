@@ -105,11 +105,12 @@ public class UserReservations extends javax.swing.JFrame {
             while (rs.next()) {
                 Vector v = new Vector();
                 
-                v.add(rs.getString(1)); //ID
-                v.add(rs.getString(2)); //Date
-                v.add(rs.getString(3)); //Room Type
-                v.add(rs.getString(4)); //Price
-                v.add(rs.getString(5)); //Schedule
+                v.add(rs.getString(1));
+                v.add(rs.getString(2));
+                v.add(rs.getString(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
+                v.add(rs.getString(6));
                 
                 dt.addRow(v);
             }
@@ -142,7 +143,6 @@ public class UserReservations extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         userDetails = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         book = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -175,6 +175,7 @@ public class UserReservations extends javax.swing.JFrame {
         gallery1.setBorderPainted(false);
         gallery1.setContentAreaFilled(false);
         gallery1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery1.setFocusable(false);
         gallery1.setPreferredSize(new java.awt.Dimension(80, 80));
         gallery1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -242,13 +243,13 @@ public class UserReservations extends javax.swing.JFrame {
 
         userReservations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Date", "Room Type", "Price", "Schedule"
+                "ID", "Room No.", "Date", "Room Type", "Price", "Schedule"
             }
         ));
         userReservations.setEnabled(false);
@@ -272,7 +273,7 @@ public class UserReservations extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "First Name", "Last Name", "Username", "Email", "Phone", "Address", "Gender", "Birthday", "New User"
+                "ID", "First Name", "Last Name", "Username", "Email", "Phone", "Address", "Gender", "Birthday", "Old User"
             }
         ));
         userDetails.setEnabled(false);
@@ -283,7 +284,6 @@ public class UserReservations extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel3.setText("User Reservations");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, -10, 10, 900));
 
         book.setBackground(new java.awt.Color(255, 255, 255));
         book.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -317,7 +317,7 @@ public class UserReservations extends javax.swing.JFrame {
             .addGroup(panelWrapperLayout.createSequentialGroup()
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 874, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -391,7 +391,6 @@ public class UserReservations extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panelWrapper;
     private javax.swing.JLabel textQuote;

@@ -388,12 +388,14 @@ public class ReserveNew extends javax.swing.JFrame {
         book4 = new javax.swing.JButton();
         roomPic4 = new javax.swing.JLabel();
         roomDPrice4 = new javax.swing.JLabel();
+        roomNo4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         room1 = new javax.swing.JLabel();
         roomPrice1 = new javax.swing.JLabel();
         details1 = new javax.swing.JButton();
         book1 = new javax.swing.JButton();
         roomPic1 = new javax.swing.JLabel();
+        roomNo1 = new javax.swing.JLabel();
         roomDPrice1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         room2 = new javax.swing.JLabel();
@@ -402,6 +404,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book2 = new javax.swing.JButton();
         roomPic2 = new javax.swing.JLabel();
         roomDPrice2 = new javax.swing.JLabel();
+        roomNo2 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         room3 = new javax.swing.JLabel();
         roomPrice3 = new javax.swing.JLabel();
@@ -409,6 +412,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book3 = new javax.swing.JButton();
         roomPic3 = new javax.swing.JLabel();
         roomDPrice3 = new javax.swing.JLabel();
+        roomNo3 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         room6 = new javax.swing.JLabel();
         roomPrice6 = new javax.swing.JLabel();
@@ -416,6 +420,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book6 = new javax.swing.JButton();
         roomPic6 = new javax.swing.JLabel();
         roomDPrice6 = new javax.swing.JLabel();
+        roomNo6 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         room7 = new javax.swing.JLabel();
         roomPrice7 = new javax.swing.JLabel();
@@ -423,6 +428,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book7 = new javax.swing.JButton();
         roomPic7 = new javax.swing.JLabel();
         roomDPrice7 = new javax.swing.JLabel();
+        roomNo7 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         room8 = new javax.swing.JLabel();
         roomPrice8 = new javax.swing.JLabel();
@@ -430,6 +436,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book8 = new javax.swing.JButton();
         roomPic8 = new javax.swing.JLabel();
         roomDPrice8 = new javax.swing.JLabel();
+        roomNo8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         room5 = new javax.swing.JLabel();
         roomPrice5 = new javax.swing.JLabel();
@@ -437,6 +444,7 @@ public class ReserveNew extends javax.swing.JFrame {
         book5 = new javax.swing.JButton();
         roomPic5 = new javax.swing.JLabel();
         roomDPrice5 = new javax.swing.JLabel();
+        roomNo5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         room9 = new javax.swing.JLabel();
 
@@ -790,6 +798,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice4.setText("null");
         jPanel4.add(roomDPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
 
+        roomNo4.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo4.setText("Room No. 4");
+        jPanel4.add(roomNo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
+
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 170, 400, 570));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -853,6 +866,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomPic1.setMinimumSize(new java.awt.Dimension(380, 380));
         roomPic1.setPreferredSize(new java.awt.Dimension(380, 380));
         jPanel5.add(roomPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        roomNo1.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo1.setText("Room No. 1");
+        jPanel5.add(roomNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
 
         roomDPrice1.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         roomDPrice1.setText("null");
@@ -926,6 +944,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice2.setText("null");
         jPanel6.add(roomDPrice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
 
+        roomNo2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo2.setText("Room No. 2");
+        jPanel6.add(roomNo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
+
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 400, 570));
 
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -993,6 +1016,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice3.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         roomDPrice3.setText("null");
         jPanel7.add(roomDPrice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
+
+        roomNo3.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo3.setText("Room No. 3");
+        jPanel7.add(roomNo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
 
         jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 170, 400, 570));
 
@@ -1062,6 +1090,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice6.setText("null");
         jPanel9.add(roomDPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
 
+        roomNo6.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo6.setText("Room No. 6");
+        jPanel9.add(roomNo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
+
         jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 770, -1, 570));
 
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1129,6 +1162,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice7.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         roomDPrice7.setText("null");
         jPanel10.add(roomDPrice7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
+
+        roomNo7.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo7.setText("Room No. 7");
+        jPanel10.add(roomNo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
 
         jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 770, -1, 570));
 
@@ -1198,6 +1236,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice8.setText("null");
         jPanel11.add(roomDPrice8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
 
+        roomNo8.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo8.setText("Room No. 8");
+        jPanel11.add(roomNo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
+
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 770, -1, 570));
 
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1266,6 +1309,11 @@ public class ReserveNew extends javax.swing.JFrame {
         roomDPrice5.setText("null");
         jPanel8.add(roomDPrice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 180, 20));
 
+        roomNo5.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        roomNo5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomNo5.setText("Room No. 5");
+        jPanel8.add(roomNo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 180, 20));
+
         jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 770, 400, 570));
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 0));
@@ -1273,7 +1321,7 @@ public class ReserveNew extends javax.swing.JFrame {
         room9.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         room9.setForeground(new java.awt.Color(255, 255, 255));
         room9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        room9.setText("20% Off!");
+        room9.setText("20% Off for New Users!");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1743,6 +1791,14 @@ public class ReserveNew extends javax.swing.JFrame {
     private javax.swing.JLabel roomDPrice6;
     private javax.swing.JLabel roomDPrice7;
     private javax.swing.JLabel roomDPrice8;
+    private javax.swing.JLabel roomNo1;
+    private javax.swing.JLabel roomNo2;
+    private javax.swing.JLabel roomNo3;
+    private javax.swing.JLabel roomNo4;
+    private javax.swing.JLabel roomNo5;
+    private javax.swing.JLabel roomNo6;
+    private javax.swing.JLabel roomNo7;
+    private javax.swing.JLabel roomNo8;
     private javax.swing.JLabel roomPic1;
     private javax.swing.JLabel roomPic2;
     private javax.swing.JLabel roomPic3;

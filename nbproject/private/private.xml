@@ -5,15 +5,24 @@
         <group>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/ChangedPW.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/ReserveOld.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/BookNew.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/RoomDetailsNew.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/PWChange.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/ForgotPW.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/Login.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/EditRooms.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/UserReservations.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Contact.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/Main.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/SignUp.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/ReserveNew.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/CancelSchedule.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Gallery.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/BookOld.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/admin/AdminPWChanged.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Home.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/Profile.java</file>
-            <file>file:/D:/NetBeansProjects/GUI/src/loggedin/PWForgot.java</file>
+            <file>file:/D:/NetBeansProjects/GUI/src/admin/AdminChangePW.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/AkatsukiHotel/PWChanged.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/loggedin/RoomDetailsOld.java</file>
             <file>file:/D:/NetBeansProjects/GUI/src/admin/Admin.java</file>

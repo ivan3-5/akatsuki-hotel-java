@@ -44,6 +44,8 @@ public class Admin extends javax.swing.JFrame {
         editRooms = new javax.swing.JButton();
         logout = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        changePassword = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -75,6 +77,7 @@ public class Admin extends javax.swing.JFrame {
         gallery1.setBorderPainted(false);
         gallery1.setContentAreaFilled(false);
         gallery1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery1.setFocusable(false);
         gallery1.setPreferredSize(new java.awt.Dimension(80, 80));
         gallery1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -135,7 +138,7 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user-reservation.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, -1, -1));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-room.png"))); // NOI18N
@@ -159,7 +162,7 @@ public class Admin extends javax.swing.JFrame {
                 userReservationsActionPerformed(evt);
             }
         });
-        jPanel1.add(userReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 223, 52));
+        jPanel1.add(userReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 223, 52));
 
         editRooms.setBackground(new java.awt.Color(255, 255, 255));
         editRooms.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -191,11 +194,35 @@ public class Admin extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, 220, 50));
+        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 640, 220, 50));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logout-admin.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 480, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 480, -1, -1));
+
+        changePassword.setBackground(new java.awt.Color(255, 255, 255));
+        changePassword.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        changePassword.setForeground(new java.awt.Color(230, 192, 104));
+        changePassword.setText("Change Password");
+        changePassword.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        changePassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                changePasswordMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                changePasswordMouseExited(evt);
+            }
+        });
+        changePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(changePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 630, 223, 52));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/change-password.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, -1, -1));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
         panelWrapper.setLayout(panelWrapperLayout);
@@ -301,6 +328,28 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void changePasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswordMouseEntered
+        Color gold;
+        gold = new Color(230,192,104);
+        changePassword.setBackground(gold);
+        changePassword.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_changePasswordMouseEntered
+
+    private void changePasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswordMouseExited
+        Color gold;
+        gold = new Color(230,192,104);
+        changePassword.setBackground(new Color(255,255,255));
+        changePassword.setForeground(gold);
+    }//GEN-LAST:event_changePasswordMouseExited
+
+    private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
+        AdminChangePW pwforgor = new AdminChangePW();
+        pwforgor.setVisible(true);
+        pwforgor.pack();
+        pwforgor.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_changePasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -308,11 +357,13 @@ public class Admin extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton changePassword;
     public javax.swing.JButton editRooms;
     public javax.swing.JButton gallery1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;

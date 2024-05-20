@@ -181,7 +181,6 @@ public class EditRooms extends javax.swing.JFrame {
         img3Upload = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         userDetails = new javax.swing.JTable();
-        jSeparator1 = new javax.swing.JSeparator();
         image3 = new javax.swing.JButton();
         roomSelection = new javax.swing.JComboBox();
         goback = new javax.swing.JButton();
@@ -194,7 +193,6 @@ public class EditRooms extends javax.swing.JFrame {
         updatedata = new javax.swing.JButton();
         image1 = new javax.swing.JButton();
         image2 = new javax.swing.JButton();
-        updatedata5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         img1Upload = new javax.swing.JLabel();
         img2Upload = new javax.swing.JLabel();
@@ -230,6 +228,7 @@ public class EditRooms extends javax.swing.JFrame {
         gallery1.setBorderPainted(false);
         gallery1.setContentAreaFilled(false);
         gallery1.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gallery1.setFocusable(false);
         gallery1.setPreferredSize(new java.awt.Dimension(80, 80));
         gallery1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -290,7 +289,7 @@ public class EditRooms extends javax.swing.JFrame {
 
         img3Upload.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         img3Upload.setText("Upload");
-        jPanel1.add(img3Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 720, 350, 40));
+        jPanel1.add(img3Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 720, 350, 40));
 
         userDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -306,8 +305,7 @@ public class EditRooms extends javax.swing.JFrame {
         userDetails.setToolTipText("");
         jScrollPane2.setViewportView(userDetails);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 1130, 710));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, -10, 10, 900));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 1160, 250));
 
         image3.setBackground(new java.awt.Color(255, 255, 255));
         image3.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -326,14 +324,14 @@ public class EditRooms extends javax.swing.JFrame {
                 image3ActionPerformed(evt);
             }
         });
-        jPanel1.add(image3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 720, 220, 40));
+        jPanel1.add(image3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 660, 220, 40));
 
         roomSelection.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roomSelectionActionPerformed(evt);
             }
         });
-        jPanel1.add(roomSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 230, 60));
+        jPanel1.add(roomSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 280, 60));
 
         goback.setBackground(new java.awt.Color(255, 255, 255));
         goback.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -357,19 +355,19 @@ public class EditRooms extends javax.swing.JFrame {
 
         goodFor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         goodFor.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Good For", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
-        jPanel1.add(goodFor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 410, 50));
+        jPanel1.add(goodFor, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 410, 50));
 
         roomName.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         roomName.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Room Type Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
-        jPanel1.add(roomName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 410, 50));
+        jPanel1.add(roomName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 410, 50));
 
         goodFor2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         goodFor2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Good For 2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
-        jPanel1.add(goodFor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 410, 50));
+        jPanel1.add(goodFor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 410, 50));
 
         goodFor1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         goodFor1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Good For 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
-        jPanel1.add(goodFor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 410, 50));
+        jPanel1.add(goodFor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 410, 50));
 
         price2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         price2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Price 2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
@@ -378,7 +376,7 @@ public class EditRooms extends javax.swing.JFrame {
                 price2KeyTyped(evt);
             }
         });
-        jPanel1.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 410, 50));
+        jPanel1.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 460, 410, 50));
 
         price1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         price1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Price 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 10))); // NOI18N
@@ -387,7 +385,7 @@ public class EditRooms extends javax.swing.JFrame {
                 price1KeyTyped(evt);
             }
         });
-        jPanel1.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 410, 50));
+        jPanel1.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 390, 410, 50));
 
         updatedata.setBackground(new java.awt.Color(255, 255, 255));
         updatedata.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -407,7 +405,7 @@ public class EditRooms extends javax.swing.JFrame {
                 updatedataActionPerformed(evt);
             }
         });
-        jPanel1.add(updatedata, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 780, 160, 50));
+        jPanel1.add(updatedata, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 710, 160, 50));
 
         image1.setBackground(new java.awt.Color(255, 255, 255));
         image1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -426,7 +424,7 @@ public class EditRooms extends javax.swing.JFrame {
                 image1ActionPerformed(evt);
             }
         });
-        jPanel1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, 220, 40));
+        jPanel1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 660, 220, 40));
 
         image2.setBackground(new java.awt.Color(255, 255, 255));
         image2.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -445,43 +443,25 @@ public class EditRooms extends javax.swing.JFrame {
                 image2ActionPerformed(evt);
             }
         });
-        jPanel1.add(image2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, 220, 40));
-
-        updatedata5.setBackground(new java.awt.Color(255, 255, 255));
-        updatedata5.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        updatedata5.setText("Update Data");
-        updatedata5.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        updatedata5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                updatedata5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                updatedata5MouseExited(evt);
-            }
-        });
-        updatedata5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updatedata5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(updatedata5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, -1, 40));
+        jPanel1.add(image2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, 220, 40));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Room Details");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 70, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 40, 1460, -1));
 
         img1Upload.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         img1Upload.setText("Upload");
-        jPanel1.add(img1Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, 350, 40));
+        jPanel1.add(img1Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 720, 350, 40));
 
         img2Upload.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         img2Upload.setText("Upload");
-        jPanel1.add(img2Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 670, 350, 40));
+        jPanel1.add(img2Upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 720, 350, 40));
 
         img1Upload1.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
         img1Upload1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        img1Upload1.setText("Preffered Image Size (380 x 380)");
-        jPanel1.add(img1Upload1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 580, 40));
+        img1Upload1.setText("*Preffered Image Size (380 x 380)");
+        jPanel1.add(img1Upload1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 1460, 40));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
         panelWrapper.setLayout(panelWrapperLayout);
@@ -495,7 +475,7 @@ public class EditRooms extends javax.swing.JFrame {
             .addGroup(panelWrapperLayout.createSequentialGroup()
                 .addComponent(toppanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 874, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -593,6 +573,7 @@ public class EditRooms extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(new JFrame(), "Please fill all the text fields and add all images!", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             uploadData();
+            JOptionPane.showMessageDialog(new JFrame(), "Room data has been updated!", "Update", JOptionPane.INFORMATION_MESSAGE);
             tableDataLoad();
             roomSelection.removeAllItems();
             loadRoomsData();
@@ -655,18 +636,6 @@ public class EditRooms extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_image2ActionPerformed
 
-    private void updatedata5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updatedata5MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updatedata5MouseEntered
-
-    private void updatedata5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updatedata5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updatedata5MouseExited
-
-    private void updatedata5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatedata5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updatedata5ActionPerformed
-
     private void price1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_price1KeyTyped
         char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
@@ -703,7 +672,6 @@ public class EditRooms extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel panelWrapper;
     private javax.swing.JTextField price1;
@@ -714,7 +682,6 @@ public class EditRooms extends javax.swing.JFrame {
     private javax.swing.JLabel textWelcom;
     private javax.swing.JPanel toppanel;
     public javax.swing.JButton updatedata;
-    public javax.swing.JButton updatedata5;
     private javax.swing.JTable userDetails;
     // End of variables declaration//GEN-END:variables
 }

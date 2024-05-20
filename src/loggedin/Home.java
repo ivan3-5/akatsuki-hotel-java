@@ -7,16 +7,20 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import panelsImages.homepic1;
-import panelsImages.homepic2;
-import panelsImages.homepic3;
-import panelsImages.homepic4;
-import panelsImages.homepic5;
 
 /**
  *
@@ -25,6 +29,7 @@ import panelsImages.homepic5;
 public class Home extends javax.swing.JFrame {
 
     String oldUser;
+    int count = 1;
 
     /**
      * Creates new form Login
@@ -32,6 +37,77 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         oldUserCheck();
+        slideshow();
+    }
+    
+    public void slideshow() {
+        new Thread() {
+            @Override
+            public void run() {
+                String SUrl, SUser, SPass;
+                    SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+                    SUser = "root";
+                    SPass = "";
+                for (int i = 0; i >= 0; i++) {
+                    try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+                        Statement st = con.createStatement();
+                        String query = "SELECT * FROM rooms WHERE id = " + count;
+                        ResultSet rs = st.executeQuery(query);
+                        rs.next();
+
+                        Blob imageBlob = rs.getBlob("Img1");
+                        byte[] bytes = imageBlob.getBytes(1, (int) imageBlob.length());
+                        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                        BufferedImage image = ImageIO.read(bis);
+
+                        switch (count) {
+                            case 1:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 2;
+                                break;
+                            case 2:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 3;
+                                break;
+                            case 3:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 4;
+                                break;
+                            case 4:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 5;
+                                break;
+                            case 5:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 6;
+                                break;
+                            case 6:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 7;
+                                break;
+                            case 7:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 8;
+                                break;
+                            case 8:
+                                showPicMid.setIcon(new ImageIcon(image));
+                                Thread.sleep(2000);
+                                count = 1;
+                                break;
+                        }
+                    } catch (Exception e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+            }
+        }.start();
     }
     
     public void bgGoldfgWhite() {
@@ -128,18 +204,20 @@ public class Home extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         insidepanel = new javax.swing.JPanel();
         panelHome = new javax.swing.JPanel();
-        scrollPanel = new javax.swing.JScrollPane();
-        panelIn = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        showPicMid = new javax.swing.JLabel();
         pic1 = new javax.swing.JButton();
         pic2 = new javax.swing.JButton();
         pic3 = new javax.swing.JButton();
-        pic5 = new javax.swing.JButton();
         pic4 = new javax.swing.JButton();
+        pic5 = new javax.swing.JButton();
+        pic6 = new javax.swing.JButton();
+        pic7 = new javax.swing.JButton();
+        pic8 = new javax.swing.JButton();
         textWelcom2 = new javax.swing.JLabel();
         textWelcom3 = new javax.swing.JLabel();
+        textWelcom4 = new javax.swing.JLabel();
         book = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        gtGallery = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -415,33 +493,12 @@ public class Home extends javax.swing.JFrame {
         panelHome.setBackground(new java.awt.Color(255, 255, 255));
         panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        scrollPanel.setBackground(new java.awt.Color(255, 255, 255,255));
-        scrollPanel.setBorder(null);
-        scrollPanel.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPanel.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        panelIn.setBackground(new java.awt.Color(255, 255, 255,255));
-        panelIn.setMinimumSize(new java.awt.Dimension(856, 631));
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg1.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout panelInLayout = new javax.swing.GroupLayout(panelIn);
-        panelIn.setLayout(panelInLayout);
-        panelInLayout.setHorizontalGroup(
-            panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 856, Short.MAX_VALUE)
-        );
-        panelInLayout.setVerticalGroup(
-            panelInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, Short.MAX_VALUE)
-                .addContainerGap(487, Short.MAX_VALUE))
-        );
-
-        scrollPanel.setViewportView(panelIn);
-
-        panelHome.add(scrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 840, 430));
+        showPicMid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showPicMid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showPicMid.setMaximumSize(new java.awt.Dimension(380, 380));
+        showPicMid.setMinimumSize(new java.awt.Dimension(380, 380));
+        showPicMid.setPreferredSize(new java.awt.Dimension(380, 380));
+        panelHome.add(showPicMid, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, -1, -1));
 
         pic1.setBackground(new java.awt.Color(255, 255, 255));
         pic1.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
@@ -461,7 +518,7 @@ public class Home extends javax.swing.JFrame {
                 pic1ActionPerformed(evt);
             }
         });
-        panelHome.add(pic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 640, -1, -1));
+        panelHome.add(pic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 640, -1, -1));
 
         pic2.setBackground(new java.awt.Color(255, 255, 255));
         pic2.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
@@ -481,7 +538,7 @@ public class Home extends javax.swing.JFrame {
                 pic2ActionPerformed(evt);
             }
         });
-        panelHome.add(pic2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 640, -1, -1));
+        panelHome.add(pic2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 640, -1, -1));
 
         pic3.setBackground(new java.awt.Color(255, 255, 255));
         pic3.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
@@ -501,27 +558,7 @@ public class Home extends javax.swing.JFrame {
                 pic3ActionPerformed(evt);
             }
         });
-        panelHome.add(pic3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 640, -1, -1));
-
-        pic5.setBackground(new java.awt.Color(255, 255, 255));
-        pic5.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
-        pic5.setForeground(new java.awt.Color(0, 104, 104));
-        pic5.setText("5");
-        pic5.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
-        pic5.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                pic5FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                pic5FocusLost(evt);
-            }
-        });
-        pic5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pic5ActionPerformed(evt);
-            }
-        });
-        panelHome.add(pic5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 640, -1, -1));
+        panelHome.add(pic3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 640, -1, -1));
 
         pic4.setBackground(new java.awt.Color(255, 255, 255));
         pic4.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
@@ -541,16 +578,100 @@ public class Home extends javax.swing.JFrame {
                 pic4ActionPerformed(evt);
             }
         });
-        panelHome.add(pic4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 640, -1, -1));
+        panelHome.add(pic4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 640, -1, -1));
+
+        pic5.setBackground(new java.awt.Color(255, 255, 255));
+        pic5.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        pic5.setForeground(new java.awt.Color(0, 104, 104));
+        pic5.setText("5");
+        pic5.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        pic5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pic5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pic5FocusLost(evt);
+            }
+        });
+        pic5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pic5ActionPerformed(evt);
+            }
+        });
+        panelHome.add(pic5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 640, -1, -1));
+
+        pic6.setBackground(new java.awt.Color(255, 255, 255));
+        pic6.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        pic6.setForeground(new java.awt.Color(0, 104, 104));
+        pic6.setText("6");
+        pic6.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        pic6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pic6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pic6FocusLost(evt);
+            }
+        });
+        pic6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pic6ActionPerformed(evt);
+            }
+        });
+        panelHome.add(pic6, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 640, -1, -1));
+
+        pic7.setBackground(new java.awt.Color(255, 255, 255));
+        pic7.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        pic7.setForeground(new java.awt.Color(0, 104, 104));
+        pic7.setText("7");
+        pic7.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        pic7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pic7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pic7FocusLost(evt);
+            }
+        });
+        pic7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pic7ActionPerformed(evt);
+            }
+        });
+        panelHome.add(pic7, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 640, -1, -1));
+
+        pic8.setBackground(new java.awt.Color(255, 255, 255));
+        pic8.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        pic8.setForeground(new java.awt.Color(0, 104, 104));
+        pic8.setText("8");
+        pic8.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        pic8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pic8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pic8FocusLost(evt);
+            }
+        });
+        pic8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pic8ActionPerformed(evt);
+            }
+        });
+        panelHome.add(pic8, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, -1, -1));
 
         textWelcom2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        textWelcom2.setText("Wanna take a break and go on a vacation?");
-        panelHome.add(textWelcom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 670, -1, 50));
+        textWelcom2.setText("Check out the Gallery!");
+        panelHome.add(textWelcom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 670, -1, 50));
 
         textWelcom3.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
         textWelcom3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textWelcom3.setText("Welcome to Akatsuki Hotel!");
         panelHome.add(textWelcom3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1700, -1));
+
+        textWelcom4.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        textWelcom4.setText("Wanna take a break and go on a vacation?");
+        panelHome.add(textWelcom4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 670, -1, 50));
 
         book.setBackground(new java.awt.Color(255, 255, 255));
         book.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
@@ -571,22 +692,28 @@ public class Home extends javax.swing.JFrame {
                 bookActionPerformed(evt);
             }
         });
-        panelHome.add(book, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 730, 223, 52));
+        panelHome.add(book, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 730, 223, 52));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255, 175));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1700, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
-        );
-
-        panelHome.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+        gtGallery.setBackground(new java.awt.Color(255, 255, 255));
+        gtGallery.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        gtGallery.setForeground(new java.awt.Color(230, 192, 104));
+        gtGallery.setText("Gallery");
+        gtGallery.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        gtGallery.setFocusable(false);
+        gtGallery.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                gtGalleryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                gtGalleryMouseExited(evt);
+            }
+        });
+        gtGallery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gtGalleryActionPerformed(evt);
+            }
+        });
+        panelHome.add(gtGallery, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 223, 52));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -772,133 +899,68 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_gallery1ActionPerformed
 
     private void pic1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic1FocusGained
-        Color darkgreen = new Color(0,104,104);
-        pic1.setBackground(darkgreen);
-        pic1.setForeground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic1FocusGained
 
     private void pic1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic1FocusLost
-        Color darkgreen = new Color(0,104,104);
-        pic1.setForeground(darkgreen);
-        pic1.setBackground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic1FocusLost
 
     private void pic1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic1ActionPerformed
-        homepic1 pic1 = new homepic1();
-        homepic2 pic2 = new homepic2();
-        homepic3 pic3 = new homepic3();
-        homepic4 pic4 = new homepic4();
-        homepic5 pic5 = new homepic5();
-        scrollPanel.getViewport().remove(panelIn);
-        scrollPanel.getViewport().remove(pic2);
-        scrollPanel.getViewport().remove(pic3);
-        scrollPanel.getViewport().remove(pic4);
-        scrollPanel.getViewport().remove(pic5);
-        scrollPanel.getViewport().add(pic1);
+        count = 1;
+        slideshow();
     }//GEN-LAST:event_pic1ActionPerformed
 
     private void pic2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic2FocusGained
-        Color darkgreen = new Color(0,104,104);
-        pic2.setBackground(darkgreen);
-        pic2.setForeground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic2FocusGained
 
     private void pic2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic2FocusLost
-        Color darkgreen = new Color(0,104,104);
-        pic2.setForeground(darkgreen);
-        pic2.setBackground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic2FocusLost
 
     private void pic2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic2ActionPerformed
-        homepic1 pic1 = new homepic1();
-        homepic2 pic2 = new homepic2();
-        homepic3 pic3 = new homepic3();
-        homepic4 pic4 = new homepic4();
-        homepic5 pic5 = new homepic5();
-        scrollPanel.getViewport().remove(panelIn);
-        scrollPanel.getViewport().remove(pic1);
-        scrollPanel.getViewport().remove(pic3);
-        scrollPanel.getViewport().remove(pic4);
-        scrollPanel.getViewport().remove(pic5);
-        scrollPanel.getViewport().add(pic2);
+        count = 2;
+        slideshow();
     }//GEN-LAST:event_pic2ActionPerformed
 
     private void pic3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic3FocusGained
-        Color darkgreen = new Color(0,104,104);
-        pic3.setBackground(darkgreen);
-        pic3.setForeground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic3FocusGained
 
     private void pic3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic3FocusLost
-        Color darkgreen = new Color(0,104,104);
-        pic3.setForeground(darkgreen);
-        pic3.setBackground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic3FocusLost
 
     private void pic3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic3ActionPerformed
-        homepic1 pic1 = new homepic1();
-        homepic2 pic2 = new homepic2();
-        homepic3 pic3 = new homepic3();
-        homepic4 pic4 = new homepic4();
-        homepic5 pic5 = new homepic5();
-        scrollPanel.getViewport().remove(panelIn);
-        scrollPanel.getViewport().remove(pic2);
-        scrollPanel.getViewport().remove(pic1);
-        scrollPanel.getViewport().remove(pic4);
-        scrollPanel.getViewport().remove(pic5);
-        scrollPanel.getViewport().add(pic3);
+        count = 3;
+        slideshow();
     }//GEN-LAST:event_pic3ActionPerformed
 
     private void pic5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic5FocusGained
-        Color darkgreen = new Color(0,104,104);
-        pic5.setBackground(darkgreen);
-        pic5.setForeground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic5FocusGained
 
     private void pic5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic5FocusLost
-        Color darkgreen = new Color(0,104,104);
-        pic5.setForeground(darkgreen);
-        pic5.setBackground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic5FocusLost
 
     private void pic5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic5ActionPerformed
-        homepic1 pic1 = new homepic1();
-        homepic2 pic2 = new homepic2();
-        homepic3 pic3 = new homepic3();
-        homepic4 pic4 = new homepic4();
-        homepic5 pic5 = new homepic5();
-        scrollPanel.getViewport().remove(panelIn);
-        scrollPanel.getViewport().remove(pic2);
-        scrollPanel.getViewport().remove(pic3);
-        scrollPanel.getViewport().remove(pic4);
-        scrollPanel.getViewport().remove(pic1);
-        scrollPanel.getViewport().add(pic5);
+        count = 5;
+        slideshow();
     }//GEN-LAST:event_pic5ActionPerformed
 
     private void pic4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic4FocusGained
-        Color darkgreen = new Color(0,104,104);
-        pic4.setBackground(darkgreen);
-        pic4.setForeground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic4FocusGained
 
     private void pic4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic4FocusLost
-        Color darkgreen = new Color(0,104,104);
-        pic4.setForeground(darkgreen);
-        pic4.setBackground(new Color(255,255,255));
+        
     }//GEN-LAST:event_pic4FocusLost
 
     private void pic4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic4ActionPerformed
-        homepic1 pic1 = new homepic1();
-        homepic2 pic2 = new homepic2();
-        homepic3 pic3 = new homepic3();
-        homepic4 pic4 = new homepic4();
-        homepic5 pic5 = new homepic5();
-        scrollPanel.getViewport().remove(panelIn);
-        scrollPanel.getViewport().remove(pic2);
-        scrollPanel.getViewport().remove(pic3);
-        scrollPanel.getViewport().remove(pic1);
-        scrollPanel.getViewport().remove(pic5);
-        scrollPanel.getViewport().add(pic4);
+        count = 4;
+        slideshow();
     }//GEN-LAST:event_pic4ActionPerformed
 
     private void bookMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookMouseEntered
@@ -919,6 +981,63 @@ public class Home extends javax.swing.JFrame {
         this.sidepanelChoice(1);
     }//GEN-LAST:event_bookActionPerformed
 
+    private void pic6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic6FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic6FocusGained
+
+    private void pic6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic6FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic6FocusLost
+
+    private void pic6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic6ActionPerformed
+        count = 6;
+        slideshow();
+    }//GEN-LAST:event_pic6ActionPerformed
+
+    private void pic7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic7FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic7FocusGained
+
+    private void pic7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic7FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic7FocusLost
+
+    private void pic7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic7ActionPerformed
+        count = 7;
+        slideshow();
+    }//GEN-LAST:event_pic7ActionPerformed
+
+    private void pic8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic8FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic8FocusGained
+
+    private void pic8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pic8FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pic8FocusLost
+
+    private void pic8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pic8ActionPerformed
+        count = 8;
+        slideshow();
+    }//GEN-LAST:event_pic8ActionPerformed
+
+    private void gtGalleryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gtGalleryMouseEntered
+        Color gold;
+        gold = new Color(230,192,104);
+        gtGallery.setBackground(gold);
+        gtGallery.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_gtGalleryMouseEntered
+
+    private void gtGalleryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gtGalleryMouseExited
+        Color gold;
+        gold = new Color(230,192,104);
+        gtGallery.setBackground(new Color(255,255,255));
+        gtGallery.setForeground(gold);
+    }//GEN-LAST:event_gtGalleryMouseExited
+
+    private void gtGalleryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gtGalleryActionPerformed
+        this.sidepanelChoice(2);
+    }//GEN-LAST:event_gtGalleryActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -931,29 +1050,31 @@ public class Home extends javax.swing.JFrame {
     public javax.swing.JButton contact;
     public javax.swing.JButton gallery;
     public javax.swing.JButton gallery1;
+    public javax.swing.JButton gtGallery;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
     private javax.swing.JPanel panelHome;
-    private javax.swing.JPanel panelIn;
     private javax.swing.JPanel panelWrapper;
     public javax.swing.JButton pic1;
     public javax.swing.JButton pic2;
     public javax.swing.JButton pic3;
     public javax.swing.JButton pic4;
     public javax.swing.JButton pic5;
+    public javax.swing.JButton pic6;
+    public javax.swing.JButton pic7;
+    public javax.swing.JButton pic8;
     public javax.swing.JButton reserve;
-    private javax.swing.JScrollPane scrollPanel;
+    private javax.swing.JLabel showPicMid;
     private javax.swing.JPanel sidepanel;
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
     private javax.swing.JLabel textWelcom2;
     private javax.swing.JLabel textWelcom3;
+    private javax.swing.JLabel textWelcom4;
     private javax.swing.JPanel toppanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -181,7 +181,7 @@ public class RoomDetailsOld extends javax.swing.JFrame {
         panelWrapper.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 190, 147, -1));
 
         imageShow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imageShow.setMaximumSize(null);
+        imageShow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         imageShow.setMinimumSize(new java.awt.Dimension(380, 380));
         imageShow.setPreferredSize(new java.awt.Dimension(380, 380));
         panelWrapper.add(imageShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));

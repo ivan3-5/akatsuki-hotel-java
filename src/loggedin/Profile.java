@@ -100,10 +100,11 @@ public class Profile extends javax.swing.JFrame {
             while (rs.next()) {
                 Vector v = new Vector();
                 
-                v.add(rs.getString(2)); //DateBooked
-                v.add(rs.getString(3)); //RoomType
-                v.add(rs.getString(4)); //Price
-                v.add(rs.getString(5)); //RoomSchedule
+                v.add(rs.getString(2));
+                v.add(rs.getString(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
+                v.add(rs.getString(6));
                 
                 dt.addRow(v);
             }
@@ -233,7 +234,8 @@ public class Profile extends javax.swing.JFrame {
         textBirthday = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         textAddress = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        cancelSchedule = new javax.swing.JLabel();
+        changepword = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         textPhone = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -540,14 +542,24 @@ public class Profile extends javax.swing.JFrame {
         textAddress.setText("Null");
         jPanel11.add(textAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 440, -1));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
-        jLabel2.setText("Change Password");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        cancelSchedule.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        cancelSchedule.setForeground(new java.awt.Color(255, 0, 0));
+        cancelSchedule.setText("Cancel Schedule");
+        cancelSchedule.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                cancelScheduleMouseClicked(evt);
             }
         });
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
+        jPanel11.add(cancelSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 130, 20));
+
+        changepword.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
+        changepword.setText("Change Password");
+        changepword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changepwordMouseClicked(evt);
+            }
+        });
+        jPanel11.add(changepword, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
         jLabel58.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel58.setText("Phone:");
@@ -569,13 +581,13 @@ public class Profile extends javax.swing.JFrame {
 
         userData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Date", "Room Type", "Price", "Schedule"
+                "Room No.", "Date", "Room Type", "Price", "Schedule"
             }
         ));
         userData.setEnabled(false);
@@ -808,13 +820,21 @@ public class Profile extends javax.swing.JFrame {
      
     }//GEN-LAST:event_gallery1ActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        PWForgot pwforgot = new PWForgot();
+    private void changepwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changepwordMouseClicked
+        PWChange pwforgot = new PWChange();
         pwforgot.setVisible(true);
         pwforgot.pack();
         pwforgot.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_changepwordMouseClicked
+
+    private void cancelScheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelScheduleMouseClicked
+        CancelSchedule cs = new CancelSchedule();
+        cs.setVisible(true);
+        cs.pack();
+        cs.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_cancelScheduleMouseClicked
 
     /**
      * @param args the command line arguments
@@ -824,13 +844,14 @@ public class Profile extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton about;
+    private javax.swing.JLabel cancelSchedule;
+    private javax.swing.JLabel changepword;
     public javax.swing.JButton contact;
     public javax.swing.JButton gallery;
     public javax.swing.JButton gallery1;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel47;

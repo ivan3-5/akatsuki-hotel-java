@@ -7,10 +7,19 @@ package loggedin;
 
 import AkatsukiHotel.Login;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,13 +29,16 @@ import javax.swing.JOptionPane;
 public class Gallery extends javax.swing.JFrame {
 
     String oldUser;
-
+    
     /**
      * Creates new form Login
      */
     public Gallery() {
         initComponents();
         oldUserCheck();
+        getImage1();
+        getImage2();
+        getImage3();
     }
     
     public void bgGoldfgWhite() {
@@ -55,12 +67,176 @@ public class Gallery extends javax.swing.JFrame {
         }
         return oldUser;
     }
+    
+    public void getImage1() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            int i;
+            for (i = 1; i <=8; i++) {
+                String query = "SELECT * FROM rooms WHERE id = " + i;
+                ResultSet rs = st.executeQuery(query);
+                
+                while (rs.next()) {
+                    Blob imageBlob = rs.getBlob("Img1");
+                    byte[] bytes = imageBlob.getBytes(1, (int) imageBlob.length());
+                    ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                    BufferedImage image = ImageIO.read(bis);
 
+                    switch (i) {
+                        case 1:
+                            roomPic1.setIcon(new ImageIcon(image));
+                            break;
+                        case 2:
+                            roomPic2.setIcon(new ImageIcon(image));
+                            break;
+                        case 3:
+                            roomPic3.setIcon(new ImageIcon(image));
+                            break;
+                        case 4:
+                            roomPic4.setIcon(new ImageIcon(image));
+                            break;
+                        case 5:
+                            roomPic5.setIcon(new ImageIcon(image));
+                            break;
+                        case 6:
+                            roomPic6.setIcon(new ImageIcon(image));
+                            break;
+                        case 7:
+                            roomPic7.setIcon(new ImageIcon(image));
+                            break;
+                        case 8:
+                            roomPic8.setIcon(new ImageIcon(image));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            con.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    
+    public void getImage2() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            int i;
+            for (i = 1; i <=8; i++) {
+                String query = "SELECT * FROM rooms WHERE id = " + i;
+                ResultSet rs = st.executeQuery(query);
+                
+                while (rs.next()) {
+                    Blob imageBlob = rs.getBlob("Img2");
+                    byte[] bytes = imageBlob.getBytes(1, (int) imageBlob.length());
+                    ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                    BufferedImage image = ImageIO.read(bis);
+
+                    switch (i) {
+                        case 1:
+                            roomPic9.setIcon(new ImageIcon(image));
+                            break;
+                        case 2:
+                            roomPic10.setIcon(new ImageIcon(image));
+                            break;
+                        case 3:
+                            roomPic11.setIcon(new ImageIcon(image));
+                            break;
+                        case 4:
+                            roomPic12.setIcon(new ImageIcon(image));
+                            break;
+                        case 5:
+                            roomPic13.setIcon(new ImageIcon(image));
+                            break;
+                        case 6:
+                            roomPic14.setIcon(new ImageIcon(image));
+                            break;
+                        case 7:
+                            roomPic15.setIcon(new ImageIcon(image));
+                            break;
+                        case 8:
+                            roomPic16.setIcon(new ImageIcon(image));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            con.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    
+    public void getImage3() {
+        String SUrl, SUser, SPass;
+            SUrl = "jdbc:MySQL://localhost:3306/akatsukihotel_user_database";
+            SUser = "root";
+            SPass = "";
+        
+        try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
+            Statement st = con.createStatement();
+            int i;
+            for (i = 1; i <=8; i++) {
+                String query = "SELECT * FROM rooms WHERE id = " + i;
+                ResultSet rs = st.executeQuery(query);
+                
+                while (rs.next()) {
+                    Blob imageBlob = rs.getBlob("Img3");
+                    byte[] bytes = imageBlob.getBytes(1, (int) imageBlob.length());
+                    ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+                    BufferedImage image = ImageIO.read(bis);
+
+                    switch (i) {
+                        case 1:
+                            roomPic17.setIcon(new ImageIcon(image));
+                            break;
+                        case 2:
+                            roomPic18.setIcon(new ImageIcon(image));
+                            break;
+                        case 3:
+                            roomPic19.setIcon(new ImageIcon(image));
+                            break;
+                        case 4:
+                            roomPic20.setIcon(new ImageIcon(image));
+                            break;
+                        case 5:
+                            roomPic21.setIcon(new ImageIcon(image));
+                            break;
+                        case 6:
+                            roomPic22.setIcon(new ImageIcon(image));
+                            break;
+                        case 7:
+                            roomPic23.setIcon(new ImageIcon(image));
+                            break;
+                        case 8:
+                            roomPic24.setIcon(new ImageIcon(image));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            con.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    
     public void sidepanelChoice(int choice) {
         Home home = new Home();
         ReserveOld reserveOld = new ReserveOld();
         ReserveNew reserveNew = new ReserveNew();
-
         Gallery gallery = new Gallery();
         Contact contact = new Contact();
         About about = new About();
@@ -124,15 +300,33 @@ public class Gallery extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         insidepanel = new javax.swing.JPanel();
         panelGallery = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         textWelcom6 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel58 = new javax.swing.JLabel();
+        roomPic1 = new javax.swing.JLabel();
+        roomPic2 = new javax.swing.JLabel();
+        roomPic3 = new javax.swing.JLabel();
+        roomPic4 = new javax.swing.JLabel();
+        roomPic5 = new javax.swing.JLabel();
+        roomPic6 = new javax.swing.JLabel();
+        roomPic7 = new javax.swing.JLabel();
+        roomPic8 = new javax.swing.JLabel();
+        roomPic9 = new javax.swing.JLabel();
+        roomPic10 = new javax.swing.JLabel();
+        roomPic11 = new javax.swing.JLabel();
+        roomPic12 = new javax.swing.JLabel();
+        roomPic13 = new javax.swing.JLabel();
+        roomPic14 = new javax.swing.JLabel();
+        roomPic15 = new javax.swing.JLabel();
+        roomPic16 = new javax.swing.JLabel();
+        roomPic17 = new javax.swing.JLabel();
+        roomPic18 = new javax.swing.JLabel();
+        roomPic19 = new javax.swing.JLabel();
+        roomPic20 = new javax.swing.JLabel();
+        roomPic21 = new javax.swing.JLabel();
+        roomPic22 = new javax.swing.JLabel();
+        roomPic23 = new javax.swing.JLabel();
+        roomPic24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -407,61 +601,269 @@ public class Gallery extends javax.swing.JFrame {
         panelGallery.setBackground(new java.awt.Color(255, 255, 255));
         panelGallery.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         textWelcom6.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
         textWelcom6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textWelcom6.setText("Gallery");
-        panelGallery.add(textWelcom6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1700, -1));
 
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg1.jpg"))); // NOI18N
-        jLabel38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 660, 390));
+        roomPic1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic1.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic1.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic1.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservelargepic1.jpg"))); // NOI18N
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 120, 390, 390));
+        roomPic2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic2.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic2.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic2.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg2.jpg"))); // NOI18N
-        jLabel39.setText("jLabel39");
-        jLabel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 590, 390));
+        roomPic3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic3.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic3.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic3.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg3.jpg"))); // NOI18N
-        jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 520, 750, 330));
+        roomPic4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic4.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic4.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic4.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/homeimg4.jpg"))); // NOI18N
-        jLabel41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, 500, 330));
+        roomPic5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic5.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic5.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic5.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reservevippic1.jpg"))); // NOI18N
-        jLabel42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelGallery.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 390, 330));
+        roomPic6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic6.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic6.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic6.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255, 200));
+        roomPic7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic7.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic7.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic7.setPreferredSize(new java.awt.Dimension(380, 380));
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1700, Short.MAX_VALUE)
+        roomPic8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic8.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic8.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic8.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic9.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic9.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic9.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic10.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic10.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic10.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic11.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic11.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic11.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic12.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic12.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic12.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic13.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic13.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic13.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic14.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic14.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic14.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic15.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic15.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic15.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic16.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic16.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic16.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic17.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic17.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic17.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic18.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic18.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic18.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic19.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic19.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic19.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic20.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic20.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic20.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic21.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic21.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic21.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic22.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic22.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic22.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic23.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic23.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic23.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        roomPic24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roomPic24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        roomPic24.setMaximumSize(new java.awt.Dimension(380, 380));
+        roomPic24.setMinimumSize(new java.awt.Dimension(380, 380));
+        roomPic24.setPreferredSize(new java.awt.Dimension(380, 380));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textWelcom6, javax.swing.GroupLayout.DEFAULT_SIZE, 1674, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(roomPic22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(roomPic20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roomPic21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(roomPic10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(roomPic9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(roomPic5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(roomPic2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomPic4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(textWelcom6)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(roomPic18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomPic19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        panelGallery.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+        jScrollPane1.setViewportView(jPanel1);
 
-        jLabel58.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aboutbg.png"))); // NOI18N
-        panelGallery.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
+        panelGallery.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
 
         insidepanel.add(panelGallery, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
 
@@ -653,20 +1055,38 @@ public class Gallery extends javax.swing.JFrame {
     public javax.swing.JButton gallery1;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
     private javax.swing.JPanel panelGallery;
     private javax.swing.JPanel panelWrapper;
     public javax.swing.JButton reserve;
+    private javax.swing.JLabel roomPic1;
+    private javax.swing.JLabel roomPic10;
+    private javax.swing.JLabel roomPic11;
+    private javax.swing.JLabel roomPic12;
+    private javax.swing.JLabel roomPic13;
+    private javax.swing.JLabel roomPic14;
+    private javax.swing.JLabel roomPic15;
+    private javax.swing.JLabel roomPic16;
+    private javax.swing.JLabel roomPic17;
+    private javax.swing.JLabel roomPic18;
+    private javax.swing.JLabel roomPic19;
+    private javax.swing.JLabel roomPic2;
+    private javax.swing.JLabel roomPic20;
+    private javax.swing.JLabel roomPic21;
+    private javax.swing.JLabel roomPic22;
+    private javax.swing.JLabel roomPic23;
+    private javax.swing.JLabel roomPic24;
+    private javax.swing.JLabel roomPic3;
+    private javax.swing.JLabel roomPic4;
+    private javax.swing.JLabel roomPic5;
+    private javax.swing.JLabel roomPic6;
+    private javax.swing.JLabel roomPic7;
+    private javax.swing.JLabel roomPic8;
+    private javax.swing.JLabel roomPic9;
     private javax.swing.JPanel sidepanel;
     private javax.swing.JLabel textQuote;
     private javax.swing.JLabel textWelcom;
