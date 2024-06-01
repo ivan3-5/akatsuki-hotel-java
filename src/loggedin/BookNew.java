@@ -136,8 +136,11 @@ public class BookNew extends javax.swing.JFrame {
             SPass = "";
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         roomSchedule = sdf.format(schedule.getDate());
-        String roomtype;
+        String roomtype, goodfor, goodfor1, goodfor2;
             roomtype = roomType.getText();
+            goodfor = goodFor.getText();
+            goodfor1 = goodFor1.getText();
+            goodfor2 = goodFor2.getText();
         System.out.println(roomtype);
         try (Connection con = DriverManager.getConnection(SUrl, SUser, SPass)) {
             String query = "SELECT COUNT(*) FROM dateschedules WHERE Room" + roomChosen + " = '" + roomSchedule + "'";
@@ -163,24 +166,31 @@ public class BookNew extends javax.swing.JFrame {
                 System.out.println("Price: " + roomPriceSelected);
                 
                 if (1 == selected) {
-                    String querySetSchedule = "INSERT INTO dateschedules (Room" + roomChosen + ", RoomNo) "
-                            + "VALUES ('" + roomSchedule + "', '" + roomChosen + "')";
-                    System.out.println(querySetSchedule);
-                    st.execute(querySetSchedule);
-                    System.out.println(profileID);
-                    
-                    String querySetUser = "INSERT INTO u" + profileID + " (RoomNo, DateBooked, RoomType, Price, RoomSchedule) "
-                            + "VALUES ('" + roomChosen + "', '" + dateToday + "', '" + roomtype + "', '" + roomPriceSelected + "', '" + roomSchedule + "')";
-                    System.out.println(querySetUser);
-                    st.execute(querySetUser);
-                    
-                    String querySetOld = "UPDATE user SET old = '1' WHERE id = " + profileID;
-                    System.out.println(querySetOld);
-                    st.execute(querySetOld);
-                    
-                    JOptionPane.showMessageDialog(new JFrame(), "Successfully booked a hotel!", "Book", JOptionPane.INFORMATION_MESSAGE);
-                    
-                    this.dispose();
+                    if ("0".equals(roomPriceSelected) || "0.0".equals(roomPriceSelected) || "No Room".equals(roomtype) || "N/A".equals(goodfor) || "N/A".equals(goodfor1) || "N/A".equals(goodfor2)){
+                        JOptionPane.showMessageDialog(new JFrame(), "No Room!", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        String querySetSchedule = "INSERT INTO dateschedules (Room" + roomChosen + ", RoomNo) "
+                                + "VALUES ('" + roomSchedule + "', '" + roomChosen + "')";
+                        System.out.println(querySetSchedule);
+                        st.execute(querySetSchedule);
+                        System.out.println(profileID);
+
+                        String querySetUser = "INSERT INTO u" + profileID + " (RoomNo, DateBooked, RoomType, Price, RoomSchedule) "
+                                + "VALUES ('" + roomChosen + "', '" + dateToday + "', '" + roomtype + "', '" + roomPriceSelected + "', '" + roomSchedule + "')";
+                        System.out.println(querySetUser);
+                        st.execute(querySetUser);
+
+                        String querySetOld = "UPDATE user SET old = '1' WHERE id = " + profileID;
+                        System.out.println(querySetOld);
+                        st.execute(querySetOld);
+
+                        JOptionPane.showMessageDialog(new JFrame(), "Successfully booked a hotel!", "Book", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        ReserveOld ro = new ReserveOld();
+                        ro.setVisible(true);
+                        ro.setLocationRelativeTo(null);
+                        this.dispose();
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(new JFrame(), "This room is already scheduled on this date!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -523,6 +533,9 @@ public class BookNew extends javax.swing.JFrame {
     }//GEN-LAST:event_closeFocusLost
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        ReserveNew rn = new ReserveNew();
+        rn.setVisible(true);
+        rn.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_closeActionPerformed
 

@@ -284,6 +284,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("2".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -293,6 +294,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("3".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -302,6 +304,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("4".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -311,6 +314,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("5".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -320,6 +324,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("6".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -329,6 +334,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("7".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -338,6 +344,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             } else if ("8".equals(roomChosen)) {
                 try (FileWriter fw = new FileWriter("room.txt")) {
                     fw.write(roomChosen);
@@ -347,6 +354,7 @@ public class ReserveNew extends javax.swing.JFrame {
                 BookNew br = new BookNew();
                 br.setVisible(true);
                 br.setLocationRelativeTo(null);
+                this.dispose();
             }
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());

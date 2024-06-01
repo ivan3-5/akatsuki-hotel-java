@@ -218,7 +218,6 @@ public class Home extends javax.swing.JFrame {
         textWelcom4 = new javax.swing.JLabel();
         book = new javax.swing.JButton();
         gtGallery = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Akatsuki Hotel Inc.");
@@ -715,11 +714,6 @@ public class Home extends javax.swing.JFrame {
         });
         panelHome.add(gtGallery, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 730, 223, 52));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/aboutbg.png"))); // NOI18N
-        panelHome.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
-
         insidepanel.add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 880));
 
         javax.swing.GroupLayout panelWrapperLayout = new javax.swing.GroupLayout(panelWrapper);
@@ -1053,7 +1047,6 @@ public class Home extends javax.swing.JFrame {
     public javax.swing.JButton gtGallery;
     public javax.swing.JButton home;
     private javax.swing.JPanel insidepanel;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel logo;
     public javax.swing.JButton logout;
